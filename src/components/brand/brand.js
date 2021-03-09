@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 // icons
 import AddIcon from "@material-ui/icons/Add";
 // consts

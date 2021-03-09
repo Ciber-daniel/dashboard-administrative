@@ -1,10 +1,19 @@
+:root {
+  --font-g: "Roboto", sans-serif;
+}
+
 header.MuiAppBar-colorPrimary {
-  height: 12.5rem;
-  background: #f2f2f2 0% 0% no-repeat padding-box;
+  height: 10rem;
+  background: #f2f2f2;
 }
 
 .MuiToolbar-root.MuiToolbar-dense.MuiToolbar-gutters {
-  padding: 3.5em;
+  padding: 3rem;
+  margin-left: 1rem;
+}
+
+header.MuiPaper-elevation4 {
+  box-shadow: none;
 }
 
 svg.MuiSvgIcon-root {
@@ -15,7 +24,7 @@ svg.MuiSvgIcon-root {
 h6.MuiTypography-root {
   color: #a7a7a7;
   font-size: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 h4.MuiTypography-root {
@@ -24,14 +33,14 @@ h4.MuiTypography-root {
 }
 
 .heading {
-  padding: 2.5rem;
+  padding: 2rem;
 }
 
 .user-description {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 12.5rem;
+  height: 10rem;
   background: #f2f2f2 0% 0% no-repeat padding-box;
 }
 
@@ -40,12 +49,18 @@ h4.MuiTypography-root {
   height: 6rem;
 }
 
-.user-description .logout {
+.name-user .logout {
   display: flex;
 }
 
-.user-description .logout img {
-  margin-right: 0.7rem;
+.name-user .logout p {
+  font-family: var(--font-g);
+  font-weight: 400;
+}
+
+.name-user .logout img {
+  margin-right: 0.6rem;
+  width: 1.3rem;
 }
 
 .MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.MuiDrawer-paperAnchorDockedLeft.MuiPaper-elevation0 {
@@ -59,21 +74,35 @@ h4.MuiTypography-root {
 }
 
 .name-user span {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #707070;
+  font-family: var(--font-g);
+  font-weight: 400;
 }
 
 .name-user p {
   color: #a7a7a7;
-  font-size: 1rem;
+  font-family: var(--font-g);
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .list-items {
   background: transparent linear-gradient(0deg, #63d1a2 0%, #63c3d1 100%) 0% 0%
     no-repeat padding-box;
-  height: 100vh;
+  height: 74vh;
 }
 
-ul.MuiList-root.MuiList-padding {
-  height: 100vh;
+.wrapper-footer {
+  background: #f2f2f2 0% 0% no-repeat padding-box;
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  color: #707070;
+  font-size: 0.7rem;
+  padding: 0.6rem;
+  font-family: var(--font-g);
+  font-weight: 400;
 }
