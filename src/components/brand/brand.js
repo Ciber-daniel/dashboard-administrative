@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // icons
 import AddIcon from "@material-ui/icons/Add";
 // consts
@@ -12,6 +12,15 @@ import { Modals } from "../utils/modals/Modals";
 import XGridDemo from "../utils/grid/Xgrid";
 
 const Brand = () => {
+  const titles = ["Tipo de bien", "Nombre"];
+  const data = [
+    {
+      id: "1",
+      type: "Computadora",
+      name: "Apple",
+    },
+  ];
+
   return (
     <>
       <Header
@@ -38,7 +47,7 @@ const Brand = () => {
           </div>
         </div>
         <div className="row-grid">
-          <XGridDemo />
+          <XGridDemo titles={titles} data={data} />
         </div>
       </main>
     </>
