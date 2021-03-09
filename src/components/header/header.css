@@ -98,6 +98,11 @@ h4.MuiTypography-root {
   display: flex;
   justify-content: center;
 }
+.icon-expand {
+  color: #ffffff;
+  margin-left: 5rem;
+  width: 0.8rem;
+}
 
 footer {
   color: #707070;

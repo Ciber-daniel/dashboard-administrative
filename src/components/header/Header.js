@@ -52,7 +52,6 @@ export default function Header(props) {
         variant="persistent"
         anchor="left"
         open={openDrawer}
-        onClick={handleDrawerClose}
       >
         <Divider />
         <div className="user-description">
@@ -68,7 +67,7 @@ export default function Header(props) {
         </div>
         <Divider />
         <div className="list-items">
-          <ListDrawer />
+          <ListDrawer callback={handleDrawerClose} />
         </div>
         <Divider />
         <div className="wrapper-footer">
