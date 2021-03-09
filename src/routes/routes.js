@@ -9,4 +9,9 @@ export const Routes = {
     wordKey: "Marcas",
     description: "Tablas / Marcas",
   },
+  insurers: {
+    route: "/insurers",
+    wordKey: "Aseguradoras",
+    description: "Tablas / Aseguradoras",
+  },
 };
