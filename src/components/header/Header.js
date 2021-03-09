@@ -4,6 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import PropTypes from "prop-types";
 import "./header.css";
 import Drawer from "@material-ui/core/Drawer";
 
@@ -11,8 +12,6 @@ import List from "@material-ui/core/List";
 
 import Divider from "@material-ui/core/Divider";
 
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -20,13 +19,18 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 
 import AvatarUser from "../../assets/img/avatar2.png";
-import LogoutIcon from "../../assets/img/icon-logout.svg";
+import LogoutIcon from "../../assets/icons/icon-logout.svg";
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = { open: false };
   }
+
+  static propTypes = {
+    wordKey: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  };
 
   handleDrawerOpen = () => this.setState({ open: !this.state.open });
   handleDrawerClose = () => this.setState({ open: false });
@@ -47,10 +51,10 @@ class Header extends Component {
             </IconButton>
             <div className="heading">
               <Typography variant="h6" color="inherit">
-                Dashboard
+                {this.props.description}
               </Typography>
               <Typography variant="h4" color="inherit">
-                Dashboard
+                {this.props.wordKey}
               </Typography>
             </div>
           </Toolbar>
@@ -64,12 +68,12 @@ class Header extends Component {
         >
           <Divider />
           <div className="user-description">
-            <img className="avatar" src={AvatarUser} />
+            <img className="avatar" alt="AVATAR" src={AvatarUser} />
             <div className="name-user">
               <span>Julio Besse</span>
               <p>Backuser</p>
               <div className="logout">
-                <img src={LogoutIcon} />
+                <img alt="LogoutIcon" src={LogoutIcon} />
                 <p>Cerrar sesión</p>
               </div>
             </div>
@@ -87,8 +91,6 @@ class Header extends Component {
               ))}
             </List>
           </div>
-          <Divider />
-          <footer>hola</footer>
         </Drawer>
       </>
     );
