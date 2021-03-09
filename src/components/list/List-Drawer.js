@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   itemList: {
-    paddingBottom: theme.spacing(2),
+    paddingBottom: theme.spacing(1),
   },
 
   iconsDrawer: {
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#ffffff",
     fontFamily: "Roboto",
     fontWeight: "500",
-    fontSize: "0.9rem",
+    fontSize: "0.8rem",
   },
 }));
 
