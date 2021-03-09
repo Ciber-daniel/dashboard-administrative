@@ -6,12 +6,12 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import Collapse from "@material-ui/core/Collapse";
 import { Link } from "react-router-dom";
 // assets
-import IconDashboard from "../../assets/img/icon-dashboard.svg";
-import IconUsers from "../../assets/img/icon-users.svg";
-import IconTables from "../../assets/img/icon-tables.svg";
-import IconPolizas1 from "../../assets/img/icon-polizas-aprobadas.svg";
-import IconPolizas2 from "../../assets/img/icon-polizas-onboarding.svg";
-import ArrowDown from "../../assets/img/arrow-down.svg";
+import IconDashboard from "../../assets/icons/icon-dashboard.svg";
+import IconUsers from "../../assets/icons/icon-users.svg";
+import IconTables from "../../assets/icons/icon-tables.svg";
+import IconPolizas1 from "../../assets/icons/icon-polizas-aprobadas.svg";
+import IconPolizas2 from "../../assets/icons/icon-polizas-onboarding.svg";
+import ArrowDown from "../../assets/icons/arrow-down.svg";
 import { Routes } from "../../routes/routes";
 
 const useStyles = makeStyles((theme) => ({
@@ -54,16 +54,19 @@ export default function ListDrawer(props) {
       aria-labelledby="nested-list-subheader"
       className={classes.root}
     >
-      <ListItem button className={classes.itemList} onClick={props.callback}>
-        <ListItemIcon>
-          <img
-            className={classes.iconsDrawer}
-            src={IconDashboard}
-            alt="Dashboard"
-          />
-        </ListItemIcon>
-        <p className={classes.textColor}>Dashboard</p>
-      </ListItem>
+      <Link to={Routes.dashboard.route} style={{ textDecoration: "none" }}>
+        <ListItem button className={classes.itemList} onClick={props.callback}>
+          <ListItemIcon>
+            <img
+              className={classes.iconsDrawer}
+              src={IconDashboard}
+              alt="Dashboard"
+            />
+          </ListItemIcon>
+          <p className={classes.textColor}>Dashboard</p>
+        </ListItem>
+      </Link>
+
       <ListItem button className={classes.itemList} onClick={props.callback}>
         <ListItemIcon>
           <img className={classes.iconsDrawer} src={IconUsers} alt="Users" />

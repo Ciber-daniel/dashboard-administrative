@@ -7,6 +7,7 @@ import { Routes } from "../../routes/routes";
 import "./brands.css";
 // components
 import Header from "../header/Header";
+import XGridDemo from "../utils/grid/Xgrid";
 
 const Brand = () => {
   return (
@@ -16,6 +17,7 @@ const Brand = () => {
         description={Routes.brands.description}
       />
       <div className="brand-container">
+        <XGridDemo />
         <div className="icons-container">
           <div>
             <button className="buttons">

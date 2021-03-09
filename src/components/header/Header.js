@@ -26,7 +26,7 @@ export default function Header(props) {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar variant="dense">
           <IconButton
             edge="start"
