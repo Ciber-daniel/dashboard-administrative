@@ -66,6 +66,7 @@ h4.MuiTypography-root {
 .MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.MuiDrawer-paperAnchorDockedLeft.MuiPaper-elevation0 {
   width: 17rem;
   height: 67.5rem;
+  box-shadow: 0px 3px 6px #00000029;
 }
 
 .name-user {

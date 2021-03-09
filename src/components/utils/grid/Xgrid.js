@@ -13,13 +13,13 @@ const rows = [
   },
 ];
 
-export default function XGridDemo() {
+export default function XGridDemo(props) {
   return (
     <div style={{ height: 250, width: "100%" }}>
       <XGrid
         columns={[
-          { field: "type", headerName: "Tipo de bien" },
-          { field: "name", headerName: "Nombre" },
+          { field: "type", headerName: `${props.type}`, width: 200 },
+          { field: "name", headerName: `${props.name}`, width: 200 },
         ]}
         rows={rows}
       />

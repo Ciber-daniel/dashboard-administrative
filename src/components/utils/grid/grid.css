@@ -1,4 +1,3 @@
-.MuiDataGrid-colCellWrapper {
+div.MuiDataGrid-root.MuiDataGrid-root:before.MuiDataGrid-root:after {
   box-sizing: none;
-  padding: 5rem;
 }

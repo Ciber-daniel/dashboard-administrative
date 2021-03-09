@@ -122,6 +122,22 @@ export default function ListDrawer(props) {
               <p className={classes.textColor}>Marcas</p>
             </ListItem>
           </Link>
+          <Link to={Routes.insurers.route} style={{ textDecoration: "none" }}>
+            <ListItem
+              button
+              className={classes.nested}
+              onClick={props.callback}
+            >
+              <ListItemIcon>
+                <img
+                  className={classes.iconsDrawer}
+                  src={IconTables}
+                  alt="Tables"
+                />
+              </ListItemIcon>
+              <p className={classes.textColor}>Aseguradoras</p>
+            </ListItem>
+          </Link>
         </List>
       </Collapse>
     </List>
