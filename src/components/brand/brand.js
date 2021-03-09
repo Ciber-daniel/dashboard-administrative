@@ -16,8 +16,7 @@ const Brand = () => {
         wordKey={Routes.brands.wordKey}
         description={Routes.brands.description}
       />
-      <div className="brand-container">
-        <XGridDemo />
+      <main className="brand-container">
         <div className="icons-container">
           <div>
             <button className="buttons">
@@ -29,8 +28,10 @@ const Brand = () => {
             <span style={{ color: "#707070" }}>1 registro</span>
           </div>
         </div>
-        <div className="row"></div>
-      </div>
+        <div className="row-grid">
+          <XGridDemo />
+        </div>
+      </main>
     </>
   );
 };
