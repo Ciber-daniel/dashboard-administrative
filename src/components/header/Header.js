@@ -10,10 +10,10 @@ import Drawer from "@material-ui/core/Drawer";
 import Divider from "@material-ui/core/Divider";
 
 import AvatarUser from "../../assets/img/avatar2.png";
-import LogoutIcon from "../../assets/img/icon-logout.svg";
+import LogoutIcon from "../../assets/icons/icon-logout.svg";
 import ListDrawer from "../list/List-Drawer";
 
-export default function Header() {
+export default function Header(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -39,10 +39,10 @@ export default function Header() {
           </IconButton>
           <div className="heading">
             <Typography variant="h6" color="inherit">
-              Dashboard
+              {props.description}
             </Typography>
             <Typography variant="h4" color="inherit">
-              Dashboard
+              {props.wordKey}
             </Typography>
           </div>
         </Toolbar>
@@ -52,23 +52,22 @@ export default function Header() {
         variant="persistent"
         anchor="left"
         open={openDrawer}
-        onClick={handleDrawerClose}
       >
         <Divider />
         <div className="user-description">
-          <img className="avatar" src={AvatarUser} />
+          <img className="avatar" alt="avatar" src={AvatarUser} />
           <div className="name-user">
             <span>Julio Besse</span>
             <p>Backuser</p>
             <div className="logout">
-              <img src={LogoutIcon} />
+              <img src={LogoutIcon} alt="logout" />
               <p>Cerrar sesión</p>
             </div>
           </div>
         </div>
         <Divider />
         <div className="list-items">
-          <ListDrawer />
+          <ListDrawer callback={handleDrawerClose} />
         </div>
         <Divider />
         <div className="wrapper-footer">

@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
 import Collapse from "@material-ui/core/Collapse";
-
-import ExpandLess from "@material-ui/icons/ExpandLess";
-import ExpandMore from "@material-ui/icons/ExpandMore";
-
+import { Link } from "react-router-dom";
+// assets
 import IconDashboard from "../../assets/img/icon-dashboard.svg";
 import IconUsers from "../../assets/img/icon-users.svg";
 import IconTables from "../../assets/img/icon-tables.svg";
 import IconPolizas1 from "../../assets/img/icon-polizas-aprobadas.svg";
 import IconPolizas2 from "../../assets/img/icon-polizas-onboarding.svg";
 import ArrowDown from "../../assets/img/arrow-down.svg";
+import { Routes } from "../../routes/routes";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ListDrawer() {
+export default function ListDrawer(props) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -57,49 +54,71 @@ export default function ListDrawer() {
       aria-labelledby="nested-list-subheader"
       className={classes.root}
     >
-      <ListItem button className={classes.itemList}>
+      <ListItem button className={classes.itemList} onClick={props.callback}>
         <ListItemIcon>
-          <img className={classes.iconsDrawer} src={IconDashboard} />
+          <img
+            className={classes.iconsDrawer}
+            src={IconDashboard}
+            alt="Dashboard"
+          />
         </ListItemIcon>
         <p className={classes.textColor}>Dashboard</p>
       </ListItem>
-      <ListItem button className={classes.itemList}>
+      <ListItem button className={classes.itemList} onClick={props.callback}>
         <ListItemIcon>
-          <img className={classes.iconsDrawer} src={IconUsers} />
+          <img className={classes.iconsDrawer} src={IconUsers} alt="Users" />
         </ListItemIcon>
         <p className={classes.textColor}>Usuarios Asegurados</p>
       </ListItem>
-      <ListItem button className={classes.itemList}>
+      <ListItem button className={classes.itemList} onClick={props.callback}>
         <ListItemIcon>
-          <img className={classes.iconsDrawer} src={IconPolizas1} />
+          <img
+            className={classes.iconsDrawer}
+            src={IconPolizas1}
+            alt="Polizas"
+          />
         </ListItemIcon>
         <p className={classes.textColor}>Pólizas aprobadas</p>
       </ListItem>
-      <ListItem button className={classes.itemList}>
+      <ListItem button className={classes.itemList} onClick={props.callback}>
         <ListItemIcon>
-          <img className={classes.iconsDrawer} src={IconPolizas2} />
+          <img
+            className={classes.iconsDrawer}
+            src={IconPolizas2}
+            alt="Poliza2"
+          />
         </ListItemIcon>
         <p className={classes.textColor}>Pólizas en Onboarding</p>
       </ListItem>
       <ListItem button className={classes.itemList} onClick={handleClick}>
         <ListItemIcon>
-          <img className={classes.iconsDrawer} src={IconTables} />
+          <img className={classes.iconsDrawer} src={IconTables} alt="Tables" />
         </ListItemIcon>
         <p className={classes.textColor}>Tablas</p>
         {open ? (
-          <img src={ArrowDown} className="icon-expand" />
+          <img src={ArrowDown} className="icon-expand" alt="arrow-down" />
         ) : (
-          <img src={ArrowDown} className="icon-expand" />
+          <img src={ArrowDown} className="icon-expand" alt="arrow-down" />
         )}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <img className={classes.iconsDrawer} src={IconTables} />
-            </ListItemIcon>
-            <p className={classes.textColor}>Marcas</p>
-          </ListItem>
+          <Link to={Routes.brands.route} style={{ textDecoration: "none" }}>
+            <ListItem
+              button
+              className={classes.nested}
+              onClick={props.callback}
+            >
+              <ListItemIcon>
+                <img
+                  className={classes.iconsDrawer}
+                  src={IconTables}
+                  alt="Tables"
+                />
+              </ListItemIcon>
+              <p className={classes.textColor}>Marcas</p>
+            </ListItem>
+          </Link>
         </List>
       </Collapse>
     </List>
