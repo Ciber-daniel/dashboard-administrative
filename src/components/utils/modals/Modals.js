@@ -1,5 +1,14 @@
-import { Backdrop, Fade, makeStyles, Modal } from "@material-ui/core";
-import React, { useState } from "react";
+import React from "react";
+import {
+  Backdrop,
+  Divider,
+  Fade,
+  makeStyles,
+  Modal,
+  TextField,
+} from "@material-ui/core";
+// styles
+import "../modals/Modals.css";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -8,47 +17,75 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "Column",
+    outline: "none",
     backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    boxShadow: theme.shadows[10],
+    width: "50%",
+    height: "70%",
   },
 }));
 
-export const Modals = () => {
+export const Modals = (props) => {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <>
-      <button onClick={handleOpen}></button>
       <div>
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
           className={classes.modal}
-          open={open}
-          onClose={handleClose}
+          open={props.statusOpen}
+          onClose={() => {
+            props.setOpen(false);
+          }}
           closeAfterTransition
           BackdropComponent={Backdrop}
           BackdropProps={{
             timeout: 500,
           }}
         >
-          <Fade in={open}>
-            <div className={classes.paper}>
-              <h2 id="transition-modal-title">Transition modal</h2>
-              <p id="transition-modal-description">
-                react-transition-group animates me.
-              </p>
+          <Fade in={props.statusOpen}>
+            <div className={classes.paper} style={{ borderRadius: "3%" }}>
+              <div className="form">
+                <form action="submit" style={{ width: "100%", height: "100%" }}>
+                  <div className="title">
+                    <h2>Agregar Marca</h2>
+                  </div>
+                  <div className="divider">
+                    <Divider />
+                  </div>
+                  <div className="inputs">
+                    <label htmlFor="standard-full-width">Label</label>
+                    <div className="input-container">
+                      <TextField
+                        id="standard-full-width"
+                        placeholder="Tipo de bien"
+                        fullWidth
+                        InputLabelProps={{
+                          shrink: true,
+                        }}
+                      />
+                    </div>
+                    <label htmlFor="standard-full-width-2">Label </label>
+                    <div className="input-container">
+                      <TextField
+                        id="standard-full-width-2"
+                        placeholder="Tipo de bien"
+                        fullWidth
+                        InputLabelProps={{
+                          shrink: true,
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <div className="button"></div>
+                </form>
+              </div>
             </div>
           </Fade>
         </Modal>
