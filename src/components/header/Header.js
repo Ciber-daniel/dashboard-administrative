@@ -58,14 +58,14 @@ export default function Header(props) {
             ""
           ) : props.selectedStatus ? (
             <div>
-              <CircularButton icon={addIcon} />
-              <CircularButton icon={reload} />
+              <CircularButton icon={editar} />
+              <CircularButton icon={eliminar} />
               <span>1 registro</span>
             </div>
           ) : (
             <div>
-              <CircularButton icon={editar} />
-              <CircularButton icon={eliminar} />
+              <CircularButton icon={addIcon} />
+              <CircularButton icon={reload} />
               <span>1 registro</span>
             </div>
           )}

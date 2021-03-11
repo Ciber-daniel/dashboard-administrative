@@ -12,7 +12,7 @@ import TransitionModal from "../utils/modals/Modals";
 
 const Brand = () => {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(true);
+  const [selected, setSelected] = useState(false);
 
   const titles = ["Tipo de bien", "Nombre"];
   const data = [
