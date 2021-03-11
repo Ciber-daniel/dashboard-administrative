@@ -9,6 +9,9 @@ export default function XGridDemo(props) {
   return (
     <div style={{ height: 400, width: "100%" }}>
       <XGrid
+        onRowSelected={() => {
+          props.selected(!props.selectedStatus);
+        }}
         columns={[
           { field: "type", headerName: `${props.titles[0]}`, width: 250 },
           { field: "name", headerName: `${props.titles[1]}`, width: 250 },
