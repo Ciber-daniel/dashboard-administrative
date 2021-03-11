@@ -3,7 +3,9 @@ import TextField from "@material-ui/core/TextField";
 import { Divider } from "@material-ui/core";
 // styles
 import "./form.css";
-import placeholder from "../../../assets/img/placeholder.jpg";
+import placeholder from "../../../assets/img/placeholder.svg";
+import CustomButton from "../button/Button";
+import styles from "../button/Button.Style";
 
 const currencies = [
   {
@@ -24,7 +26,7 @@ const currencies = [
   },
 ];
 
-export default function FormModals() {
+export default function FormModals(props) {
   const [currency, setCurrency] = useState("1");
 
   const handleChange = (event) => {
@@ -44,7 +46,7 @@ export default function FormModals() {
       });
     }
   };
-
+  const classes = styles(props);
   return (
     <div className="form">
       <form
@@ -93,7 +95,7 @@ export default function FormModals() {
           <div className="form__img-input-container">
             <input
               type="file"
-              accept=".png, .jpg, .jpeg"
+              accept=".png"
               id="photo"
               className="visually-hidden"
               onChange={handleImg}
@@ -101,6 +103,10 @@ export default function FormModals() {
             <label htmlFor="photo" className="form-img__file-label"></label>
             <img src={src} alt={alt} className="form-img__img-preview" />
           </div>
+        </div>
+        <div className="container-modal-buttons">
+          <CustomButton className={classes.defaultBtn} name="Agregar" />
+          <CustomButton className={classes.whiteBtn} name="Cancelar" />
         </div>
       </form>
     </div>
