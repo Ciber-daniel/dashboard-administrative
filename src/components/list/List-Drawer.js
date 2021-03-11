@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     paddingTop: "2rem",
-    paddingLeft: "1rem",
   },
   nested: {
     paddingLeft: theme.spacing(4),

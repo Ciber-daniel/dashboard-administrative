@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// icons
-import AddIcon from "@material-ui/icons/Add";
 // consts
 import { Routes } from "../../routes/routes";
 // styles
@@ -10,9 +8,15 @@ import Header from "../header/Header";
 // utils
 import { Modals } from "../utils/modals/Modals";
 import XGridDemo from "../utils/grid/Xgrid";
+// assets
+import addIcon from "../../assets/icons/rediseño.svg";
+import reload from "../../assets/icons/actualizar.svg";
+import editar from "../../assets/icons/editar.svg";
+import eliminar from "../../assets/icons/eliminar.svg";
 
 const Brand = () => {
   const [open, setOpen] = useState(true);
+  const [selected, setSelected] = useState(false);
 
   const titles = ["Tipo de bien", "Nombre"];
   const data = [
@@ -34,17 +38,22 @@ const Brand = () => {
       <main className="brand-container">
         <div className="icons-container">
           <div>
-            <button
+            <div
               className="buttons"
               onClick={() => {
                 setOpen(true);
               }}
             >
-              <AddIcon fontSize="small" />
-            </button>
-            <button className="buttons">
-              <AddIcon fontSize="small" />
-            </button>
+              <img src={addIcon} alt="Agregar marca" />
+            </div>
+            <div
+              className="buttons"
+              onClick={() => {
+                setOpen(true);
+              }}
+            >
+              <img src={reload} alt="Agregar marca" />
+            </div>
             <span
               style={{
                 color: "#707070",
