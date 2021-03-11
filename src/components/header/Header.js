@@ -14,6 +14,11 @@ import LogoutIcon from "../../assets/icons/icon-logout.svg";
 import ListDrawer from "../list/List-Drawer";
 //utils
 import { CircularButton } from "../utils/button/Circular";
+// assets
+import addIcon from "../../assets/icons/rediseño.svg";
+import reload from "../../assets/icons/actualizar.svg";
+// import editar from "../../assets/icons/editar.svg";
+// import eliminar from "../../assets/icons/eliminar.svg";
 
 export default function Header(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -48,8 +53,10 @@ export default function Header(props) {
             </Typography>
           </div>
         </Toolbar>
-        <div>
-          <CircularButton></CircularButton>
+        <div className="icons-container">
+          <CircularButton icon={addIcon} />
+          <CircularButton icon={addIcon} />
+          <span>1 registro</span>
         </div>
       </AppBar>
       <Drawer

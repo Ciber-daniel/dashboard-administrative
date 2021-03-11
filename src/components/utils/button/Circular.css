@@ -11,3 +11,23 @@
 .buttons:focus {
   outline: none;
 }
+
+.icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  top: 70%;
+  right: 1rem;
+}
+
+.icons-container div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0rem 0.4rem 0rem 0rem;
+}
+
+.icons-container span {
+  color: black;
+}

@@ -9,11 +9,6 @@ import Header from "../header/Header";
 import XGridDemo from "../utils/grid/Xgrid";
 // import CustomButton from "../utils/button/Button";
 import TransitionModal from "../utils/modals/Modals";
-// assets
-import addIcon from "../../assets/icons/rediseño.svg";
-import reload from "../../assets/icons/actualizar.svg";
-// import editar from "../../assets/icons/editar.svg";
-// import eliminar from "../../assets/icons/eliminar.svg";
 
 const Brand = () => {
   const [open, setOpen] = useState(false);
