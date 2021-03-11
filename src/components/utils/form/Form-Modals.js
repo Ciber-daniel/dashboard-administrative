@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
+import { Divider } from "@material-ui/core";
+// styles
 import "./form.css";
 import placeholder from "../../../assets/img/placeholder.jpg";
 
@@ -52,6 +54,9 @@ export default function FormModals() {
       >
         <div className="title">
           <h2>Agregar Marca</h2>
+        </div>
+        <div className="divider">
+          <Divider />
         </div>
         <div className="inputs">
           <div className="input-container">

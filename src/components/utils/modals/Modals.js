@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import Add from "../../../assets/icons/rediseño.svg";
-import Refresh from "../../../assets/icons/actualizar.svg";
 import FormModals from "../form/Form-Modals";
+import { Fade } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -24,13 +23,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ModalsWithButtons(props) {
+export default function TransitionModal(props) {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
-  const [open, setOpen] = useState(props.statusOpen);
 
   const body = (
-    <div className={classes.paper}>
+    <div className={classes.paper} style={{ borderRadius: "3%" }}>
       <FormModals />
     </div>
   );
@@ -46,7 +44,13 @@ export default function ModalsWithButtons(props) {
           props.setOpen(false);
         }}
       >
-        {body}
+        <Fade
+          in={props.statusOpen}
+          className={classes.modal}
+          style={{ width: "100%", height: "100%" }}
+        >
+          <div className={classes.modal}>{body}</div>
+        </Fade>
       </Modal>
     </div>
   );

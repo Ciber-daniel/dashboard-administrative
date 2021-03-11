@@ -11,7 +11,8 @@ import Rombo from "../../assets/icons/rombo.svg";
 import Trazado from "../../assets/icons/trazado.svg";
 import Wheel from "../../assets/icons/media-rueda.svg";
 import Cross from "../../assets/icons/cruz.svg";
-import CustomButton from "../utils/button/Button";
+// import CustomButton from "../utils/button/Button";
+
 export default function Dashboard() {
   return (
     <>

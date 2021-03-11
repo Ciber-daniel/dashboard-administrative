@@ -91,3 +91,7 @@ to be able to see the preview of the image. */
   object-fit: contain;
   border: none;
 }
+
+.divider {
+  margin: 0rem 2rem;
+}

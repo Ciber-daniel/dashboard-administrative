@@ -1,0 +1,13 @@
+.buttons {
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.buttons:hover {
+  box-shadow: 0px 1px 3px 1px rgb(73, 73, 73);
+}
+
+.buttons:focus {
+  outline: none;
+}

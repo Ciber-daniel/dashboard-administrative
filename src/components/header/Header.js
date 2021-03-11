@@ -12,6 +12,8 @@ import Divider from "@material-ui/core/Divider";
 import AvatarUser from "../../assets/img/avatar2.png";
 import LogoutIcon from "../../assets/icons/icon-logout.svg";
 import ListDrawer from "../list/List-Drawer";
+//utils
+import { CircularButton } from "../utils/button/Circular";
 
 export default function Header(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -46,6 +48,9 @@ export default function Header(props) {
             </Typography>
           </div>
         </Toolbar>
+        <div>
+          <CircularButton></CircularButton>
+        </div>
       </AppBar>
       <Drawer
         className="drawer"
