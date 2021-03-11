@@ -1,32 +1,37 @@
 import React from "react";
-// icons
-import AddIcon from "@material-ui/icons/Add";
-// consts
+// routes
 import { Routes } from "../../routes/routes";
 // styles
+import "./insurers.css";
 // components
 import Header from "../header/Header";
+// utils
+import XGridDemo from "../utils/grid/Xgrid";
+import ModalsWithButtons from "../utils/modals/Modals";
 
 const Insurer = () => {
+  const titles = ["Nombre de la aseguradora", "Hooli"];
+  const data = [
+    {
+      id: "1",
+      type: "BBVA",
+      name: "Si",
+    },
+  ];
+
   return (
     <>
       <Header
         wordKey={Routes.insurers.wordKey}
         description={Routes.insurers.description}
       />
-      <div className="brand-container">
+      <div className="insurers-container">
         <div className="icons-container">
-          <div>
-            <button className="buttons">
-              <AddIcon fontSize="small" />
-            </button>
-            <button className="buttons">
-              <AddIcon fontSize="small" />
-            </button>
-            <span style={{ color: "#707070" }}>1 registro</span>
-          </div>
+          <ModalsWithButtons />
         </div>
-        <div className="row"></div>
+        <div className="row-grid-insurers">
+          <XGridDemo titles={titles} data={data} />
+        </div>
       </div>
     </>
   );

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-// consts
+// routes
 import { Routes } from "../../routes/routes";
 // styles
 import "./brands.css";
 // components
 import Header from "../header/Header";
 // utils
-import { Modals } from "../utils/modals/Modals";
 import XGridDemo from "../utils/grid/Xgrid";
+import CustomButton from "../utils/button/Button";
+import ModalsWithButtons from "../utils/modals/Modals";
 // assets
 import addIcon from "../../assets/icons/rediseño.svg";
 import reload from "../../assets/icons/actualizar.svg";
@@ -15,7 +16,7 @@ import editar from "../../assets/icons/editar.svg";
 import eliminar from "../../assets/icons/eliminar.svg";
 
 const Brand = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(false);
 
   const titles = ["Tipo de bien", "Nombre"];
@@ -29,12 +30,11 @@ const Brand = () => {
 
   return (
     <>
-      <div style={{ marginBottom: "11rem" }}>
-        <Header
-          wordKey={Routes.brands.wordKey}
-          description={Routes.brands.description}
-        />
-      </div>
+      <Header
+        wordKey={Routes.brands.wordKey}
+        description={Routes.brands.description}
+      />
+
       <main className="brand-container">
         <div className="icons-container">
           <div>
@@ -64,9 +64,9 @@ const Brand = () => {
               1 registro
             </span>
           </div>
-          <Modals statusOpen={open} setOpen={setOpen} />
+          <ModalsWithButtons statusOpen={open} setOpen={setOpen} />
         </div>
-        <div className="row-grid">
+        <div className="row-grid-brands">
           <XGridDemo titles={titles} data={data} />
         </div>
       </main>
