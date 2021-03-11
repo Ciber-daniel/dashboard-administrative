@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // icons
 import AddIcon from "@material-ui/icons/Add";
 // consts
@@ -13,6 +13,8 @@ import XGridDemo from "../utils/grid/Xgrid";
 import CustomButton from "../utils/button/Button";
 
 const Brand = () => {
+  const [open, setOpen] = useState(true);
+
   const titles = ["Tipo de bien", "Nombre"];
   const data = [
     {
@@ -24,28 +26,37 @@ const Brand = () => {
 
   return (
     <>
-      <Header
-        wordKey={Routes.brands.wordKey}
-        description={Routes.brands.description}
-      />
+      <div style={{ marginBottom: "11rem" }}>
+        <Header
+          wordKey={Routes.brands.wordKey}
+          description={Routes.brands.description}
+        />
+      </div>
       <main className="brand-container">
         <div className="icons-container">
           <div>
             <button
               className="buttons"
               onClick={() => {
-                console.log("running?");
+                setOpen(true);
               }}
             >
-              <Modals />
-              <div className="modal"></div>
               <AddIcon fontSize="small" />
             </button>
             <button className="buttons">
               <AddIcon fontSize="small" />
             </button>
-            <span style={{ color: "#707070" }}>1 registro</span>
+            <span
+              style={{
+                color: "#707070",
+                fontSize: "100%",
+                marginLeft: "0.8rem",
+              }}
+            >
+              1 registro
+            </span>
           </div>
+          <Modals statusOpen={open} setOpen={setOpen} />
         </div>
         <div className="row-grid">
           <XGridDemo titles={titles} data={data} />
