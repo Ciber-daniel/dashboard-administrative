@@ -17,8 +17,8 @@ import { CircularButton } from "../utils/button/Circular";
 // assets
 import addIcon from "../../assets/icons/rediseño.svg";
 import reload from "../../assets/icons/actualizar.svg";
-// import editar from "../../assets/icons/editar.svg";
-// import eliminar from "../../assets/icons/eliminar.svg";
+import editar from "../../assets/icons/editar.svg";
+import eliminar from "../../assets/icons/eliminar.svg";
 
 export default function Header(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -54,9 +54,21 @@ export default function Header(props) {
           </div>
         </Toolbar>
         <div className="icons-container">
-          <CircularButton icon={addIcon} />
-          <CircularButton icon={addIcon} />
-          <span>1 registro</span>
+          {window.location.pathname === "/" ? (
+            ""
+          ) : props.selectedStatus ? (
+            <div>
+              <CircularButton icon={addIcon} />
+              <CircularButton icon={reload} />
+              <span>1 registro</span>
+            </div>
+          ) : (
+            <div>
+              <CircularButton icon={editar} />
+              <CircularButton icon={eliminar} />
+              <span>1 registro</span>
+            </div>
+          )}
         </div>
       </AppBar>
       <Drawer

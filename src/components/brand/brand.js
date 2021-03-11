@@ -12,7 +12,7 @@ import TransitionModal from "../utils/modals/Modals";
 
 const Brand = () => {
   const [open, setOpen] = useState(false);
-  // const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(true);
 
   const titles = ["Tipo de bien", "Nombre"];
   const data = [
@@ -28,12 +28,18 @@ const Brand = () => {
       <Header
         wordKey={Routes.brands.wordKey}
         description={Routes.brands.description}
+        selectedStatus={selected}
       />
 
       <main className="brand-container">
         <TransitionModal statusOpen={open} setOpen={setOpen} />
         <div className="row-grid-brands">
-          <XGridDemo titles={titles} data={data} />
+          <XGridDemo
+            titles={titles}
+            data={data}
+            selectedStatus={selected}
+            selected={setSelected}
+          />
         </div>
       </main>
     </>

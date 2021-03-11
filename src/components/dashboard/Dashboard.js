@@ -20,7 +20,7 @@ export default function Dashboard() {
         wordKey={Routes.dashboard.wordKey}
         description={Routes.dashboard.description}
       />
-      <main className="main-container">
+      <div className="main-container">
         <div className="figures">
           <div className="elipse">
             <img src={Elipse} alt="elipse" />
@@ -50,7 +50,7 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
 }
