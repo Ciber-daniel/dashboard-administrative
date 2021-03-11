@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin: 1.5rem 2rem 0 2rem;
+  padding-top: 10%;
 }
 
 .icons-container {
@@ -21,13 +21,14 @@
 
 .buttons {
   border-radius: 50%;
-  background-color: #63c3d1;
-  border: 0;
-  height: 2.2rem;
-  width: 2.2rem;
-  margin: 0.5rem;
+  border: none;
+  cursor: pointer;
 }
 
-.row-grid {
-  padding-top: 1.5%;
+.buttons:focus {
+  outline: none;
+}
+
+.row-grid-brands {
+  padding-top: 1%;
 }

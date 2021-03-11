@@ -2,8 +2,6 @@ import React from "react";
 import { styled } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
-const props = props.background;
-
 const MyButton = styled(Button)({
   display: "flex",
   alignItems: "center",
@@ -14,7 +12,7 @@ const MyButton = styled(Button)({
   color: "black",
   boxshadow: "0rem 0.1rem 0.3rem #00000029",
   opacity: 1,
-  background: props.background,
+  background: "green",
   borderRadius: "1rem",
   transition: "all 0.6s",
 });

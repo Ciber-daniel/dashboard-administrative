@@ -1,14 +1,9 @@
 import React from "react";
-import {
-  Backdrop,
-  Divider,
-  Fade,
-  makeStyles,
-  Modal,
-  TextField,
-} from "@material-ui/core";
-// styles
-import "../modals/Modals.css";
+import { makeStyles } from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
+import Add from "../../../assets/icons/rediseño.svg";
+import Refresh from "../../../assets/icons/actualizar.svg";
+import FormModals from "../form/Form-Modals";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -19,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     flexDirection: "Column",
     outline: "none",
     backgroundColor: theme.palette.background.paper,
@@ -29,67 +24,53 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Modals = (props) => {
+export default function ModalsWithButtons() {
   const classes = useStyles();
+  // getModalStyle is not a pure function, we roll the style only on the first render
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const body = (
+    <div className={classes.paper}>
+      <FormModals />
+    </div>
+  );
 
   return (
-    <>
+    <div>
       <div>
-        <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
-          className={classes.modal}
-          open={props.statusOpen}
-          onClose={() => {
-            props.setOpen(false);
-          }}
-          closeAfterTransition
-          BackdropComponent={Backdrop}
-          BackdropProps={{
-            timeout: 500,
+        <button className="buttons" onClick={handleOpen}>
+          <img src={Add} alt="agregar" />
+        </button>
+        <button className="buttons">
+          <img src={Refresh} alt="actualizar" />
+        </button>
+        <span
+          style={{
+            color: "#707070",
+            fontSize: "100%",
+            marginLeft: "0.8rem",
           }}
         >
-          <Fade in={props.statusOpen}>
-            <div className={classes.paper} style={{ borderRadius: "3%" }}>
-              <div className="form">
-                <form action="submit" style={{ width: "100%", height: "100%" }}>
-                  <div className="title">
-                    <h2>Agregar Marca</h2>
-                  </div>
-                  <div className="divider">
-                    <Divider />
-                  </div>
-                  <div className="inputs">
-                    <label htmlFor="standard-full-width">Label</label>
-                    <div className="input-container">
-                      <TextField
-                        id="standard-full-width"
-                        placeholder="Tipo de bien"
-                        fullWidth
-                        InputLabelProps={{
-                          shrink: true,
-                        }}
-                      />
-                    </div>
-                    <label htmlFor="standard-full-width-2">Label </label>
-                    <div className="input-container">
-                      <TextField
-                        id="standard-full-width-2"
-                        placeholder="Tipo de bien"
-                        fullWidth
-                        InputLabelProps={{
-                          shrink: true,
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div className="button"></div>
-                </form>
-              </div>
-            </div>
-          </Fade>
-        </Modal>
+          1 registro
+        </span>
       </div>
-    </>
+      <Modal
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+      >
+        {body}
+      </Modal>
+    </div>
   );
-};
+}
