@@ -12,7 +12,6 @@ export default makeStyles({
     opacity: 1,
     background: "#A7A7A7",
     borderRadius: 21,
-    transition: "all 0.6s",
     marginLeft: "2%",
     textTransform: "lowercase",
     fontWeight: 300,
