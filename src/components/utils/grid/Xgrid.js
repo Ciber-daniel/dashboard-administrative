@@ -10,8 +10,8 @@ export default function XGridDemo(props) {
     <div style={{ height: 250, width: "100%" }}>
       <XGrid
         columns={[
-          { field: "type", headerName: `${props.titles[0]}`, width: 200 },
-          { field: "name", headerName: `${props.titles[1]}`, width: 200 },
+          { field: "type", headerName: `${props.titles[0]}`, width: 250 },
+          { field: "name", headerName: `${props.titles[1]}`, width: 250 },
         ]}
         rows={props.data}
       />

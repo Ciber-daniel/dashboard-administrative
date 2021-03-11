@@ -10,6 +10,7 @@ import Header from "../header/Header";
 // utils
 import { Modals } from "../utils/modals/Modals";
 import XGridDemo from "../utils/grid/Xgrid";
+import CustomButton from "../utils/button/Button";
 
 const Brand = () => {
   const titles = ["Tipo de bien", "Nombre"];
@@ -49,6 +50,7 @@ const Brand = () => {
         <div className="row-grid">
           <XGridDemo titles={titles} data={data} />
         </div>
+        <CustomButton name="Agregar" color="black" />
       </main>
     </>
   );
