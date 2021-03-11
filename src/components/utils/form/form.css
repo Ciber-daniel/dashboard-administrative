@@ -105,7 +105,3 @@ to be able to see the preview of the image. */
 Button span:first-letter {
   text-transform: uppercase;
 }
-
-.makeStyles-defaultBtn-23:hover {
-  transition: all 2s;
-}
