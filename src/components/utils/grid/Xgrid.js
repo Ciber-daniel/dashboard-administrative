@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { XGrid, LicenseInfo } from "@material-ui/x-grid";
 // style
 import "./grid.css";
@@ -8,6 +8,8 @@ LicenseInfo.setLicenseKey(
 );
 
 export default function XGridDemo(props) {
+  const [row, setRow] = useState({});
+
   return (
     <div style={{ height: 400, width: "100%" }}>
       <XGrid
@@ -21,12 +23,28 @@ export default function XGridDemo(props) {
           columnMenuSortDesc: "Ordenar por DESC",
         }}
         l
-        onRowSelected={() => {
-          props.selected(!props.selectedStatus);
+        onRowSelected={(newSelection) => {
+          const selectedRow = newSelection.data;
+          const getSelectedRow = newSelection.api.current.getSelectedRows();
+          if (props.selectedStatus) {
+            if (selectedRow.id === getSelectedRow[0].id) {
+              props.selected(false);
+            }
+          } else {
+            props.selected(true);
+          }
         }}
         columns={[
-          { field: "type", headerName: `${props.titles[0]}`, width: 250 },
-          { field: "name", headerName: `${props.titles[1]}`, width: 250 },
+          {
+            field: "type",
+            headerName: `${props.titles[0]}`,
+            width: 250,
+          },
+          {
+            field: "name",
+            headerName: `${props.titles[1]}`,
+            width: 250,
+          },
         ]}
         rows={props.data}
       />

@@ -77,14 +77,10 @@ export default function FormModals(props) {
               SelectProps={{
                 native: true,
               }}
-              fullWidth
+              className="width-select"
             >
               {currencies.map((option) => (
-                <option
-                  placeholder="Tipo de bien"
-                  key={option.value}
-                  value={option.value}
-                >
+                <option key={option.value} value={option.value}>
                   {option.label}
                 </option>
               ))}

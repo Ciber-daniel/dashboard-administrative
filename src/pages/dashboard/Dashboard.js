@@ -19,7 +19,7 @@ export default function Dashboard() {
         wordKey={Routes.dashboard.wordKey}
         description={Routes.dashboard.description}
       />
-      <main>
+      <main className="container">
         <div className="main-container">
           <div className="figures">
             <div className="elipse">

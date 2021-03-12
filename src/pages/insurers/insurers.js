@@ -7,6 +7,7 @@ import "./insurers.css";
 import Header from "../../components/header/Header";
 // utils
 import XGridDemo from "../../components/utils/grid/Xgrid";
+
 const Insurer = () => {
   const [selected, setSelected] = useState(false);
   const titles = ["Nombre de la aseguradora", "Hooli"];

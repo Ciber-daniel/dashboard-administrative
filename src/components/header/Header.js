@@ -91,33 +91,35 @@ export default function Header(props) {
           )}
         </div>
       </AppBar>
-      <Drawer
-        className="drawer"
-        variant="persistent"
-        anchor="left"
-        open={openDrawer}
-      >
-        <Divider />
-        <div className="user-description">
-          <img className="avatar" alt="avatar" src={AvatarUser} />
-          <div className="name-user">
-            <span>Julio Besse</span>
-            <p>Backuser</p>
-            <div className="logout">
-              <img src={LogoutIcon} alt="logout" />
-              <p>Cerrar sesión</p>
+      <div className="content-drawer" onClick={handleDrawerClose}>
+        <Drawer
+          className="drawer"
+          variant="persistent"
+          anchor="left"
+          open={openDrawer}
+        >
+          <Divider />
+          <div className="user-description">
+            <img className="avatar" alt="avatar" src={AvatarUser} />
+            <div className="name-user">
+              <span>Julio Besse</span>
+              <p>Backuser</p>
+              <div className="logout">
+                <img src={LogoutIcon} alt="logout" />
+                <p>Cerrar sesión</p>
+              </div>
             </div>
           </div>
-        </div>
-        <Divider />
-        <div className="list-items">
-          <ListDrawer callback={handleDrawerClose} />
-        </div>
-        <Divider />
-        <div className="wrapper-footer">
-          <footer>® Hooli | Todos los derechos reservados</footer>
-        </div>
-      </Drawer>
+          <Divider />
+          <div className="list-items">
+            <ListDrawer callback={handleDrawerClose} />
+          </div>
+          <Divider />
+          <div className="wrapper-footer">
+            <footer>® Hooli | Todos los derechos reservados</footer>
+          </div>
+        </Drawer>
+      </div>
     </>
   );
 }
