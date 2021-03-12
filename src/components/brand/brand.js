@@ -26,6 +26,8 @@ const Brand = () => {
     },
   ];
 
+  console.log(modalsInfo);
+
   return (
     <>
       <Header
@@ -46,7 +48,7 @@ const Brand = () => {
         <TransitionModal
           statusOpen={openEdit}
           setOpen={setOpenEdit}
-          data={modalsInfo.update}
+          data={modalsInfo.edit}
         />
         <TransitionModal
           statusOpen={openDelete}
