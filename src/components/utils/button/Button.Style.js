@@ -13,15 +13,24 @@ export default makeStyles({
     textTransform: "lowercase",
     fontWeight: 300,
     fontFamily: '"Roboto", sans-serif',
+    "&:hover": {
+      background: "linear-gradient(90deg, #63d1a2 0%, #63c3d1 100%)",
+    },
   },
-  degreeBtn: {
+  redBtn: {
     width: "14rem",
     height: "2rem",
-    background:
-      "transparent linear-gradient(90deg, #63D1A2 0%, #63C3D1 100%) 0% 0% no-repeat padding-box",
+    background: "#D44141",
     borderRadius: 21,
+    marginLeft: "2%",
     opacity: 1,
     textTransform: "lowercase",
+    color: "#ffffff",
+    fontWeight: 300,
+    fontFamily: '"Roboto", sans-serif',
+    "&:hover": {
+      background: "#D44141",
+    },
   },
   whiteBtn: {
     width: "14rem",

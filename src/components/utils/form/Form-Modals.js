@@ -55,7 +55,11 @@ export default function FormModals(props) {
         autoComplete="off"
       >
         <div className="title">
-          <h2>Agregar Marca</h2>
+          {props.data.title === "Eliminar Marca" ? (
+            <h2 style={{ color: "red" }}>{props.data.title}</h2>
+          ) : (
+            <h2>{props.data.title}</h2>
+          )}
         </div>
         <div className="divider">
           <Divider />
@@ -63,7 +67,7 @@ export default function FormModals(props) {
         <div className="inputs">
           <div className="input-container">
             <TextField
-              label="Tipo de bien"
+              label={props.data.firstInput.label}
               id="standard-select-currency-native"
               select
               value={currency}
@@ -82,9 +86,9 @@ export default function FormModals(props) {
           </div>
           <div className="input-container">
             <TextField
-              label="Marca"
+              label={props.data.secondInput.label}
               id="standard-full-width"
-              placeholder="Marca"
+              placeholder={props.data.secondInput.placeholder}
               margin="normal"
               InputLabelProps={{
                 shrink: true,
@@ -105,8 +109,37 @@ export default function FormModals(props) {
           </div>
         </div>
         <div className="container-modal-buttons">
-          <CustomButton className={classes.defaultBtn} name="Agregar" />
-          <CustomButton className={classes.whiteBtn} name="Cancelar" />
+          {props.data.title === "Eliminar Marca" ? (
+            <div className="container-modal-buttons">
+              <CustomButton
+                className={classes.redBtn}
+                onClick={props.data.buttonTitle.action}
+                name={props.data.buttonTitle.title}
+              />
+              <CustomButton
+                className={classes.whiteBtn}
+                onClick={() => {
+                  props.setOpen(false);
+                }}
+                name="Cancelar"
+              />
+            </div>
+          ) : (
+            <div className="container-modal-buttons">
+              <CustomButton
+                className={classes.defaultBtn}
+                onClick={props.data.buttonTitle.action}
+                name={props.data.buttonTitle.title}
+              />
+              <CustomButton
+                className={classes.whiteBtn}
+                onClick={() => {
+                  props.setOpen(false);
+                }}
+                name="Cancelar"
+              />
+            </div>
+          )}
         </div>
       </form>
     </div>

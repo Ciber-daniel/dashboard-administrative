@@ -29,7 +29,7 @@ export default function TransitionModal(props) {
 
   const body = (
     <div className={classes.paper} style={{ borderRadius: "3%" }}>
-      <FormModals />
+      <FormModals setOpen={props.setOpen} data={props.data} />
     </div>
   );
 
@@ -40,9 +40,6 @@ export default function TransitionModal(props) {
         aria-describedby="simple-modal-description"
         className={classes.modal}
         open={props.statusOpen}
-        onClose={() => {
-          props.setOpen(false);
-        }}
       >
         <Fade
           in={props.statusOpen}

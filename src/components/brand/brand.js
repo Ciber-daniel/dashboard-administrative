@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 // routes
-import { Routes } from "../../routes/routes";
+import { Routes } from "../../consts/routes";
 // styles
 import "./brands.css";
 // components
 import Header from "../header/Header";
 // utils
 import XGridDemo from "../utils/grid/Xgrid";
-// import CustomButton from "../utils/button/Button";
 import TransitionModal from "../utils/modals/Modals";
+// consts
+import { modalsInfo } from "../../consts/modals-info";
 
 const Brand = () => {
-  const [open, setOpen] = useState(true);
+  const [openAdd, setOpenAdd] = useState(false);
+  const [openEdit, setOpenEdit] = useState(false);
+  const [openDelete, setOpenDelete] = useState(false);
   const [selected, setSelected] = useState(false);
 
   const titles = ["Tipo de bien", "Nombre"];
@@ -38,16 +41,35 @@ const Brand = () => {
     },
   ];
 
+  console.log(modalsInfo);
+
   return (
     <>
       <Header
         wordKey={Routes.brands.wordKey}
         description={Routes.brands.description}
         selectedStatus={selected}
+        setOpenAdd={setOpenAdd}
+        setOpenEdit={setOpenEdit}
+        setOpenDelete={setOpenDelete}
       />
 
       <main className="brand-container">
-        <TransitionModal statusOpen={open} setOpen={setOpen} />
+        <TransitionModal
+          statusOpen={openAdd}
+          setOpen={setOpenAdd}
+          data={modalsInfo.add}
+        />
+        <TransitionModal
+          statusOpen={openEdit}
+          setOpen={setOpenEdit}
+          data={modalsInfo.edit}
+        />
+        <TransitionModal
+          statusOpen={openDelete}
+          setOpen={setOpenDelete}
+          data={modalsInfo.delete}
+        />
         <div className="row-grid-brands">
           <XGridDemo
             titles={titles}

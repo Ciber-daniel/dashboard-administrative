@@ -99,20 +99,9 @@ to be able to see the preview of the image. */
 .container-modal-buttons {
   display: flex;
   flex-direction: row-reverse;
-  padding-right: 5%;
+  padding-right: 2%;
 }
 
 Button span:first-letter {
   text-transform: uppercase;
-}
-
-button.makeStyles-defaultBtn-8 {
-  transition: all 0.3s;
-}
-
-button.makeStyles-defaultBtn-8:hover {
-  background: linear-gradient(90deg, #63d1a2 0%, #63c3d1 100%) 0% 0% no-repeat
-    padding-box;
-  box-shadow: none;
-  text-decoration: none;
 }

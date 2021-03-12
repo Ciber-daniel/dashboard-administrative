@@ -9,7 +9,7 @@ export const CircularButton = (props) => {
         <div
           className="buttons"
           onClick={() => {
-            props.callback();
+            props.setOpen(true);
           }}
         >
           <img src={props.icon} alt="Agregar marca" />
