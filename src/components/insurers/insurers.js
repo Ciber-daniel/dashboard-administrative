@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // routes
 import { Routes } from "../../routes/routes";
 // styles
@@ -10,6 +10,7 @@ import XGridDemo from "../utils/grid/Xgrid";
 import ModalsWithButtons from "../utils/modals/Modals";
 
 const Insurer = () => {
+  const [selected, setSelected] = useState(false);
   const titles = ["Nombre de la aseguradora", "Hooli"];
   const data = [
     {
@@ -24,13 +25,16 @@ const Insurer = () => {
       <Header
         wordKey={Routes.insurers.wordKey}
         description={Routes.insurers.description}
+        selectedStatus={selected}
       />
       <div className="insurers-container">
-        <div className="icons-container">
-          <ModalsWithButtons />
-        </div>
         <div className="row-grid-insurers">
-          <XGridDemo titles={titles} data={data} />
+          <XGridDemo
+            titles={titles}
+            data={data}
+            selectedStatus={selected}
+            selected={setSelected}
+          />
         </div>
       </div>
     </>

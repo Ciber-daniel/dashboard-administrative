@@ -2,9 +2,6 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles({
   defaultBtn: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
     width: "14rem",
     letterSpacing: "0rem",
     height: "2rem",
@@ -12,16 +9,10 @@ export default makeStyles({
     opacity: 1,
     background: "#A7A7A7",
     borderRadius: 21,
-    transition: "all 0.6s",
     marginLeft: "2%",
     textTransform: "lowercase",
     fontWeight: 300,
     fontFamily: '"Roboto", sans-serif',
-    transition: "all 3s",
-    "&:hover": {
-      background:
-        "transparent linear-gradient(90deg, #63d1a2 0%, #63c3d1 100%)",
-    },
   },
   degreeBtn: {
     width: "14rem",

@@ -1,3 +1,29 @@
 div.MuiDataGrid-root.MuiDataGrid-root:before.MuiDataGrid-root:after {
   box-sizing: none;
 }
+
+.MuiDataGrid-selectedRowCount {
+  display: none;
+}
+
+div.MuiDataGrid-root .MuiDataGrid-footer .MuiDataGrid-selectedRowCount {
+  visibility: hidden;
+}
+
+div.MuiDataGrid-root .MuiDataGrid-rowCount,
+.MuiDataGrid-root .MuiDataGrid-selectedRowCount {
+  display: none;
+}
+
+div.MuiDataGrid-root .MuiDataGrid-colCell:focus,
+.MuiDataGrid-root .MuiDataGrid-cell:focus {
+  outline: none;
+}
+
+div.MuiDataGrid-root .MuiDataGrid-cellLeft:focus {
+  outline: none;
+}
+
+div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected {
+  background: #a7a7a7 0% 0% no-repeat padding-box;
+}

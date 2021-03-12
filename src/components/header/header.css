@@ -25,11 +25,15 @@ h6.MuiTypography-root {
   color: #a7a7a7;
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
+  font-family: var(--font-g);
+  font-weight: 400;
 }
 
 h4.MuiTypography-root {
   color: #63c3d1;
   font-size: 2.5rem;
+  font-family: var(--font-g);
+  font-weight: 300;
 }
 
 .heading {
@@ -96,6 +100,7 @@ h4.MuiTypography-root {
   background: transparent linear-gradient(0deg, #63d1a2 0%, #63c3d1 100%) 0% 0%
     no-repeat padding-box;
   height: 72vh;
+  padding-left: 3%;
 }
 
 .wrapper-footer {
@@ -106,7 +111,7 @@ h4.MuiTypography-root {
 }
 .icon-expand {
   color: #ffffff;
-  margin-left: 5rem;
+  margin-left: 50%;
   width: 0.8rem;
 }
 

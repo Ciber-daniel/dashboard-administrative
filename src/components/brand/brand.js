@@ -21,6 +21,21 @@ const Brand = () => {
       type: "Computadora",
       name: "Apple",
     },
+    {
+      id: "2",
+      type: "Computadora",
+      name: "Apple",
+    },
+    {
+      id: "3",
+      type: "Computadora",
+      name: "Apple",
+    },
+    {
+      id: "4",
+      type: "Computadora",
+      name: "Apple",
+    },
   ];
 
   return (

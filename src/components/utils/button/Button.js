@@ -1,12 +1,10 @@
 import React from "react";
-
+import { styled } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import styles from "./Button.Style";
 
 export default function CustomButton(props) {
-  const classes = styles(props);
   return (
-    <Button {...props} color={props.color} width={props.width}>
+    <Button {...props}>
       <span>{props.name}</span>
     </Button>
   );
