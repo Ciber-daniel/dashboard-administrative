@@ -12,7 +12,7 @@ import IconTables from "../../assets/icons/icon-tables.svg";
 import IconPolizas1 from "../../assets/icons/icon-polizas-aprobadas.svg";
 import IconPolizas2 from "../../assets/icons/icon-polizas-onboarding.svg";
 import ArrowDown from "../../assets/icons/arrow-down.svg";
-import { Routes } from "../../routes/routes";
+import { Routes } from "../../consts/routes";
 
 const useStyles = makeStyles((theme) => ({
   root: {

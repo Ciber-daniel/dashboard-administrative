@@ -31,6 +31,10 @@ export default function Header(props) {
     setOpenDrawer(false);
   };
 
+  const reloadFunction = () => {
+    window.location.reload();
+  };
+
   return (
     <>
       <AppBar position="fixed">
@@ -58,14 +62,14 @@ export default function Header(props) {
             ""
           ) : props.selectedStatus ? (
             <div>
-              <CircularButton icon={editar} />
-              <CircularButton icon={eliminar} />
+              <CircularButton icon={editar} setOpen={props.setOpenEdit} />
+              <CircularButton icon={eliminar} setOpen={props.setOpenDelete} />
               <span>1 registro</span>
             </div>
           ) : (
             <div>
-              <CircularButton icon={addIcon} />
-              <CircularButton icon={reload} />
+              <CircularButton icon={addIcon} setOpen={props.setOpenAdd} />
+              <CircularButton icon={reload} setOpen={reloadFunction} />
               <span>1 registro</span>
             </div>
           )}

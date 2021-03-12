@@ -6,7 +6,7 @@ import Insurers from "./components/insurers/insurers";
 import Brand from "./components/brand/brand";
 
 // consts
-import { Routes } from "./routes/routes";
+import { Routes } from "./consts/routes";
 
 class App extends Component {
   render() {
