@@ -41,8 +41,6 @@ const Brand = () => {
     },
   ];
 
-  console.log(modalsInfo);
-
   return (
     <>
       <Header

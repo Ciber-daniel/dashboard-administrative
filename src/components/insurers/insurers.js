@@ -7,7 +7,6 @@ import "./insurers.css";
 import Header from "../header/Header";
 // utils
 import XGridDemo from "../utils/grid/Xgrid";
-import ModalsWithButtons from "../utils/modals/Modals";
 
 const Insurer = () => {
   const [selected, setSelected] = useState(false);
