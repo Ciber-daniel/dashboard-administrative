@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { XGrid, LicenseInfo } from "@material-ui/x-grid";
 import "./grid.css";
 
@@ -7,8 +7,6 @@ LicenseInfo.setLicenseKey(
 );
 
 export default function XGridDemo(props) {
-  const [row, setRow] = useState({});
-
   return (
     <div style={{ height: 400, width: "100%" }}>
       <XGrid
