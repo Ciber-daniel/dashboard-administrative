@@ -4,7 +4,7 @@ import { Routes } from "../../consts/routes";
 // styles
 import "./insurers.css";
 // components
-import Header from "../header/Header";
+import Header from "../../components/header/Header";
 // utils
 import XGridDemo from "../utils/grid/Xgrid";
 import TransitionModal from "../utils/modals/Modals";

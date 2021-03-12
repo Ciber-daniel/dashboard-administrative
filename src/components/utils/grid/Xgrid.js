@@ -1,5 +1,6 @@
 import React from "react";
 import { XGrid, LicenseInfo } from "@material-ui/x-grid";
+// style
 import "./grid.css";
 
 LicenseInfo.setLicenseKey(

@@ -1,3 +1,7 @@
+:root {
+  --font-g: "Roboto", sans-serif;
+}
+
 .buttons {
   border-radius: 50%;
   border: none;
@@ -30,4 +34,48 @@
 
 .icons-container span {
   color: #707070;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tiptext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  visibility: hidden;
+  width: 6rem;
+  height: 0.4rem;
+  background-color: #707070;
+  color: #ffffff;
+  text-align: center;
+  padding: 6px 0;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  font-size: 0.6rem;
+  font-family: var(--font-g);
+  font-weight: 300;
+}
+.tooltip .tiptext::after {
+  content: "";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+}
+.tooltip:hover .tiptext {
+  visibility: visible;
+}
+
+.tooltip.bottom .tiptext {
+  margin-left: -60px;
+  top: 120%;
+}
+.tooltip.bottom .tiptext::after {
+  margin-left: 1.5rem;
+  bottom: 100%;
+  left: 50%;
+  border-color: transparent transparent #707070 transparent;
 }

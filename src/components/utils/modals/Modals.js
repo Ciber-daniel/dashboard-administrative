@@ -1,8 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
-import FormModals from "../form/Form-Modals";
 import { Fade } from "@material-ui/core";
+import Modal from "@material-ui/core/Modal";
+// utils
+import FormModals from "../form/Form-Modals";
 
 const useStyles = makeStyles((theme) => ({
   modal: {

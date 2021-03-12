@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-// routes
-import { Routes } from "../../consts/routes";
 // styles
 import "./brands.css";
 // components
-import Header from "../header/Header";
+import Header from "../../components/header/Header";
 // utils
-import XGridDemo from "../utils/grid/Xgrid";
-import TransitionModal from "../utils/modals/Modals";
+import XGridDemo from "../../components/utils/grid/Xgrid";
+import TransitionModal from "../../components/utils/modals/Modals";
 // consts
 import { modalsInfo } from "../../consts/modals-info";
+// routes
+import { Routes } from "../../consts/routes";
 
 const Brand = () => {
   const [openAdd, setOpenAdd] = useState(false);

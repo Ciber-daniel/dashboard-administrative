@@ -3,7 +3,9 @@ import TextField from "@material-ui/core/TextField";
 import { Divider } from "@material-ui/core";
 // styles
 import "./form.css";
+// assets
 import placeholder from "../../../assets/img/placeholder.svg";
+// button
 import CustomButton from "../button/Button";
 import styles from "../button/Button.Style";
 
@@ -75,7 +77,7 @@ export default function FormModals(props) {
               SelectProps={{
                 native: true,
               }}
-              fullWidth
+              className="width-select"
             >
               {currencies.map((option) => (
                 <option key={option.value} value={option.value}>
