@@ -6,8 +6,8 @@ import "./insurers.css";
 // components
 import Header from "../../components/header/Header";
 // utils
-import XGridDemo from "../utils/grid/Xgrid";
-import TransitionModal from "../utils/modals/Modals";
+import XGridDemo from "../../components/utils/grid/Xgrid";
+import TransitionModal from "../../components/utils/modals/Modals";
 import { modalsInfo } from "../../consts/modals-info";
 
 const Insurer = () => {
