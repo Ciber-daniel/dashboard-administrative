@@ -4,11 +4,9 @@ import { Routes } from "../../consts/routes";
 // styles
 import "./insurers.css";
 // components
-import Header from "../header/Header";
+import Header from "../../components/header/Header";
 // utils
-import XGridDemo from "../utils/grid/Xgrid";
-import ModalsWithButtons from "../utils/modals/Modals";
-
+import XGridDemo from "../../components/utils/grid/Xgrid";
 const Insurer = () => {
   const [selected, setSelected] = useState(false);
   const titles = ["Nombre de la aseguradora", "Hooli"];

@@ -2,7 +2,7 @@ import React from "react";
 // styles
 import "./dashboard.css";
 // components
-import Header from "../header/Header";
+import Header from "../../components/header/Header";
 // consts
 import { Routes } from "../../consts/routes";
 // assets
@@ -11,7 +11,6 @@ import Rombo from "../../assets/icons/rombo.svg";
 import Trazado from "../../assets/icons/trazado.svg";
 import Wheel from "../../assets/icons/media-rueda.svg";
 import Cross from "../../assets/icons/cruz.svg";
-// import CustomButton from "../utils/button/Button";
 
 export default function Dashboard() {
   return (

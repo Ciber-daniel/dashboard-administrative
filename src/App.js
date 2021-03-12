@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// components
-import Dashboard from "./components/dashboard/Dashboard";
-import Insurers from "./components/insurers/insurers";
-import Brand from "./components/brand/brand";
-
+// pages
+import Dashboard from "./pages/dashboard/Dashboard";
+import Insurers from "./pages/insurers/insurers";
+import Brand from "./pages/brand/brand";
 // consts
 import { Routes } from "./consts/routes";
 
