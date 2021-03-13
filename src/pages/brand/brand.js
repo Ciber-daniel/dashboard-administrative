@@ -5,9 +5,9 @@ import "./brands.css";
 import Header from "../../components/header/Header";
 // utils
 import XGridDemo from "../../components/utils/grid/Xgrid";
-import TransitionModal from "../../components/utils/modals/Modals";
+import TransitionModal from "../../components/utils/modals/Modal-Brands";
 // consts
-import { modalsInfo } from "../../consts/modals-info";
+import { modalsInfoBrands } from "../../consts/modals-info";
 // routes
 import { Routes } from "../../consts/routes";
 
@@ -56,17 +56,17 @@ const Brand = () => {
         <TransitionModal
           statusOpen={openAdd}
           setOpen={setOpenAdd}
-          data={modalsInfo.add}
+          data={modalsInfoBrands.add}
         />
         <TransitionModal
           statusOpen={openEdit}
           setOpen={setOpenEdit}
-          data={modalsInfo.edit}
+          data={modalsInfoBrands.edit}
         />
         <TransitionModal
           statusOpen={openDelete}
           setOpen={setOpenDelete}
-          data={modalsInfo.delete}
+          data={modalsInfoBrands.delete}
         />
         <div className="row-grid-brands">
           <XGridDemo

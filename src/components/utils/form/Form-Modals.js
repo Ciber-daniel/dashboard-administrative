@@ -61,7 +61,7 @@ export default function FormModals(props) {
       >
         {/* titles */}
         <div className="title">
-          {props.data.title === "Eliminar Marca" ? (
+          {props.data.title.includes("Eliminar") ? (
             <h2 style={{ color: "red" }}>{props.data.title}</h2>
           ) : (
             <h2>{props.data.title}</h2>
@@ -71,35 +71,79 @@ export default function FormModals(props) {
           <Divider />
         </div>
         <div className="inputs">
-          <div className="input-container">
-            <TextField
-              label={props.data.firstInput.label}
-              id="standard-select-currency-native"
-              select
-              SelectProps={{
-                native: true,
+          {props.data.title.includes("aseguradora") ? (
+            <div
+              className="container-inverse"
+              style={{
+                display: "flex",
+                flexDirection: "column-reverse",
+                marginTop: "-5%",
               }}
-              className="width-select"
             >
-              {currencies.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </TextField>
-          </div>
-          <div className="input-container">
-            <TextField
-              label={props.data.secondInput.label}
-              id="standard-full-width"
-              placeholder={props.data.secondInput.placeholder}
-              margin="normal"
-              InputLabelProps={{
-                shrink: true,
-              }}
-              fullWidth
-            />
-          </div>
+              <div className="input-container">
+                <TextField
+                  label={props.data.firstInput.label}
+                  id="standard-select-currency-native"
+                  select
+                  onChange={handleChange}
+                  SelectProps={{
+                    native: true,
+                  }}
+                  className="width-select"
+                >
+                  <option>Si</option>
+                  <option>No</option>
+                </TextField>
+              </div>
+              <div className="input-container">
+                <TextField
+                  label={props.data.secondInput.label}
+                  id="standard-full-width"
+                  placeholder={props.data.secondInput.placeholder}
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  fullWidth
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="container-inverse">
+              <div className="input-container">
+                <TextField
+                  label={props.data.firstInput.label}
+                  id="standard-select-currency-native"
+                  select
+                  value={currency}
+                  onChange={handleChange}
+                  SelectProps={{
+                    native: true,
+                  }}
+                  className="width-select"
+                >
+                  {currencies.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </TextField>
+              </div>
+              <div className="input-container">
+                <TextField
+                  label={props.data.secondInput.label}
+                  id="standard-full-width"
+                  placeholder={props.data.secondInput.placeholder}
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  fullWidth
+                />
+              </div>
+            </div>
+          )}
+
           <div className="form__img-input-container">
             <input
               type="file"
@@ -113,7 +157,7 @@ export default function FormModals(props) {
           </div>
         </div>
         <div className="container-modal-buttons">
-          {props.data.title === "Eliminar Marca" ? (
+          {props.data.title.includes("Eliminar") ? (
             <div className="container-modal-buttons">
               <CustomButton
                 className={classes.redBtn}
