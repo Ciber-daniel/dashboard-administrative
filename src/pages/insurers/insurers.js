@@ -7,8 +7,8 @@ import "./insurers.css";
 import Header from "../../components/header/Header";
 // utils
 import XGridDemo from "../../components/utils/grid/Xgrid";
-import TransitionModal from "../../components/utils/modals/Modals";
-import { modalsInfo } from "../../consts/modals-info";
+import TransitionModalInsurers from "../../components/utils/modals/Modal-Insurers";
+import { modalsInfoInsurers } from "../../consts/modals-info";
 
 const Insurer = () => {
   const [openAdd, setOpenAdd] = useState(false);
@@ -35,20 +35,20 @@ const Insurer = () => {
         setOpenEdit={setOpenEdit}
         setOpenDelete={setOpenDelete}
       />
-      <TransitionModal
+      <TransitionModalInsurers
         statusOpen={openAdd}
         setOpen={setOpenAdd}
-        data={modalsInfo.add}
+        data={modalsInfoInsurers.add}
       />
-      <TransitionModal
+      <TransitionModalInsurers
         statusOpen={openEdit}
         setOpen={setOpenEdit}
-        data={modalsInfo.edit}
+        data={modalsInfoInsurers.edit}
       />
-      <TransitionModal
+      <TransitionModalInsurers
         statusOpen={openDelete}
         setOpen={setOpenDelete}
-        data={modalsInfo.delete}
+        data={modalsInfoInsurers.delete}
       />
       <div className="insurers-container">
         <div className="row-grid-insurers">

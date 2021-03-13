@@ -9,6 +9,8 @@ import placeholder from "../../../assets/img/placeholder.svg";
 import CustomButton from "../button/Button";
 import styles from "../button/Button.Style";
 
+import { modalsInfoInsurers } from "../../../consts/modals-info";
+
 const currencies = [
   {
     value: "1",
@@ -67,7 +69,7 @@ export default function FormModals(props) {
         autoComplete="off"
       >
         <div className="title">
-          {props.data.title === "Eliminar Marca" ? (
+          {props.data.title.includes("Eliminar") ? (
             <h2 style={{ color: "red" }}>{props.data.title}</h2>
           ) : (
             <h2>{props.data.title}</h2>
@@ -77,37 +79,79 @@ export default function FormModals(props) {
           <Divider />
         </div>
         <div className="inputs">
-          <div className="input-container">
-            <TextField
-              label={props.data.firstInput.label}
-              id="standard-select-currency-native"
-              select
-              value={currency}
-              onChange={handleChange}
-              SelectProps={{
-                native: true,
+          {props.data.title.includes("aseguradora") ? (
+            <div
+              className="container-inverse"
+              style={{
+                display: "flex",
+                flexDirection: "column-reverse",
+                marginTop: "-5%",
               }}
-              className="width-select"
             >
-              {currencies.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </TextField>
-          </div>
-          <div className="input-container">
-            <TextField
-              label={props.data.secondInput.label}
-              id="standard-full-width"
-              placeholder={props.data.secondInput.placeholder}
-              margin="normal"
-              InputLabelProps={{
-                shrink: true,
-              }}
-              fullWidth
-            />
-          </div>
+              <div className="input-container">
+                <TextField
+                  label={props.data.firstInput.label}
+                  id="standard-select-currency-native"
+                  select
+                  onChange={handleChange}
+                  SelectProps={{
+                    native: true,
+                  }}
+                  className="width-select"
+                >
+                  <option>Si</option>
+                  <option>No</option>
+                </TextField>
+              </div>
+              <div className="input-container">
+                <TextField
+                  label={props.data.secondInput.label}
+                  id="standard-full-width"
+                  placeholder={props.data.secondInput.placeholder}
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  fullWidth
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="container-inverse">
+              <div className="input-container">
+                <TextField
+                  label={props.data.firstInput.label}
+                  id="standard-select-currency-native"
+                  select
+                  value={currency}
+                  onChange={handleChange}
+                  SelectProps={{
+                    native: true,
+                  }}
+                  className="width-select"
+                >
+                  {currencies.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </TextField>
+              </div>
+              <div className="input-container">
+                <TextField
+                  label={props.data.secondInput.label}
+                  id="standard-full-width"
+                  placeholder={props.data.secondInput.placeholder}
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  fullWidth
+                />
+              </div>
+            </div>
+          )}
+
           <div className="form__img-input-container">
             <input
               type="file"
@@ -145,10 +189,6 @@ export default function FormModals(props) {
                 name={props.data.buttonTitle.title}
                 message={"Marca agregada con éxito"}
                 severity={"success"}
-                handleClick={handleClick({
-                  vertical: "top",
-                  horizontal: "center",
-                })}
               />
               <CustomButton
                 className={classes.whiteBtn}

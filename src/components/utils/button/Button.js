@@ -8,15 +8,30 @@ function Alert(props) {
 }
 
 export default function CustomButton(props) {
-  const state = { props };
-  const { vertical, horizontal, open } = props.state;
+  const [state, setState] = useState({
+    open: false,
+    vertical: "top",
+    horizontal: "center",
+  });
+
+  const handleClick = (newState) => () => {
+    setState({ open: true, ...newState });
+  };
+
+  const { vertical, horizontal, open } = state;
 
   const handleClose = () => {
-    props.setState({ ...state, open: false });
+    setState({ ...state, open: false });
   };
 
   const buttons = (
-    <Button {...props} onClick={() => props.onClick()}>
+    <Button
+      {...props}
+      onClick={handleClick({
+        vertical: "top",
+        horizontal: "center",
+      })}
+    >
       <span>{props.name}</span>
     </Button>
   );
