@@ -8,6 +8,7 @@ function Alert(props) {
 }
 
 export default function CustomButton(props) {
+  const state = { props };
   const { vertical, horizontal, open } = props.state;
 
   const handleClose = () => {

@@ -19,6 +19,7 @@ import addIcon from "../../assets/icons/rediseño.svg";
 import reload from "../../assets/icons/actualizar.svg";
 import editar from "../../assets/icons/editar.svg";
 import eliminar from "../../assets/icons/eliminar.svg";
+import { Height } from "@material-ui/icons";
 
 export default function Header(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -91,7 +92,7 @@ export default function Header(props) {
           )}
         </div>
       </AppBar>
-      <div className="content-drawer" onClick={handleDrawerClose}>
+      <div className="content-drawer">
         <Drawer
           className="drawer"
           variant="persistent"
@@ -120,6 +121,24 @@ export default function Header(props) {
           </div>
         </Drawer>
       </div>
+      {openDrawer ? (
+        <div
+          className="drawer-handler"
+          style={{
+            height: "100%",
+            width: "100vw",
+            backgroundColor: "transparent",
+            position: "absolute",
+            zIndex: 1150,
+            right: 0,
+          }}
+          onClick={() => {
+            setOpenDrawer(false);
+          }}
+        ></div>
+      ) : (
+        ""
+      )}
     </>
   );
 }

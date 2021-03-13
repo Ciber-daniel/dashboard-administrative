@@ -7,9 +7,15 @@ import "./insurers.css";
 import Header from "../../components/header/Header";
 // utils
 import XGridDemo from "../../components/utils/grid/Xgrid";
+import TransitionModal from "../../components/utils/modals/Modals";
+import { modalsInfo } from "../../consts/modals-info";
 
 const Insurer = () => {
+  const [openAdd, setOpenAdd] = useState(false);
+  const [openEdit, setOpenEdit] = useState(false);
+  const [openDelete, setOpenDelete] = useState(false);
   const [selected, setSelected] = useState(false);
+
   const titles = ["Nombre de la aseguradora", "Hooli"];
   const data = [
     {
@@ -25,6 +31,24 @@ const Insurer = () => {
         wordKey={Routes.insurers.wordKey}
         description={Routes.insurers.description}
         selectedStatus={selected}
+        setOpenAdd={setOpenAdd}
+        setOpenEdit={setOpenEdit}
+        setOpenDelete={setOpenDelete}
+      />
+      <TransitionModal
+        statusOpen={openAdd}
+        setOpen={setOpenAdd}
+        data={modalsInfo.add}
+      />
+      <TransitionModal
+        statusOpen={openEdit}
+        setOpen={setOpenEdit}
+        data={modalsInfo.edit}
+      />
+      <TransitionModal
+        statusOpen={openDelete}
+        setOpen={setOpenDelete}
+        data={modalsInfo.delete}
       />
       <div className="insurers-container">
         <div className="row-grid-insurers">
