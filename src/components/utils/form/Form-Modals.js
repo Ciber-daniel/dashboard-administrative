@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
-import { Divider } from "@material-ui/core";
+import { Divider, Snackbar } from "@material-ui/core";
+import MuiAlert from "@material-ui/lab/Alert";
 // styles
 import "./form.css";
 // assets
@@ -28,31 +29,19 @@ const currencies = [
   },
 ];
 
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
 export default function FormModals(props) {
   const [{ alt, src }, setImg] = useState({
     src: placeholder,
     alt: "Upload an Image",
   });
 
-  const [currency, setCurrency] = useState("1");
+  // const [currency, setCurrency] = useState("1");
 
-  const [state, setState] = useState({
-    open: false,
-    vertical: "top",
-    horizontal: "center",
-  });
-
-  const handleClick = (newState) => () => {
-    setState({ open: true, ...newState });
-  };
-
-  const handleChange = (event) => {
-    setCurrency(event.target.value);
-  };
-
-  const handleClose = () => {
-    props.setState({ ...state, open: false });
-  };
+  const [openAlert, setOpenAlert] = useState(false);
 
   const handleImg = (e) => {
     if (e.target.files[0]) {
@@ -70,6 +59,7 @@ export default function FormModals(props) {
         noValidate
         autoComplete="off"
       >
+        {/* titles */}
         <div className="title">
           {props.data.title === "Eliminar Marca" ? (
             <h2 style={{ color: "red" }}>{props.data.title}</h2>
@@ -129,7 +119,6 @@ export default function FormModals(props) {
                 className={classes.redBtn}
                 onClick={props.data.buttonTitle.action}
                 name={props.data.buttonTitle.title}
-                severity={"warning"}
               />
               <CustomButton
                 className={classes.whiteBtn}
@@ -144,17 +133,34 @@ export default function FormModals(props) {
               <CustomButton
                 className={classes.defaultBtn}
                 name={props.data.buttonTitle.title}
-                alert="true"
-                state={state}
-                callback={handleClick}
-                callbackClose={handleClose}
-                message={"Marca agregada con éxito"}
-                severity={"success"}
+                onClick={() => {
+                  setOpenAlert(true);
+                }}
               />
+              <Snackbar
+                autoHideDuration={5000}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "center",
+                }}
+                open={openAlert}
+                onClose={() => {
+                  setOpenAlert(false);
+                }}
+                key="top-center"
+              >
+                <Alert
+                  onClose={() => {
+                    setOpenAlert(false);
+                  }}
+                  severity="success"
+                >
+                  "Marca creada con exito"
+                </Alert>
+              </Snackbar>
               <CustomButton
                 className={classes.whiteBtn}
-                alert="false"
-                callback={() => {
+                onClick={() => {
                   props.setOpen(false);
                 }}
                 name="Cancelar"
