@@ -9,8 +9,6 @@ import placeholder from "../../../assets/img/placeholder.svg";
 import CustomButton from "../button/Button";
 import styles from "../button/Button.Style";
 
-import { modalsInfoInsurers } from "../../../consts/modals-info";
-
 const currencies = [
   {
     value: "1",
@@ -31,6 +29,11 @@ const currencies = [
 ];
 
 export default function FormModals(props) {
+  const [{ alt, src }, setImg] = useState({
+    src: placeholder,
+    alt: "Upload an Image",
+  });
+
   const [currency, setCurrency] = useState("1");
 
   const [state, setState] = useState({
@@ -47,10 +50,9 @@ export default function FormModals(props) {
     setCurrency(event.target.value);
   };
 
-  const [{ alt, src }, setImg] = useState({
-    src: placeholder,
-    alt: "Upload an Image",
-  });
+  const handleClose = () => {
+    props.setState({ ...state, open: false });
+  };
 
   const handleImg = (e) => {
     if (e.target.files[0]) {
@@ -165,7 +167,7 @@ export default function FormModals(props) {
           </div>
         </div>
         <div className="container-modal-buttons">
-          {props.data.title === "Eliminar Marca" ? (
+          {props.data.title.includes("Eliminar") ? (
             <div className="container-modal-buttons">
               <CustomButton
                 className={classes.redBtn}
@@ -185,14 +187,18 @@ export default function FormModals(props) {
             <div className="container-modal-buttons">
               <CustomButton
                 className={classes.defaultBtn}
-                onClick={props.data.buttonTitle.action}
                 name={props.data.buttonTitle.title}
+                alert="true"
+                state={state}
+                callback={handleClick}
+                callbackClose={handleClose}
                 message={"Marca agregada con éxito"}
                 severity={"success"}
               />
               <CustomButton
                 className={classes.whiteBtn}
-                onClick={() => {
+                alert="false"
+                callback={() => {
                   props.setOpen(false);
                 }}
                 name="Cancelar"
