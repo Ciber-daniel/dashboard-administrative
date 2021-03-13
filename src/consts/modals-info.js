@@ -1,23 +1,23 @@
-import { addItem } from "../services/services";
+import { addBrand, deleteBrand, editBrand } from "../services/api-services";
 
 export const modalsInfoBrands = {
   add: {
     title: "Agregar marca",
     firstInput: { label: "Tipo de bien", placeholder: "Tipo de bien" },
     secondInput: { label: "Marca", placeholder: "Marca" },
-    buttonTitle: { title: "Agregar", action: addItem },
+    buttonInfo: { title: "Agregar", action: addBrand },
   },
   edit: {
     title: "Editar marca",
     firstInput: { label: "Tipo de bien", placeholder: "Tipo de bien" },
     secondInput: { label: "Marca", placeholder: "Marca" },
-    buttonTitle: { title: "Guardar cambios", action: addItem },
+    buttonInfo: { title: "Guardar cambios", action: editBrand },
   },
   delete: {
     title: "Eliminar Marca",
     firstInput: { label: "Tipo de bien", placeholder: "Tipo de bien" },
     secondInput: { label: "Marca", placeholder: "Marca" },
-    buttonTitle: { title: "Eliminar", action: addItem },
+    buttonInfo: { title: "Eliminar", action: deleteBrand },
   },
 };
 
@@ -26,18 +26,18 @@ export const modalsInfoInsurers = {
     title: "Agregar aseguradora",
     firstInput: { label: "Hooli", placeholder: "Si" },
     secondInput: { label: "Nombre de la aseguradora", placeholder: "BBVA" },
-    buttonTitle: { title: "Agregar", action: addItem },
+    buttonInfo: { title: "Agregar", action: addBrand },
   },
   edit: {
     title: "Editar aseguradora",
     firstInput: { label: "Hooli", placeholder: "Si" },
     secondInput: { label: "Nombre de la aseguradora", placeholder: "BBVA" },
-    buttonTitle: { title: "Guardar cambios", action: addItem },
+    buttonInfo: { title: "Guardar cambios", action: addBrand },
   },
   delete: {
     title: "Eliminar aseguradora",
     firstInput: { label: "Hooli", placeholder: "Si" },
     secondInput: { label: "Nombre de la aseguradora", placeholder: "BBVA" },
-    buttonTitle: { title: "Eliminar", action: addItem },
+    buttonInfo: { title: "Eliminar", action: addBrand },
   },
 };

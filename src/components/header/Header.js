@@ -19,7 +19,8 @@ import addIcon from "../../assets/icons/rediseño.svg";
 import reload from "../../assets/icons/actualizar.svg";
 import editar from "../../assets/icons/editar.svg";
 import eliminar from "../../assets/icons/eliminar.svg";
-import { Height } from "@material-ui/icons";
+// services
+import { refreshPage } from "../../services/local-services";
 
 export default function Header(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -30,10 +31,6 @@ export default function Header(props) {
 
   const handleDrawerClose = () => {
     setOpenDrawer(false);
-  };
-
-  const reloadFunction = () => {
-    window.location.reload();
   };
 
   return (
@@ -85,7 +82,7 @@ export default function Header(props) {
               <CircularButton
                 text={"Actualizar pagina"}
                 icon={reload}
-                setOpen={reloadFunction}
+                setOpen={refreshPage}
               />
               <span>1 registro</span>
             </div>

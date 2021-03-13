@@ -9,6 +9,7 @@ import placeholder from "../../../assets/img/placeholder.svg";
 // button
 import CustomButton from "../button/Button";
 import styles from "../button/Button.Style";
+import { SnackBar } from "../snackbars/snackbar";
 
 const currencies = [
   {
@@ -39,8 +40,6 @@ export default function FormModals(props) {
     alt: "Upload an Image",
   });
 
-  // const [currency, setCurrency] = useState("1");
-
   const [openAlert, setOpenAlert] = useState(false);
 
   const handleImg = (e) => {
@@ -59,7 +58,6 @@ export default function FormModals(props) {
         noValidate
         autoComplete="off"
       >
-        {/* titles */}
         <div className="title">
           {props.data.title.includes("Eliminar") ? (
             <h2 style={{ color: "red" }}>{props.data.title}</h2>
@@ -85,7 +83,6 @@ export default function FormModals(props) {
                   label={props.data.firstInput.label}
                   id="standard-select-currency-native"
                   select
-                  onChange={handleChange}
                   SelectProps={{
                     native: true,
                   }}
@@ -115,8 +112,6 @@ export default function FormModals(props) {
                   label={props.data.firstInput.label}
                   id="standard-select-currency-native"
                   select
-                  value={currency}
-                  onChange={handleChange}
                   SelectProps={{
                     native: true,
                   }}
@@ -161,9 +156,15 @@ export default function FormModals(props) {
             <div className="container-modal-buttons">
               <CustomButton
                 className={classes.redBtn}
-                onClick={props.data.buttonTitle.action}
-                name={props.data.buttonTitle.title}
+                onClick={() => {
+                  props.data.buttonInfo.action(() => {
+                    props.setOpen(false);
+                  });
+                  props.setOpen(false);
+                }}
+                name={props.data.buttonInfo.title}
               />
+
               <CustomButton
                 className={classes.whiteBtn}
                 onClick={() => {
@@ -176,32 +177,33 @@ export default function FormModals(props) {
             <div className="container-modal-buttons">
               <CustomButton
                 className={classes.defaultBtn}
-                name={props.data.buttonTitle.title}
+                name={props.data.buttonInfo.title}
                 onClick={() => {
-                  setOpenAlert(true);
+                  props.data.buttonInfo.title === "Agregar"
+                    ? props.data.buttonInfo.action(() => {
+                        setOpenAlert(true);
+                        setTimeout(() => {
+                          props.setOpen(false);
+                        }, 3000);
+                      })
+                    : props.data.buttonInfo.action(() => {
+                        props.setOpen(false);
+                      });
                 }}
               />
-              <Snackbar
-                autoHideDuration={5000}
-                anchorOrigin={{
+              <SnackBar
+                snackBar={{
+                  autoHideDuration: 5000,
                   vertical: "top",
                   horizontal: "center",
-                }}
-                open={openAlert}
-                onClose={() => {
-                  setOpenAlert(false);
-                }}
-                key="top-center"
-              >
-                <Alert
-                  onClose={() => {
+                  openAlert: openAlert,
+                  setOpenAlert: () => {
                     setOpenAlert(false);
-                  }}
-                  severity="success"
-                >
-                  "Marca creada con exito"
-                </Alert>
-              </Snackbar>
+                  },
+                  severity: "success",
+                  message: "Marca agregada con exito",
+                }}
+              />
               <CustomButton
                 className={classes.whiteBtn}
                 onClick={() => {

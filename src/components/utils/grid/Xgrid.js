@@ -2,6 +2,8 @@ import React from "react";
 import { XGrid, LicenseInfo } from "@material-ui/x-grid";
 // style
 import "./grid.css";
+// services
+import { validateRowSelected } from "../../../services/local-services";
 
 LicenseInfo.setLicenseKey(
   "566251e0a8fd26c8758bbc5c1f9df178T1JERVI6MjE5MTUsRVhQSVJZPTE2NDYyMjIwNTcwMDAsS0VZVkVSU0lPTj0x"
@@ -22,15 +24,11 @@ export default function XGridDemo(props) {
         }}
         l
         onRowSelected={(newSelection) => {
-          const selectedRow = newSelection.data;
-          const getSelectedRow = newSelection.api.current.getSelectedRows();
-          if (props.selectedStatus) {
-            if (selectedRow.id === getSelectedRow[0].id) {
-              props.selected(false);
-            }
-          } else {
-            props.selected(true);
-          }
+          validateRowSelected(
+            newSelection,
+            props.selectedStatus,
+            props.selected
+          );
         }}
         columns={[
           {
