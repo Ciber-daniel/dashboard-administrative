@@ -1,38 +1,16 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
-import { Divider, Snackbar } from "@material-ui/core";
-import MuiAlert from "@material-ui/lab/Alert";
+import { Divider } from "@material-ui/core";
 // styles
 import "./form.css";
 // assets
 import placeholder from "../../../assets/img/placeholder.svg";
-// button
+// utils
 import CustomButton from "../button/Button";
 import styles from "../button/Button.Style";
 import { SnackBar } from "../snackbars/snackbar";
-
-const currencies = [
-  {
-    value: "1",
-    label: "Tipo de bien",
-  },
-  {
-    value: "2",
-    label: "Computadora",
-  },
-  {
-    value: "3",
-    label: "Celular",
-  },
-  {
-    value: "4",
-    label: "Auto",
-  },
-];
-
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
+// services
+import { currencies } from "../../../consts/currencies";
 
 export default function FormModals(props) {
   const [{ alt, src }, setImg] = useState({
@@ -50,7 +28,9 @@ export default function FormModals(props) {
       });
     }
   };
+
   const classes = styles(props);
+
   return (
     <div className="form">
       <form
@@ -138,7 +118,6 @@ export default function FormModals(props) {
               </div>
             </div>
           )}
-
           <div className="form__img-input-container">
             <input
               type="file"
@@ -164,7 +143,6 @@ export default function FormModals(props) {
                 }}
                 name={props.data.buttonInfo.title}
               />
-
               <CustomButton
                 className={classes.whiteBtn}
                 onClick={() => {
@@ -202,6 +180,8 @@ export default function FormModals(props) {
                   },
                   severity: "success",
                   message: "Marca agregada con exito",
+                  alertElevation: 6,
+                  varian: "filled",
                 }}
               />
               <CustomButton

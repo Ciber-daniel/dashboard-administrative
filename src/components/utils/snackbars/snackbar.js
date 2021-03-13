@@ -18,6 +18,8 @@ export const SnackBar = (props) => {
       key={snackbarInfo.vertical + "-" + snackbarInfo.horizontal}
     >
       <Alert
+        elevation={snackbarInfo.alertElevation}
+        variant={snackbarInfo.variant}
         onClose={() => {
           snackbarInfo.setOpenAlert(false);
         }}
