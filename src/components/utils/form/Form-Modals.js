@@ -29,6 +29,11 @@ const currencies = [
 ];
 
 export default function FormModals(props) {
+  const [{ alt, src }, setImg] = useState({
+    src: placeholder,
+    alt: "Upload an Image",
+  });
+
   const [currency, setCurrency] = useState("1");
 
   const [state, setState] = useState({
@@ -45,10 +50,9 @@ export default function FormModals(props) {
     setCurrency(event.target.value);
   };
 
-  const [{ alt, src }, setImg] = useState({
-    src: placeholder,
-    alt: "Upload an Image",
-  });
+  const handleClose = () => {
+    props.setState({ ...state, open: false });
+  };
 
   const handleImg = (e) => {
     if (e.target.files[0]) {
@@ -82,8 +86,6 @@ export default function FormModals(props) {
               label={props.data.firstInput.label}
               id="standard-select-currency-native"
               select
-              value={currency}
-              onChange={handleChange}
               SelectProps={{
                 native: true,
               }}
@@ -141,18 +143,18 @@ export default function FormModals(props) {
             <div className="container-modal-buttons">
               <CustomButton
                 className={classes.defaultBtn}
-                onClick={props.data.buttonTitle.action}
                 name={props.data.buttonTitle.title}
+                alert="true"
+                state={state}
+                callback={handleClick}
+                callbackClose={handleClose}
                 message={"Marca agregada con éxito"}
                 severity={"success"}
-                handleClick={handleClick({
-                  vertical: "top",
-                  horizontal: "center",
-                })}
               />
               <CustomButton
                 className={classes.whiteBtn}
-                onClick={() => {
+                alert="false"
+                callback={() => {
                   props.setOpen(false);
                 }}
                 name="Cancelar"
