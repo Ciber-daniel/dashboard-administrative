@@ -31,6 +31,16 @@ const currencies = [
 export default function FormModals(props) {
   const [currency, setCurrency] = useState("1");
 
+  const [state, setState] = useState({
+    open: false,
+    vertical: "top",
+    horizontal: "center",
+  });
+
+  const handleClick = (newState) => () => {
+    setState({ open: true, ...newState });
+  };
+
   const handleChange = (event) => {
     setCurrency(event.target.value);
   };
@@ -117,6 +127,7 @@ export default function FormModals(props) {
                 className={classes.redBtn}
                 onClick={props.data.buttonTitle.action}
                 name={props.data.buttonTitle.title}
+                severity={"warning"}
               />
               <CustomButton
                 className={classes.whiteBtn}
@@ -132,6 +143,12 @@ export default function FormModals(props) {
                 className={classes.defaultBtn}
                 onClick={props.data.buttonTitle.action}
                 name={props.data.buttonTitle.title}
+                message={"Marca agregada con éxito"}
+                severity={"success"}
+                handleClick={handleClick({
+                  vertical: "top",
+                  horizontal: "center",
+                })}
               />
               <CustomButton
                 className={classes.whiteBtn}
