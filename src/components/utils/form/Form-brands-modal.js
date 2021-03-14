@@ -150,6 +150,7 @@ export default function BrandForm(props) {
               imageInput: formik.values.photo,
             }}
             submitState={formik.isSubmitting}
+            setOpen={props.setOpen}
             message="Marca agregada con exito"
           />
         </div>

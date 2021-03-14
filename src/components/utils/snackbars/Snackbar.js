@@ -1,43 +1,53 @@
 import React from "react";
 import Alert from "@material-ui/lab/Alert";
-
+import { makeStyles } from "@material-ui/core/styles";
+import "./snackbar.css";
 import { Snackbar } from "@material-ui/core";
 
+const useStyles = makeStyles((theme) => ({
+  alertInfo: {
+    marginTop: "4%",
+    [theme.breakpoints.up("xl")]: {
+      marginTop: "11%",
+    },
+  },
+}));
+
 export const SnackBar = (props) => {
+  const classes = useStyles();
   const snackbarInfo = props.snackBar;
 
   const alertBody = (
-    <div>
+    <div
+      style={{
+        width: "100%",
+      }}
+    >
       <Alert
+        className={classes.alertInfo}
         elevation={snackbarInfo.alertElevation}
-        variant={snackbarInfo.variant}
-        onClose={() => {
-          snackbarInfo.setOpenAlert(false);
-        }}
         severity="error"
+        color="error"
       >
-        {snackbarInfo.message}
+        <span style={{ color: "#D44141" }}>{snackbarInfo.message}</span>
       </Alert>
-      <Alert
-        elevation={snackbarInfo.alertElevation}
-        variant={snackbarInfo.variant}
-        onClose={() => {
-          snackbarInfo.setOpenAlert(false);
-        }}
+      {/* <Alert
+         className={classes.alertInfo}
+      elevation={snackbarInfo.alertElevation}
         severity="warning"
+        color="warning"
       >
-        {snackbarInfo.message}
-      </Alert>
-      <Alert
+        <span style={{ color: "#FCC020" }}>{snackbarInfo.message}</span>
+      </Alert>  */}
+      {/* <Alert
+        className={classes.alertInfo}
         elevation={snackbarInfo.alertElevation}
-        variant={snackbarInfo.variant}
-        onClose={() => {
-          snackbarInfo.setOpenAlert(false);
-        }}
         severity="success"
+        color="success"
       >
-        {snackbarInfo.message}
+        <span style={{ color: "#63D1A2" }}>{snackbarInfo.message}</span>
       </Alert>
+     */}
     </div>
   );
 

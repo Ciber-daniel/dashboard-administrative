@@ -109,3 +109,18 @@ Button span:first-letter {
 .width-select {
   width: 100%;
 }
+
+@media (min-width: 1920px) {
+  .container-modal-buttons {
+    margin-top: -5.5%;
+    padding-right: 3.5%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container-modal-buttons {
+    margin: auto;
+    padding-left: 4%;
+  }
+}

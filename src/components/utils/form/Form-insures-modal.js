@@ -135,6 +135,7 @@ export default function InsureForm(props) {
         </div>
         <div className="container-modal-buttons">
           <CustomButton
+            setOpen={props.setOpen}
             inputsValues={{
               firstInput: formik.values.insurer,
               secondInput: formik.values.hooli,

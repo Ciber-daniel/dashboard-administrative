@@ -16,8 +16,8 @@ header.MuiPaper-elevation4 {
   box-shadow: none;
 }
 
-svg.MuiSvgIcon-root {
-  fill: #63c3d1;
+span.MuiIconButton-label {
+  color: #63c3d1;
   opacity: 1;
 }
 
