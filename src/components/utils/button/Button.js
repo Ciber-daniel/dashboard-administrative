@@ -7,6 +7,8 @@ import "./button.css";
 export default function CustomButton(props) {
   const [openAlert, setOpenAlert] = useState(false);
 
+  console.log(props);
+
   const classes = styles(props);
 
   return (
