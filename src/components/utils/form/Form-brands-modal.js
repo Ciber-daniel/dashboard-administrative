@@ -8,22 +8,20 @@ import "./form.css";
 import placeholder from "../../../assets/img/placeholder.svg";
 // utils
 import CustomButton from "../button/Button";
-
 // services
 import { currencies } from "../../../consts/currencies";
 import { useFormik } from "formik";
 
 const validationSchema = yup.object({
-  type: yup.string("Seleccione un campo").required("Este campo es requerido"),
+  type: yup.string().required("Seleccione una opción"),
   brand: yup
-    .string("Defina el nombre de la aseguradora")
+    .string()
     .min(4, "Debe tener minimo 4 letras")
     .required("Este campo es requerido"),
   photo: yup.string("Ok?").required("Suba una imagen"),
 });
 
 export default function BrandForm(props) {
-  const [openAlert, setOpenAlert] = useState(true);
   const [{ alt, src }, setImg] = useState({
     src: placeholder,
     alt: "Upload an Image",
@@ -49,7 +47,6 @@ export default function BrandForm(props) {
     onSubmit: (values) => {
       props.data.buttonInfo.title === "Agregar"
         ? props.data.buttonInfo.action(() => {
-            setOpenAlert(true);
             setTimeout(() => {
               props.setOpen(false);
             }, 3000);
@@ -100,7 +97,8 @@ export default function BrandForm(props) {
                   value={formik.values.type}
                   onChange={formik.handleChange}
                   error={formik.touched.type && Boolean(formik.errors.type)}
-                  helperText={formik.touched.type && formik.errors.type}
+                  onBlur={formik.handleBlur}
+                  helperText={formik.errors.type}
                 >
                   {currencies.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -124,6 +122,7 @@ export default function BrandForm(props) {
                   onChange={formik.handleChange}
                   error={formik.touched.brand && Boolean(formik.errors.brand)}
                   helperText={formik.touched.brand && formik.errors.brand}
+                  onBlur={formik.handleBlur}
                 />
               </div>
             </div>
@@ -142,7 +141,17 @@ export default function BrandForm(props) {
           </div>
         </div>
         <div className="container-modal-buttons">
-          <CustomButton formik={formik} {...props} />
+          <CustomButton
+            formik={formik}
+            data={props.data}
+            inputsValues={{
+              firstInput: formik.values.type,
+              secondInput: formik.values.brand,
+              imageInput: formik.values.photo,
+            }}
+            submitState={formik.isSubmitting}
+            message="Marca agregada con exito"
+          />
         </div>
       </form>
     </div>

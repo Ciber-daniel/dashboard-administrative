@@ -9,15 +9,15 @@ import "./form.css";
 import placeholder from "../../../assets/img/placeholder.svg";
 // utils
 import CustomButton from "../button/Button";
-import styles from "../button/Button.Style";
-import { SnackBar } from "../snackbars/snackbar";
-// services
 
 const validationSchema = yup.object({
-  hooli: yup.string("Seleccione un campo"),
+  hooli: yup
+    .string("Seleccione un campo")
+    .required("Por favor rellene este campo"),
   insurer: yup
     .string("Defina el nombre de la aseguradora")
-    .min(4, "Debe tener minimo 4 letras"),
+    .min(4, "Debe tener minimo 4 letras")
+    .required("Por favor rellene este campo"),
 });
 
 export default function InsureForm(props) {
@@ -25,8 +25,6 @@ export default function InsureForm(props) {
     src: placeholder,
     alt: "Upload an Image",
   });
-
-  const [openAlert, setOpenAlert] = useState(false);
 
   const handleImg = (e) => {
     if (e.target.files[0]) {
@@ -48,7 +46,6 @@ export default function InsureForm(props) {
     onSubmit: (values) => {
       props.data.buttonInfo.title === "Agregar"
         ? props.data.buttonInfo.action(() => {
-            setOpenAlert(true);
             setTimeout(() => {
               props.setOpen(false);
             }, 3000);
@@ -58,8 +55,6 @@ export default function InsureForm(props) {
           });
     },
   });
-
-  const classes = styles(props);
 
   return (
     <div className="form">
@@ -100,6 +95,7 @@ export default function InsureForm(props) {
                 onChange={formik.handleChange}
                 error={formik.touched.hooli && Boolean(formik.errors.hooli)}
                 helperText={formik.touched.hooli && formik.errors.hooli}
+                onBlur={formik.handleBlur}
                 className="width-select"
               >
                 <option>Si</option>
@@ -117,6 +113,7 @@ export default function InsureForm(props) {
                 onChange={formik.handleChange}
                 error={formik.touched.insurer && Boolean(formik.errors.insurer)}
                 helperText={formik.touched.insurer && formik.errors.insurer}
+                onBlur={formik.handleBlur}
                 InputLabelProps={{
                   shrink: true,
                 }}
@@ -137,62 +134,16 @@ export default function InsureForm(props) {
           </div>
         </div>
         <div className="container-modal-buttons">
-          {props.data.title.includes("Eliminar") ? (
-            <div className="container-modal-buttons">
-              <CustomButton
-                type="submit"
-                className={classes.redBtn}
-                name={props.data.buttonInfo.title}
-                disabled={
-                  formik.isSubmitting ||
-                  !formik.values.photo ||
-                  !formik.values.insurer
-                }
-              />
-              <CustomButton
-                className={classes.whiteBtn}
-                onClick={() => {
-                  props.setOpen(false);
-                }}
-                name="Cancelar"
-              />
-            </div>
-          ) : (
-            <div className="container-modal-buttons">
-              <CustomButton
-                type="submit"
-                className={classes.defaultBtn}
-                name={props.data.buttonInfo.title}
-                disabled={
-                  formik.isSubmitting ||
-                  !formik.values.photo ||
-                  !formik.values.insurer
-                }
-              />
-              <SnackBar
-                snackBar={{
-                  autoHideDuration: 5000,
-                  vertical: "top",
-                  horizontal: "center",
-                  openAlert: openAlert,
-                  setOpenAlert: () => {
-                    setOpenAlert(false);
-                  },
-                  severity: "success",
-                  message: "Marca agregada con exito",
-                  alertElevation: 6,
-                  varian: "filled",
-                }}
-              />
-              <CustomButton
-                className={classes.whiteBtn}
-                onClick={() => {
-                  props.setOpen(false);
-                }}
-                name="Cancelar"
-              />
-            </div>
-          )}
+          <CustomButton
+            inputsValues={{
+              firstInput: formik.values.insurer,
+              secondInput: formik.values.hooli,
+              imageInput: formik.values.photo,
+            }}
+            submitState={formik.isSubmitting}
+            data={props.data}
+            message="Aseguradora agregada con exito"
+          />
         </div>
       </form>
     </div>

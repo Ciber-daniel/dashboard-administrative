@@ -7,14 +7,17 @@ export default makeStyles({
     height: "2rem",
     color: "#ffffff",
     opacity: 1,
-    background: "#A7A7A7",
+    background: "linear-gradient(90deg, #63d1a2 0%, #63c3d1 100%)",
     borderRadius: 21,
     marginLeft: "2%",
     textTransform: "lowercase",
     fontWeight: 300,
     fontFamily: '"Roboto", sans-serif',
     "&:hover": {
-      background: "linear-gradient(90deg, #63d1a2 0%, #63c3d1 100%)",
+      background: "linear-gradient(90deg, #13d5a5 0%, #13c5d5 100%)",
+    },
+    "&:disabled": {
+      background: "#A7A7A7",
     },
   },
   redBtn: {

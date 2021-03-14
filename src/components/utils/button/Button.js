@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-import { SnackBar } from "../snackbars/snackbar";
-import { useFormik } from "formik";
+import { SnackBar } from "../snackbars/Snackbar";
 import styles from "./Button.Style";
 import "./button.css";
 
 export default function CustomButton(props) {
-  const [openAlert, setOpenAlert] = useState(true);
+  const [openAlert, setOpenAlert] = useState(false);
 
   const classes = styles(props);
 
@@ -17,37 +16,41 @@ export default function CustomButton(props) {
           <Button
             type="submit"
             disabled={
-              props.formik.isSubmitting ||
-              !props.formik.values.type ||
-              !props.formik.values.brand
+              !props.inputsValues.firstInput ||
+              !props.inputsValues.secondInput ||
+              !props.inputsValues.imageInput ||
+              props.submitState
             }
             className={classes.redBtn}
-            name={props.data.buttonInfo.title}
-            onClick={() => {
-              console.log(formik.isValid);
-            }}
-          />
+          >
+            <span>{props.data.buttonInfo.title}</span>
+          </Button>
           <Button
             className={classes.whiteBtn}
             onClick={() => {
               props.setOpen(false);
             }}
-            name="Cancelar"
-          />
+          >
+            <span>Cancelar</span>
+          </Button>
         </div>
       ) : (
         <div className="container-modal-buttons">
           <Button
             type="submit"
             className={classes.defaultBtn}
+            onClick={() => {
+              setOpenAlert(true);
+            }}
             disabled={
-              props.formik.isSubmitting ||
-              !props.formik.values.type ||
-              !props.formik.values.brand ||
-              !props.formik.values.photo
+              !props.inputsValues.firstInput ||
+              !props.inputsValues.secondInput ||
+              !props.inputsValues.imageInput ||
+              props.submitState
             }
-            name={props.data.buttonInfo.title}
-          />
+          >
+            <span>{props.data.buttonInfo.title}</span>
+          </Button>
           <SnackBar
             snackBar={{
               autoHideDuration: 5000,
@@ -58,7 +61,7 @@ export default function CustomButton(props) {
                 setOpenAlert(false);
               },
               severity: "success",
-              message: "Marca agregada con exito",
+              message: props.message,
               alertElevation: 6,
               varian: "filled",
             }}
@@ -68,8 +71,9 @@ export default function CustomButton(props) {
             onClick={() => {
               props.setOpen(false);
             }}
-            name="Cancelar"
-          />
+          >
+            <span>Cancelar</span>
+          </Button>
         </div>
       )}
     </div>
