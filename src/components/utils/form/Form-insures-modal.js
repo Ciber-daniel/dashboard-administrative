@@ -9,6 +9,8 @@ import "./form.css";
 import placeholder from "../../../assets/img/placeholder.svg";
 // utils
 import CustomButton from "../button/Button";
+// services
+import { lettersOnly } from "../../../services/local-services";
 
 const validationSchema = yup.object({
   hooli: yup
@@ -17,6 +19,7 @@ const validationSchema = yup.object({
   insurer: yup
     .string("Defina el nombre de la aseguradora")
     .min(4, "Debe tener minimo 4 letras")
+    .test("Letters only", "El campo debe tener solo letras", lettersOnly)
     .required("Por favor rellene este campo"),
 });
 
