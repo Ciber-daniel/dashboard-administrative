@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { SnackBar } from "../snackbars/snackbar";
+import { useFormik } from "formik";
 import styles from "./Button.Style";
 import "./button.css";
 
-export default function CustomButton(props, data) {
+export default function CustomButton(props) {
   const [openAlert, setOpenAlert] = useState(true);
 
   const classes = styles(props);
@@ -14,50 +15,42 @@ export default function CustomButton(props, data) {
       {props.data.title.includes("Eliminar") ? (
         <div className="container-modal-buttons">
           <Button
+            type="submit"
+            disabled={
+              props.formik.isSubmitting ||
+              !props.formik.values.type ||
+              !props.formik.values.brand
+            }
             className={classes.redBtn}
-            onClick={() => {
-              props.data.buttonInfo.action(() => {
-                props.setOpen(false);
-              });
-              props.setOpen(false);
-            }}
             name={props.data.buttonInfo.title}
-          >
-            <span>{props.data.buttonInfo.title}</span>
-          </Button>
-
+            onClick={() => {
+              console.log(formik.isValid);
+            }}
+          />
           <Button
             className={classes.whiteBtn}
             onClick={() => {
               props.setOpen(false);
             }}
-          >
-            <span>Cancelar</span>
-          </Button>
+            name="Cancelar"
+          />
         </div>
       ) : (
         <div className="container-modal-buttons">
           <Button
+            type="submit"
             className={classes.defaultBtn}
-            // onClick={() => {
-            //   props.data.buttonInfo.title === "Agregar"
-            //     ? props.data.buttonInfo.action(() => {
-            //         setOpenAlert(true);
-            //         setTimeout(() => {
-            //           props.setOpen(false);
-            //         }, 3000000);
-            //       })
-            //     : props.data.buttonInfo.action(() => {
-            //         props.setOpen(false);
-            //       });
-            // }}
-          >
-            <span>{props.data.buttonInfo.title}</span>
-          </Button>
-
+            disabled={
+              props.formik.isSubmitting ||
+              !props.formik.values.type ||
+              !props.formik.values.brand ||
+              !props.formik.values.photo
+            }
+            name={props.data.buttonInfo.title}
+          />
           <SnackBar
             snackBar={{
-              // autoHideDuration: 5000,
+              autoHideDuration: 5000,
               vertical: "top",
               horizontal: "center",
               openAlert: openAlert,
@@ -70,15 +63,13 @@ export default function CustomButton(props, data) {
               varian: "filled",
             }}
           />
-
           <Button
             className={classes.whiteBtn}
             onClick={() => {
               props.setOpen(false);
             }}
-          >
-            <span>Cancelar</span>
-          </Button>
+            name="Cancelar"
+          />
         </div>
       )}
     </div>

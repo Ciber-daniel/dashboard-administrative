@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Fade } from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
 // utils
-import BrandForm from "../form/Form-brands-modal";
+import InsureForm from "../form/Form-insures-modal";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -24,13 +24,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TransitionModal(props) {
+export default function TransitionModalInsurers(props) {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
 
   const body = (
     <div className={classes.paper} style={{ borderRadius: "3%" }}>
-      <BrandForm setOpen={props.setOpen} data={props.data} />
+      <InsureForm
+        style={{ display: "flex", flexDirection: "column-reverse" }}
+        setOpen={props.setOpen}
+        data={props.data}
+      />
     </div>
   );
 
