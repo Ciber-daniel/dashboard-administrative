@@ -7,18 +7,15 @@ import "./form.css";
 import placeholder from "../../../assets/img/placeholder.svg";
 // utils
 import CustomButton from "../button/Button";
-import styles from "../button/Button.Style";
-import { SnackBar } from "../snackbars/snackbar";
+
 // services
 import { currencies } from "../../../consts/currencies";
 
-export default function FormModals(props) {
+export default function FormModals(props, data) {
   const [{ alt, src }, setImg] = useState({
     src: placeholder,
     alt: "Upload an Image",
   });
-
-  const [openAlert, setOpenAlert] = useState(false);
 
   const handleImg = (e) => {
     if (e.target.files[0]) {
@@ -28,8 +25,6 @@ export default function FormModals(props) {
       });
     }
   };
-
-  const classes = styles(props);
 
   return (
     <div className="form">
@@ -131,68 +126,7 @@ export default function FormModals(props) {
           </div>
         </div>
         <div className="container-modal-buttons">
-          {props.data.title.includes("Eliminar") ? (
-            <div className="container-modal-buttons">
-              <CustomButton
-                className={classes.redBtn}
-                onClick={() => {
-                  props.data.buttonInfo.action(() => {
-                    props.setOpen(false);
-                  });
-                  props.setOpen(false);
-                }}
-                name={props.data.buttonInfo.title}
-              />
-              <CustomButton
-                className={classes.whiteBtn}
-                onClick={() => {
-                  props.setOpen(false);
-                }}
-                name="Cancelar"
-              />
-            </div>
-          ) : (
-            <div className="container-modal-buttons">
-              <CustomButton
-                className={classes.defaultBtn}
-                name={props.data.buttonInfo.title}
-                onClick={() => {
-                  props.data.buttonInfo.title === "Agregar"
-                    ? props.data.buttonInfo.action(() => {
-                        setOpenAlert(true);
-                        setTimeout(() => {
-                          props.setOpen(false);
-                        }, 3000);
-                      })
-                    : props.data.buttonInfo.action(() => {
-                        props.setOpen(false);
-                      });
-                }}
-              />
-              <SnackBar
-                snackBar={{
-                  autoHideDuration: 5000,
-                  vertical: "top",
-                  horizontal: "center",
-                  openAlert: openAlert,
-                  setOpenAlert: () => {
-                    setOpenAlert(false);
-                  },
-                  severity: "success",
-                  message: "Marca agregada con exito",
-                  alertElevation: 6,
-                  varian: "filled",
-                }}
-              />
-              <CustomButton
-                className={classes.whiteBtn}
-                onClick={() => {
-                  props.setOpen(false);
-                }}
-                name="Cancelar"
-              />
-            </div>
-          )}
+          <CustomButton {...props} />
         </div>
       </form>
     </div>

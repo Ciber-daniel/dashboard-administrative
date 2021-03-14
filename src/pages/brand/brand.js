@@ -5,7 +5,7 @@ import "./brands.css";
 import Header from "../../components/header/Header";
 // utils
 import XGridDemo from "../../components/utils/grid/Xgrid";
-import TransitionModal from "../../components/utils/modals/Modal-Brands";
+import TransitionModal from "../../components/utils/modals/Modals";
 // consts
 import { data, titles } from "../../consts/brand-data";
 import { modalsInfoBrands } from "../../consts/modals-info";

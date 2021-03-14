@@ -33,6 +33,7 @@ export default makeStyles({
     },
   },
   whiteBtn: {
+    color: "inherit",
     width: "14rem",
     height: "2rem",
     background: "#f3f3f3",

@@ -1,0 +1,40 @@
+:root {
+  --font-g: "Roboto", sans-serif;
+}
+
+div.MuiPaper-root.MuiAlert-root.MuiAlert-standardSuccess.MuiPaper-elevation6 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+div.MuiPaper-elevation6 {
+  border: solid 0.1px #63d1a2;
+}
+
+div.MuiAlert-message {
+  font-family: var(--font-g);
+  font-weight: 400;
+  color: #63d1a2;
+}
+
+div.MuiSnackbar-root.MuiSnackbar-anchorOriginTopCenter {
+  width: 48%;
+}
+
+div.MuiSnackbar-anchorOriginTopCenter {
+  top: 4rem;
+}
+
+div.MuiAlert-icon {
+  padding-left: 34%;
+}
+/*
+
+
+/*
+
+.MuiAlert-standardSuccess {
+} */

@@ -7,7 +7,7 @@ import "./insurers.css";
 import Header from "../../components/header/Header";
 // utils
 import XGridDemo from "../../components/utils/grid/Xgrid";
-import TransitionModalInsurers from "../../components/utils/modals/Modal-Insurers";
+import TransitionModal from "../../components/utils/modals/Modals";
 import { modalsInfoInsurers } from "../../consts/modals-info";
 // consts
 import { data, titles } from "../../consts/insurer-data";
@@ -28,17 +28,17 @@ const Insurer = () => {
         setOpenEdit={setOpenEdit}
         setOpenDelete={setOpenDelete}
       />
-      <TransitionModalInsurers
+      <TransitionModal
         statusOpen={openAdd}
         setOpen={setOpenAdd}
         data={modalsInfoInsurers.add}
       />
-      <TransitionModalInsurers
+      <TransitionModal
         statusOpen={openEdit}
         setOpen={setOpenEdit}
         data={modalsInfoInsurers.edit}
       />
-      <TransitionModalInsurers
+      <TransitionModal
         statusOpen={openDelete}
         setOpen={setOpenDelete}
         data={modalsInfoInsurers.delete}
