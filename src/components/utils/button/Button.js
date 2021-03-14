@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-import { SnackBar } from "../snackbars/Snackbar";
+// styles
 import styles from "./Button.Style";
+// utils
+import { SnackBar } from "../snackbars/Snackbar";
 
 export default function CustomButton(props) {
-  const [openAlert, setOpenAlert] = useState(true);
-
-  console.log(props);
+  const [openAlert, setOpenAlert] = useState(false);
 
   const classes = styles(props);
 
@@ -54,7 +54,7 @@ export default function CustomButton(props) {
           </Button>
           <SnackBar
             snackBar={{
-              // autoHideDuration: 5000,
+              autoHideDuration: 5000,
               data: props.data,
               vertical: "top",
               horizontal: "center",

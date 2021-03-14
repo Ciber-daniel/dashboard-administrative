@@ -1,6 +1,6 @@
 import React from "react";
 // styles
-import "./Circular.css";
+import "./circular.css";
 
 export const CircularButton = (props) => {
   return (
@@ -12,7 +12,16 @@ export const CircularButton = (props) => {
         }}
       >
         <img src={props.icon} alt="Agregar marca" />
-        <span className="tiptext">{props.text}</span>
+        {props.text.includes("brokers") ? (
+          <span
+            style={{ fontSize: "0.56rem", width: "7rem" }}
+            className="tiptext"
+          >
+            {props.text}
+          </span>
+        ) : (
+          <span className="tiptext">{props.text}</span>
+        )}
       </div>
     </div>
   );

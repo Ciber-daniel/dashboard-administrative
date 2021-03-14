@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import * as yup from "yup";
 import { Divider } from "@material-ui/core";
-// styles
-import "./form.css";
 // assets
 import placeholder from "../../../assets/img/placeholder.svg";
+// services
+import { lettersOnly } from "../../../services/Local-Services";
+// styles
+import "./form.css";
 // utils
 import CustomButton from "../button/Button";
-// services
-import { lettersOnly } from "../../../services/local-services";
 
 const validationSchema = yup.object({
   hooli: yup

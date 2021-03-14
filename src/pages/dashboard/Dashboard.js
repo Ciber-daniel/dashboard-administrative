@@ -4,7 +4,7 @@ import "./dashboard.css";
 // components
 import Header from "../../components/header/Header";
 // consts
-import { Routes } from "../../consts/routes";
+import { Routes } from "../../consts/Routes-App";
 // assets
 import Elipse from "../../assets/icons/elipse.svg";
 import Rombo from "../../assets/icons/rombo.svg";

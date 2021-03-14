@@ -6,12 +6,6 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Drawer from "@material-ui/core/Drawer";
 import Divider from "@material-ui/core/Divider";
-// styles
-import "./header.css";
-// components
-import ListDrawer from "../list/List-Drawer";
-//utils
-import { CircularButton } from "../utils/button/Circular";
 // assets
 import AvatarUser from "../../assets/img/avatar2.png";
 import LogoutIcon from "../../assets/icons/icon-logout.svg";
@@ -19,8 +13,14 @@ import addIcon from "../../assets/icons/rediseño.svg";
 import reload from "../../assets/icons/actualizar.svg";
 import editar from "../../assets/icons/editar.svg";
 import eliminar from "../../assets/icons/eliminar.svg";
+// components
+import ListDrawer from "../list/List-Drawer";
 // services
-import { refreshPage } from "../../services/local-services";
+import { refreshPage } from "../../services/Local-Services";
+// styles
+import "./header.css";
+//utils
+import { CircularButton } from "../utils/button/Circular";
 
 export default function Header(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -61,7 +61,7 @@ export default function Header(props) {
           ) : props.selectedStatus ? (
             <div>
               <CircularButton
-                text={"Ver brokers seleccionado"}
+                text={"Ver brokers relacionados"}
                 icon={editar}
                 setOpen={props.setOpenEdit}
               />

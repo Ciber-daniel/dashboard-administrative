@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // routes
-import { Routes } from "../../consts/routes";
+import { Routes } from "../../consts/Routes-App";
 // styles
 import "./insurers.css";
 // components
@@ -8,9 +8,9 @@ import Header from "../../components/header/Header";
 // utils
 import XGridDemo from "../../components/utils/grid/Xgrid";
 import TransitionModal from "../../components/utils/modals/Modals";
-import { modalsInfoInsurers } from "../../consts/modals-info";
+import { modalsInfoInsurers } from "../../consts/Modals-Info";
 // consts
-import { data, titles } from "../../consts/insurer-data";
+import { data, titles } from "../../consts/Insurer-Data";
 
 const Insurer = () => {
   const [openAdd, setOpenAdd] = useState(false);

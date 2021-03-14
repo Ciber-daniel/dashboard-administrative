@@ -1,4 +1,4 @@
-import { addBrand, deleteBrand, editBrand } from "../services/api-services";
+import { addBrand, deleteBrand, editBrand } from "../services/Api-Services";
 
 export const modalsInfoBrands = {
   add: {

@@ -3,16 +3,16 @@ import TextField from "@material-ui/core/TextField";
 import * as yup from "yup";
 import { Divider } from "@material-ui/core";
 import { useFormik } from "formik";
-// styles
-import "./form.css";
 // assets
 import placeholder from "../../../assets/img/placeholder.svg";
+// consts
+import { currencies } from "../../../consts/Currencies";
+// styles
+import "./form.css";
+// services
+import { lettersOnly } from "../../../services/Local-Services";
 // utils
 import CustomButton from "../button/Button";
-// services
-import { lettersOnly } from "../../../services/local-services";
-// consts
-import { currencies } from "../../../consts/currencies";
 
 const validationSchema = yup.object({
   type: yup.string().required("Seleccione una opción"),

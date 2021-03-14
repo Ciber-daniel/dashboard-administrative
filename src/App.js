@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // pages
 import Dashboard from "./pages/dashboard/Dashboard";
-import Insurers from "./pages/insurers/insurers";
-import Brand from "./pages/brand/brand";
+import Insurers from "./pages/insurers/Insurers";
+import Brand from "./pages/brand/Brand";
 // consts
-import { Routes } from "./consts/routes";
+import { Routes } from "./consts/Routes-App";
 
 class App extends Component {
   render() {

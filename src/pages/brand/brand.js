@@ -7,10 +7,10 @@ import Header from "../../components/header/Header";
 import XGridDemo from "../../components/utils/grid/Xgrid";
 import TransitionModal from "../../components/utils/modals/Modals";
 // consts
-import { data, titles } from "../../consts/brand-data";
-import { modalsInfoBrands } from "../../consts/modals-info";
+import { data, titles } from "../../consts/Brand-Data";
+import { modalsInfoBrands } from "../../consts/Modals-Info";
 // routes
-import { Routes } from "../../consts/routes";
+import { Routes } from "../../consts/Routes-App";
 
 const Brand = () => {
   const [openAdd, setOpenAdd] = useState(false);

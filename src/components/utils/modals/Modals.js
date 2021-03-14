@@ -2,10 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Fade } from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
-import "./Modals.css";
 // forms
 import BrandForm from "../form/Form-brands-modal";
 import InsureForm from "../form/Form-insures-modal";
+// styles
 
 const useStyles = makeStyles((theme) => ({
   modal: {

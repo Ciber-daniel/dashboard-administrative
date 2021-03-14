@@ -40,6 +40,7 @@
   position: relative;
   display: inline-block;
 }
+
 .tooltip .tiptext {
   display: flex;
   justify-content: center;
@@ -51,7 +52,7 @@
   background-color: #707070;
   color: #ffffff;
   text-align: center;
-  padding: 6px 0;
+  padding: 0.38rem 0;
   position: absolute;
   z-index: 1;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -59,20 +60,23 @@
   font-family: var(--font-g);
   font-weight: 300;
 }
+
 .tooltip .tiptext::after {
   content: "";
   position: absolute;
-  border-width: 5px;
+  border-width: 0.31rem;
   border-style: solid;
 }
+
 .tooltip:hover .tiptext {
   visibility: visible;
 }
 
 .tooltip.bottom .tiptext {
-  margin-left: -60px;
+  margin-left: -3.75rem;
   top: 120%;
 }
+
 .tooltip.bottom .tiptext::after {
   margin-left: 1.5rem;
   bottom: 100%;
