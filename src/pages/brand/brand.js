@@ -7,6 +7,7 @@ import Header from "../../components/header/Header";
 import XGridDemo from "../../components/utils/grid/Xgrid";
 import TransitionModal from "../../components/utils/modals/Modal-Brands";
 // consts
+import { data, titles } from "../../consts/brand-data";
 import { modalsInfoBrands } from "../../consts/modals-info";
 // routes
 import { Routes } from "../../consts/routes";
@@ -16,30 +17,6 @@ const Brand = () => {
   const [openEdit, setOpenEdit] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
   const [selected, setSelected] = useState(false);
-
-  const titles = ["Tipo de bien", "Nombre"];
-  const data = [
-    {
-      id: "1",
-      type: "Computadora",
-      name: "Apple",
-    },
-    {
-      id: "2",
-      type: "Computadora",
-      name: "Apple",
-    },
-    {
-      id: "3",
-      type: "Computadora",
-      name: "Apple",
-    },
-    {
-      id: "4",
-      type: "Computadora",
-      name: "Apple",
-    },
-  ];
 
   return (
     <>

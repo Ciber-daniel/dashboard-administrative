@@ -9,21 +9,14 @@ import Header from "../../components/header/Header";
 import XGridDemo from "../../components/utils/grid/Xgrid";
 import TransitionModalInsurers from "../../components/utils/modals/Modal-Insurers";
 import { modalsInfoInsurers } from "../../consts/modals-info";
+// consts
+import { data, titles } from "../../consts/insurer-data";
 
 const Insurer = () => {
   const [openAdd, setOpenAdd] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
   const [selected, setSelected] = useState(false);
-
-  const titles = ["Nombre de la aseguradora", "Hooli"];
-  const data = [
-    {
-      id: "1",
-      type: "BBVA",
-      name: "Si",
-    },
-  ];
 
   return (
     <>
