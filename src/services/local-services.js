@@ -13,3 +13,5 @@ export const validateRowSelected = (newSelection, selectedStatus, callback) => {
 export const refreshPage = () => {
   window.location.reload();
 };
+
+export const lettersOnly = (value) => /^\D.+$/.test(value);

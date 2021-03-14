@@ -61,6 +61,11 @@ export default function Header(props) {
           ) : props.selectedStatus ? (
             <div>
               <CircularButton
+                text={"Ver brokers seleccionado"}
+                icon={editar}
+                setOpen={props.setOpenEdit}
+              />
+              <CircularButton
                 text={"Editar Marca"}
                 icon={editar}
                 setOpen={props.setOpenEdit}

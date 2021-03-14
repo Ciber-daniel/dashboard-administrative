@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import * as yup from "yup";
 import { Divider } from "@material-ui/core";
+import { useFormik } from "formik";
 // styles
 import "./form.css";
 // assets
@@ -9,15 +10,16 @@ import placeholder from "../../../assets/img/placeholder.svg";
 // utils
 import CustomButton from "../button/Button";
 // services
+import { lettersOnly } from "../../../services/local-services";
+// consts
 import { currencies } from "../../../consts/currencies";
-import { useFormik } from "formik";
 
 const validationSchema = yup.object({
   type: yup.string().required("Seleccione una opción"),
   brand: yup
     .string()
-    .min(4, "Debe tener minimo 4 letras")
-    .required("Este campo es requerido"),
+    .test("Letters only", "El campo debe tener solo letras", lettersOnly)
+    .required("Rellene el campo"),
   photo: yup.string("Ok?").required("Suba una imagen"),
 });
 
@@ -45,6 +47,7 @@ export default function BrandForm(props) {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
+      console.log("Submitting");
       props.data.buttonInfo.title === "Agregar"
         ? props.data.buttonInfo.action(() => {
             setTimeout(() => {
