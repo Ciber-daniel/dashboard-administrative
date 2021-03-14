@@ -32,7 +32,6 @@
 .form__img-input-container {
   position: relative;
   margin: -1.5% auto;
-  float: center;
 }
 
 /* this class is used to hide the file input */
@@ -99,7 +98,7 @@ to be able to see the preview of the image. */
   display: flex;
   flex-direction: row-reverse;
   padding-right: 2%;
-  margin-top: -1%;
+  margin-top: -0.5%;
 }
 
 Button span:first-letter {
