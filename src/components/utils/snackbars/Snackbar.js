@@ -5,6 +5,42 @@ import { Snackbar } from "@material-ui/core";
 
 export const SnackBar = (props) => {
   const snackbarInfo = props.snackBar;
+
+  const alertBody = (
+    <div>
+      <Alert
+        elevation={snackbarInfo.alertElevation}
+        variant={snackbarInfo.variant}
+        onClose={() => {
+          snackbarInfo.setOpenAlert(false);
+        }}
+        severity="error"
+      >
+        {snackbarInfo.message}
+      </Alert>
+      <Alert
+        elevation={snackbarInfo.alertElevation}
+        variant={snackbarInfo.variant}
+        onClose={() => {
+          snackbarInfo.setOpenAlert(false);
+        }}
+        severity="warning"
+      >
+        {snackbarInfo.message}
+      </Alert>
+      <Alert
+        elevation={snackbarInfo.alertElevation}
+        variant={snackbarInfo.variant}
+        onClose={() => {
+          snackbarInfo.setOpenAlert(false);
+        }}
+        severity="success"
+      >
+        {snackbarInfo.message}
+      </Alert>
+    </div>
+  );
+
   return (
     <Snackbar
       autoHideDuration={snackbarInfo.autoHideDuration}
@@ -18,16 +54,7 @@ export const SnackBar = (props) => {
       }}
       key={snackbarInfo.vertical + "-" + snackbarInfo.horizontal}
     >
-      <Alert
-        elevation={snackbarInfo.alertElevation}
-        variant={snackbarInfo.variant}
-        onClose={() => {
-          snackbarInfo.setOpenAlert(false);
-        }}
-        severity={snackbarInfo.severity}
-      >
-        {snackbarInfo.message}
-      </Alert>
+      {alertBody}
     </Snackbar>
   );
 };

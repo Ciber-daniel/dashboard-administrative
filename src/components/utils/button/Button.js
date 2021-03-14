@@ -5,7 +5,7 @@ import styles from "./Button.Style";
 import "./button.css";
 
 export default function CustomButton(props) {
-  const [openAlert, setOpenAlert] = useState(false);
+  const [openAlert, setOpenAlert] = useState(true);
 
   const classes = styles(props);
 
@@ -53,7 +53,7 @@ export default function CustomButton(props) {
           </Button>
           <SnackBar
             snackBar={{
-              autoHideDuration: 5000,
+              // autoHideDuration: 5000,
               vertical: "top",
               horizontal: "center",
               openAlert: openAlert,

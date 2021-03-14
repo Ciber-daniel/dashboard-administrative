@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Fade } from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
+import "./Modals.css";
 // forms
 import BrandForm from "../form/Form-brands-modal";
 import InsureForm from "../form/Form-insures-modal";
@@ -11,6 +12,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    marginTop: "1.5%",
+    border: "none",
+    "&:focus": {
+      outline: "none",
+    },
   },
   paper: {
     display: "flex",
@@ -21,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[10],
     width: "50%",
-    height: "75%",
+    height: "78%",
   },
 }));
 

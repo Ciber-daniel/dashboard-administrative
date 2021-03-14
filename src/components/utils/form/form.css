@@ -29,10 +29,9 @@
 }
 
 /*input tipo file*/
-
 .form__img-input-container {
   position: relative;
-  margin: -5% auto;
+  margin: -1.5% auto;
   float: center;
 }
 
@@ -100,6 +99,7 @@ to be able to see the preview of the image. */
   display: flex;
   flex-direction: row-reverse;
   padding-right: 2%;
+  margin-top: -1%;
 }
 
 Button span:first-letter {

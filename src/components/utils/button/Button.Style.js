@@ -9,7 +9,7 @@ export default makeStyles({
     opacity: 1,
     background: "linear-gradient(90deg, #63d1a2 0%, #63c3d1 100%)",
     borderRadius: 21,
-    marginLeft: "2%",
+    marginLeft: "4%",
     textTransform: "lowercase",
     fontWeight: 300,
     fontFamily: '"Roboto", sans-serif',
