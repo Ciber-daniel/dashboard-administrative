@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Fade } from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
 // utils
-import FormModals from "../form/Form-Modals";
+import BrandForm from "../form/Form-brands-modal";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -30,7 +30,7 @@ export default function TransitionModal(props) {
 
   const body = (
     <div className={classes.paper} style={{ borderRadius: "3%" }}>
-      <FormModals setOpen={props.setOpen} data={props.data} />
+      <BrandForm setOpen={props.setOpen} data={props.data} />
     </div>
   );
 
