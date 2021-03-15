@@ -1,3 +1,5 @@
+// Esta función se usa en Xgrid para validar si una fila está seleccionada o no y en caso de que
+// lo esté ejecutar el callback solicitado
 export const validateRowSelected = (newSelection, selectedStatus, callback) => {
   const selectedRow = newSelection.data;
   const getSelectedRow = newSelection.api.current.getSelectedRows();
@@ -18,8 +20,10 @@ export const validateRowSelected = (newSelection, selectedStatus, callback) => {
   }
 };
 
+// refrescar la pagina
 export const refreshPage = () => {
   window.location.reload();
 };
 
+// validar que solo hayan letras/cadena de string
 export const lettersOnly = (value) => /^\D.+$/.test(value);

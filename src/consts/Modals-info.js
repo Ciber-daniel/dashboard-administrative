@@ -1,4 +1,11 @@
-import { addBrand, deleteBrand, editBrand } from "../services/Api-services";
+import {
+  addBrand,
+  deleteBrand,
+  editBrand,
+  addInsurer,
+  editInsurer,
+  deleteInsurer,
+} from "../services/Api-services";
 
 export const modalsInfoBrands = {
   add: {
@@ -26,18 +33,18 @@ export const modalsInfoInsurers = {
     title: "Agregar aseguradora",
     firstInput: { label: "Hooli", placeholder: "Si" },
     secondInput: { label: "Nombre de la aseguradora", placeholder: "BBVA" },
-    buttonInfo: { title: "Agregar", action: addBrand },
+    buttonInfo: { title: "Agregar", action: addInsurer },
   },
   edit: {
     title: "Editar aseguradora",
     firstInput: { label: "Hooli", placeholder: "Si" },
     secondInput: { label: "Nombre de la aseguradora", placeholder: "BBVA" },
-    buttonInfo: { title: "Guardar cambios", action: addBrand },
+    buttonInfo: { title: "Guardar cambios", action: editInsurer },
   },
   delete: {
     title: "Eliminar aseguradora",
     firstInput: { label: "Hooli", placeholder: "Si" },
     secondInput: { label: "Nombre de la aseguradora", placeholder: "BBVA" },
-    buttonInfo: { title: "Eliminar", action: addBrand },
+    buttonInfo: { title: "Eliminar", action: deleteInsurer },
   },
 };
