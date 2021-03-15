@@ -44,6 +44,30 @@ export default function XGridDemo(props) {
         ]}
         rows={props.data}
       />
+      {/* <div className="input-container">
+        <TextField
+          className="width-select"
+          label={data.firstInput.label}
+          name="hooli"
+          id="standard-full-width"
+          value={row.type}
+          disabled
+        ></TextField>
+      </div>
+      <div className="input-container">
+        <TextField
+          label={data.secondInput.label}
+          id="standard-full-width"
+          name="insurer"
+          margin="normal"
+          disabled
+          value={row.name}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          fullWidth
+        />
+      </div> */}
     </div>
   );
 }

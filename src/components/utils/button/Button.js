@@ -16,13 +16,10 @@ export default function CustomButton(props) {
         <div className="container-modal-buttons">
           <Button
             type="submit"
-            disabled={
-              !props.inputsValues.firstInput ||
-              !props.inputsValues.secondInput ||
-              !props.inputsValues.imageInput ||
-              props.submitState
-            }
             className={classes.redBtn}
+            onClick={() => {
+              props.setOpen(false);
+            }}
           >
             <span>{props.data.buttonInfo.title}</span>
           </Button>

@@ -59,7 +59,7 @@ export default function Header(props) {
         <div className="icons-container">
           {window.location.pathname === "/" ? (
             ""
-          ) : props.selectedStatus ? (
+          ) : props.selectedStatus.status ? (
             <div>
               {window.location.pathname === "/insurers" ? (
                 <div className="div-circle-blue">

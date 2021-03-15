@@ -43,11 +43,11 @@ export default function TransitionModal(props) {
 
   const body = props.data.title.includes("aseguradora") ? (
     <div className={classes.paper} style={{ borderRadius: "3%" }}>
-      <InsureForm setOpen={props.setOpen} data={props.data} />
+      <InsureForm row={props.row} setOpen={props.setOpen} data={props.data} />
     </div>
   ) : (
     <div className={classes.paper} style={{ borderRadius: "3%" }}>
-      <BrandForm setOpen={props.setOpen} data={props.data} />
+      <BrandForm row={props.row} setOpen={props.setOpen} data={props.data} />
     </div>
   );
 

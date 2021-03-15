@@ -16,7 +16,10 @@ const Brand = () => {
   const [openAdd, setOpenAdd] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState({
+    status: false,
+    row: {},
+  });
 
   return (
     <>
@@ -44,6 +47,7 @@ const Brand = () => {
           statusOpen={openDelete}
           setOpen={setOpenDelete}
           data={modalsInfoBrands.delete}
+          row={selected.row}
         />
         <div className="row-grid-brands">
           <XGridDemo
