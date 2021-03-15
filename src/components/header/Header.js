@@ -13,7 +13,7 @@ import addIcon from "../../assets/icons/rediseño.svg";
 import reload from "../../assets/icons/actualizar.svg";
 import editar from "../../assets/icons/editar.svg";
 import eliminar from "../../assets/icons/eliminar.svg";
-import search from "../../assets/icons/search.svg";
+import lupa from "../../assets/icons/lupa.png";
 // components
 import ListDrawer from "../list/List-Drawer";
 // services
@@ -65,7 +65,7 @@ export default function Header(props) {
                 <div>
                   <CircularButton
                     text={"Ver brokers relacionados"}
-                    icon={search}
+                    icon={lupa}
                     setOpen={props.setOpenEdit}
                   />
 
