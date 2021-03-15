@@ -112,7 +112,11 @@ Button span:first-letter {
 
 @media (max-width: 1280px) {
   .container-modal-buttons {
-    margin: auto;
+    margin: -1.8% auto;
     padding-left: 4%;
+  }
+
+  div.makeStyles-modal-8 {
+    height: 72vh;
   }
 }

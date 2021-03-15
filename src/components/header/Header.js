@@ -13,6 +13,7 @@ import addIcon from "../../assets/icons/rediseño.svg";
 import reload from "../../assets/icons/actualizar.svg";
 import editar from "../../assets/icons/editar.svg";
 import eliminar from "../../assets/icons/eliminar.svg";
+import search from "../../assets/icons/brokers.svg";
 // components
 import ListDrawer from "../list/List-Drawer";
 // services
@@ -63,31 +64,57 @@ export default function Header(props) {
               {window.location.pathname === "/insurers" ? (
                 <CircularButton
                   text={"Ver brokers relacionados"}
-                  icon={editar}
+                  icon={search}
                   setOpen={props.setOpenEdit}
                 />
               ) : (
                 ""
               )}
-              <CircularButton
-                text={"Editar Marca"}
-                icon={editar}
-                setOpen={props.setOpenEdit}
-              />
-              <CircularButton
-                text={"Eliminar Marca"}
-                icon={eliminar}
-                setOpen={props.setOpenDelete}
-              />
-              <span>1 registro</span>
+              {window.location.pathname === "/insurers" ? (
+                <div>
+                  <CircularButton
+                    text={"Editar aseguradora"}
+                    icon={editar}
+                    setOpen={props.setOpenEdit}
+                  />
+                  <CircularButton
+                    text={"Eliminar aseguradora"}
+                    icon={eliminar}
+                    setOpen={props.setOpenDelete}
+                  />
+                  <span>1 registro</span>
+                </div>
+              ) : (
+                <div>
+                  <CircularButton
+                    text={"Editar marca"}
+                    icon={editar}
+                    setOpen={props.setOpenEdit}
+                  />
+                  <CircularButton
+                    text={"Eliminar marca"}
+                    icon={eliminar}
+                    setOpen={props.setOpenDelete}
+                  />
+                  <span>1 registro</span>
+                </div>
+              )}
             </div>
           ) : (
             <div>
-              <CircularButton
-                text={"Agregar marca"}
-                icon={addIcon}
-                setOpen={props.setOpenAdd}
-              />
+              {window.location.pathname === "/insurers" ? (
+                <CircularButton
+                  text={"Agregar aseguradora"}
+                  icon={addIcon}
+                  setOpen={props.setOpenAdd}
+                />
+              ) : (
+                <CircularButton
+                  text={"Agregar marca"}
+                  icon={addIcon}
+                  setOpen={props.setOpenAdd}
+                />
+              )}
               <CircularButton
                 text={"Actualizar pagina"}
                 icon={reload}
