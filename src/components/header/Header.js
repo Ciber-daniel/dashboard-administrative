@@ -13,7 +13,7 @@ import addIcon from "../../assets/icons/rediseño.svg";
 import reload from "../../assets/icons/actualizar.svg";
 import editar from "../../assets/icons/editar.svg";
 import eliminar from "../../assets/icons/eliminar.svg";
-import search from "../../assets/icons/brokers.svg";
+import search from "../../assets/icons/search.svg";
 // components
 import ListDrawer from "../list/List-Drawer";
 // services
@@ -62,18 +62,13 @@ export default function Header(props) {
           ) : props.selectedStatus.status ? (
             <div>
               {window.location.pathname === "/insurers" ? (
-                <div className="div-circle-blue">
+                <div>
                   <CircularButton
                     text={"Ver brokers relacionados"}
                     icon={search}
                     setOpen={props.setOpenEdit}
                   />
-                </div>
-              ) : (
-                ""
-              )}
-              {window.location.pathname === "/insurers" ? (
-                <div>
+
                   <CircularButton
                     text={"Editar aseguradora"}
                     icon={editar}
