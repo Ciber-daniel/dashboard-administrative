@@ -55,7 +55,6 @@ export default function InsureForm(props) {
             }, 3000);
           })
         : props.data.buttonInfo.action(() => {
-            console.log("running");
             props.setOpen(false);
           });
     },

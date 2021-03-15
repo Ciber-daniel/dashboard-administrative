@@ -60,8 +60,6 @@ export default function BrandForm(props) {
     },
   });
 
-  console.log("my row", props.row);
-
   return (
     <>
       {props.data.title.includes("Eliminar") ? (
