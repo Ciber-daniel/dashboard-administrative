@@ -6,7 +6,7 @@ import { Divider } from "@material-ui/core";
 // assets
 import placeholder from "../../../assets/img/placeholder.svg";
 // services
-import { lettersOnly } from "../../../services/Local-Services";
+import { lettersOnly } from "../../../services/Local-services";
 // styles
 import "./form.css";
 // utils

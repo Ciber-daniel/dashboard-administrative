@@ -7,8 +7,8 @@ import Header from "../../components/header/Header";
 import XGridDemo from "../../components/utils/grid/Xgrid";
 import TransitionModal from "../../components/utils/modals/Modals";
 // consts
-import { data, titles } from "../../consts/Brand-Data";
-import { modalsInfoBrands } from "../../consts/Modals-Info";
+import { data, titles } from "../../consts/Brand-data";
+import { modalsInfoBrands } from "../../consts/Modals-info";
 // routes
 import { Routes } from "../../consts/Routes-App";
 

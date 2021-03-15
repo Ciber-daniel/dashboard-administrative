@@ -8,9 +8,9 @@ import Header from "../../components/header/Header";
 // utils
 import XGridDemo from "../../components/utils/grid/Xgrid";
 import TransitionModal from "../../components/utils/modals/Modals";
-import { modalsInfoInsurers } from "../../consts/Modals-Info";
+import { modalsInfoInsurers } from "../../consts/Modals-info";
 // consts
-import { data, titles } from "../../consts/Insurer-Data";
+import { data, titles } from "../../consts/Insurer-data";
 
 const Insurer = () => {
   const [openAdd, setOpenAdd] = useState(false);

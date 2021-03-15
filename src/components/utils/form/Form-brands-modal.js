@@ -10,7 +10,7 @@ import { currencies } from "../../../consts/Currencies";
 // styles
 import "./form.css";
 // services
-import { lettersOnly } from "../../../services/Local-Services";
+import { lettersOnly } from "../../../services/Local-services";
 // utils
 import CustomButton from "../button/Button";
 

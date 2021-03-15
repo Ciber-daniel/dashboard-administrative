@@ -16,7 +16,7 @@ import eliminar from "../../assets/icons/eliminar.svg";
 // components
 import ListDrawer from "../list/List-Drawer";
 // services
-import { refreshPage } from "../../services/Local-Services";
+import { refreshPage } from "../../services/Local-services";
 // styles
 import "./header.css";
 //utils
@@ -60,11 +60,15 @@ export default function Header(props) {
             ""
           ) : props.selectedStatus ? (
             <div>
-              <CircularButton
-                text={"Ver brokers relacionados"}
-                icon={editar}
-                setOpen={props.setOpenEdit}
-              />
+              {window.location.pathname === "/insurers" ? (
+                <CircularButton
+                  text={"Ver brokers relacionados"}
+                  icon={editar}
+                  setOpen={props.setOpenEdit}
+                />
+              ) : (
+                ""
+              )}
               <CircularButton
                 text={"Editar Marca"}
                 icon={editar}
