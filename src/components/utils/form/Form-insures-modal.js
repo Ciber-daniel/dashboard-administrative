@@ -64,7 +64,7 @@ export default function InsureForm(props) {
   return (
     <>
       {props.data.title.includes("Eliminar") ? (
-        <div>
+        <div className="form">
           <DeleteForm
             setOpen={props.setOpen}
             src={src}
