@@ -3,7 +3,7 @@
 }
 
 header.MuiAppBar-colorPrimary {
-  height: 10rem;
+  height: 23.4vh;
   background: #f2f2f2;
 }
 
@@ -16,8 +16,8 @@ header.MuiPaper-elevation4 {
   box-shadow: none;
 }
 
-svg.MuiSvgIcon-root {
-  fill: #63c3d1;
+span.MuiIconButton-label {
+  color: #63c3d1;
   opacity: 1;
 }
 
@@ -25,11 +25,15 @@ h6.MuiTypography-root {
   color: #a7a7a7;
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
+  font-family: var(--font-g);
+  font-weight: 400;
 }
 
 h4.MuiTypography-root {
   color: #63c3d1;
   font-size: 2.5rem;
+  font-family: var(--font-g);
+  font-weight: 300;
 }
 
 .heading {
@@ -40,7 +44,7 @@ h4.MuiTypography-root {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 10rem;
+  height: 23vh;
   background: #f2f2f2 0% 0% no-repeat padding-box;
 }
 
@@ -55,7 +59,7 @@ h4.MuiTypography-root {
 
 .name-user .logout p {
   font-family: var(--font-g);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .name-user .logout img {
@@ -69,9 +73,13 @@ h4.MuiTypography-root {
   box-shadow: 0px 3px 6px #00000029;
 }
 
+.MuiDrawer-paper {
+  background-color: blue;
+}
+
 .name-user {
   line-height: 1rem;
-  padding-top: 0.9rem;
+  padding-top: 0.6rem;
 }
 
 .name-user span {
@@ -91,17 +99,22 @@ h4.MuiTypography-root {
 .list-items {
   background: transparent linear-gradient(0deg, #63d1a2 0%, #63c3d1 100%) 0% 0%
     no-repeat padding-box;
-  height: 74vh;
+  height: 72vh;
+  padding-left: 3%;
 }
 
 .wrapper-footer {
   background: #f2f2f2 0% 0% no-repeat padding-box;
   display: flex;
   justify-content: center;
+  align-items: center;
+  bottom: 0;
+  height: 5vh;
 }
+
 .icon-expand {
   color: #ffffff;
-  margin-left: 5rem;
+  margin-left: 50%;
   width: 0.8rem;
 }
 

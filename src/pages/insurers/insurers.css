@@ -1,0 +1,12 @@
+.insurers-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100vh;
+}
+
+.row-grid-insurers {
+  width: 96%;
+  height: 74%;
+}

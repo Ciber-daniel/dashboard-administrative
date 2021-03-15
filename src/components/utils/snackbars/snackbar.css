@@ -1,0 +1,46 @@
+:root {
+  --font-g: "Roboto", sans-serif;
+}
+
+div.MuiPaper-root.MuiAlert-root.MuiAlert-standardSuccess.MuiPaper-elevation6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: solid 0.1px #63d1a2;
+}
+
+div.MuiPaper-root.MuiAlert-root.MuiAlert-standardError.MuiPaper-elevation6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: solid 0.1px #d44141;
+}
+
+div.MuiPaper-root.MuiAlert-root.MuiAlert-standardWarning.MuiPaper-elevation6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: solid 0.1px #fcc020;
+}
+
+div.MuiPaper-elevation6 {
+  border-radius: 1rem;
+}
+
+div.MuiAlert-message {
+  font-family: var(--font-g);
+  font-weight: 400;
+}
+
+div.MuiSnackbar-root.MuiSnackbar-anchorOriginTopCenter {
+  width: 50%;
+}
+
+@media (max-height: 1919px) {
+  .alert-info {
+    margin-top: 10%;
+  }
+}

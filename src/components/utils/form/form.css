@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   margin: 2rem 9rem 0rem 9rem;
-  height: auto;
+  height: 51vh;
   padding-top: 2%;
 }
 
@@ -29,15 +29,11 @@
 }
 
 /*input tipo file*/
-
 .form__img-input-container {
   position: relative;
-  width: 10rem;
-
-  margin: auto;
+  margin: -1.5% auto;
 }
 
-/* this class is used to hide the file input */
 .visually-hidden {
   position: absolute;
   height: 1px;
@@ -46,14 +42,11 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* Adding the focus and focus-within styles for accessibility */
 input.visually-hidden:focus + label,
 input.visually-hidden:focus-within + label {
-  outline: 0.5px solid rgba(86, 206, 239, 0.4);
+  outline: 0.5px solid rgba(255, 255, 255, 0.4);
 }
 
-/* The file input is a labeled control, and since we hid it,
-we're going to use its associated label to trigger it */
 .form-img__file-label {
   position: absolute;
   top: 0;
@@ -81,13 +74,49 @@ we're going to use its associated label to trigger it */
   opacity: 1;
 }
 
-/* The image element is going to be positioned under the
-label element, since the label is a see through, we're going
-to be able to see the preview of the image. */
 .form-img__img-preview {
   display: block;
   width: 10rem;
-  height: 10rem;
-  object-fit: contain;
+  object-fit: cover;
   border: none;
+}
+
+.divider {
+  margin: 0rem 2rem;
+}
+
+/*modal buttons*/
+
+.container-modal-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 2%;
+  margin-top: -0.5%;
+}
+
+Button span:first-letter {
+  text-transform: uppercase;
+}
+
+.width-select {
+  width: 100%;
+}
+
+@media (min-width: 1920px) {
+  .container-modal-buttons {
+    margin-top: -5.5%;
+    padding-right: 3.5%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container-modal-buttons {
+    margin: -1.8% auto;
+    padding-left: 4%;
+  }
+
+  div.makeStyles-modal-8 {
+    height: 72vh;
+  }
 }

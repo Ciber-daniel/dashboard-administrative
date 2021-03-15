@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import Collapse from "@material-ui/core/Collapse";
-import { Link } from "react-router-dom";
 // assets
 import IconDashboard from "../../assets/icons/icon-dashboard.svg";
 import IconUsers from "../../assets/icons/icon-users.svg";
@@ -12,31 +12,31 @@ import IconTables from "../../assets/icons/icon-tables.svg";
 import IconPolizas1 from "../../assets/icons/icon-polizas-aprobadas.svg";
 import IconPolizas2 from "../../assets/icons/icon-polizas-onboarding.svg";
 import ArrowDown from "../../assets/icons/arrow-down.svg";
-import { Routes } from "../../routes/routes";
+// const
+import { Routes } from "../../consts/Routes-App";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     paddingTop: "2rem",
-    paddingLeft: "1rem",
   },
   nested: {
     paddingLeft: theme.spacing(4),
-  },
-
-  itemList: {
-    paddingBottom: theme.spacing(1),
   },
 
   iconsDrawer: {
     width: "1.6rem",
   },
 
+  itemList: {
+    paddingBottom: theme.spacing(2),
+  },
+
   textColor: {
     color: "#ffffff",
-    fontFamily: "Roboto",
-    fontWeight: "500",
-    fontSize: "0.8rem",
+    fontFamily: "Roboto, sans-serif",
+    fontWeight: "300",
+    fontSize: "0.85rem",
   },
 }));
 
@@ -55,7 +55,7 @@ export default function ListDrawer(props) {
       className={classes.root}
     >
       <Link to={Routes.dashboard.route} style={{ textDecoration: "none" }}>
-        <ListItem button className={classes.itemList} onClick={props.callback}>
+        <ListItem className={classes.itemList} button onClick={props.callback}>
           <ListItemIcon>
             <img
               className={classes.iconsDrawer}
@@ -63,7 +63,7 @@ export default function ListDrawer(props) {
               alt="Dashboard"
             />
           </ListItemIcon>
-          <p className={classes.textColor}>Dashboard</p>
+          <span className={classes.textColor}>Dashboard</span>
         </ListItem>
       </Link>
 
@@ -71,7 +71,7 @@ export default function ListDrawer(props) {
         <ListItemIcon>
           <img className={classes.iconsDrawer} src={IconUsers} alt="Users" />
         </ListItemIcon>
-        <p className={classes.textColor}>Usuarios Asegurados</p>
+        <span className={classes.textColor}>Usuarios Asegurados</span>
       </ListItem>
       <ListItem button className={classes.itemList} onClick={props.callback}>
         <ListItemIcon>
@@ -81,7 +81,7 @@ export default function ListDrawer(props) {
             alt="Polizas"
           />
         </ListItemIcon>
-        <p className={classes.textColor}>Pólizas aprobadas</p>
+        <span className={classes.textColor}>Pólizas aprobadas</span>
       </ListItem>
       <ListItem button className={classes.itemList} onClick={props.callback}>
         <ListItemIcon>
@@ -91,13 +91,13 @@ export default function ListDrawer(props) {
             alt="Poliza2"
           />
         </ListItemIcon>
-        <p className={classes.textColor}>Pólizas en Onboarding</p>
+        <span className={classes.textColor}>Pólizas en Onboarding</span>
       </ListItem>
       <ListItem button className={classes.itemList} onClick={handleClick}>
         <ListItemIcon>
           <img className={classes.iconsDrawer} src={IconTables} alt="Tables" />
         </ListItemIcon>
-        <p className={classes.textColor}>Tablas</p>
+        <span className={classes.textColor}>Tablas</span>
         {open ? (
           <img src={ArrowDown} className="icon-expand" alt="arrow-down" />
         ) : (
@@ -112,14 +112,7 @@ export default function ListDrawer(props) {
               className={classes.nested}
               onClick={props.callback}
             >
-              <ListItemIcon>
-                <img
-                  className={classes.iconsDrawer}
-                  src={IconTables}
-                  alt="Tables"
-                />
-              </ListItemIcon>
-              <p className={classes.textColor}>Marcas</p>
+              <span className={classes.textColor}>Marcas</span>
             </ListItem>
           </Link>
           <Link to={Routes.insurers.route} style={{ textDecoration: "none" }}>
@@ -128,14 +121,7 @@ export default function ListDrawer(props) {
               className={classes.nested}
               onClick={props.callback}
             >
-              <ListItemIcon>
-                <img
-                  className={classes.iconsDrawer}
-                  src={IconTables}
-                  alt="Tables"
-                />
-              </ListItemIcon>
-              <p className={classes.textColor}>Aseguradoras</p>
+              <span className={classes.textColor}>Aseguradoras</span>
             </ListItem>
           </Link>
         </List>
