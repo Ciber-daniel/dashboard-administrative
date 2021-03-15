@@ -1,4 +1,3 @@
-// funcion para agregar brand desde la api
 export const addBrand = (fn) => {
   console.log("add");
   fn();
