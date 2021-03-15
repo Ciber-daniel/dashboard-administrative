@@ -118,6 +118,14 @@ h4.MuiTypography-root {
   width: 0.8rem;
 }
 
+.div-circle-blue {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #63c3d1;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
 footer {
   color: #707070;
   font-size: 0.7rem;

@@ -2,6 +2,10 @@ div.MuiDataGrid-root.MuiDataGrid-root:before.MuiDataGrid-root:after {
   box-sizing: none;
 }
 
+div.MuiDataGrid-root {
+  cursor: pointer;
+}
+
 .MuiDataGrid-selectedRowCount {
   display: none;
 }
@@ -26,4 +30,9 @@ div.MuiDataGrid-root .MuiDataGrid-cellLeft:focus {
 
 div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected {
   background: #a7a7a7 0% 0% no-repeat padding-box;
+}
+
+div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected:hover {
+  transition: all 0.6s;
+  background: #f2f2f2;
 }

@@ -62,11 +62,13 @@ export default function Header(props) {
           ) : props.selectedStatus ? (
             <div>
               {window.location.pathname === "/insurers" ? (
-                <CircularButton
-                  text={"Ver brokers relacionados"}
-                  icon={search}
-                  setOpen={props.setOpenEdit}
-                />
+                <div className="div-circle-blue">
+                  <CircularButton
+                    text={"Ver brokers relacionados"}
+                    icon={search}
+                    setOpen={props.setOpenEdit}
+                  />
+                </div>
               ) : (
                 ""
               )}
