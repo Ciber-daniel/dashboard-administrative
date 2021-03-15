@@ -1,12 +1,20 @@
 export const validateRowSelected = (newSelection, selectedStatus, callback) => {
   const selectedRow = newSelection.data;
   const getSelectedRow = newSelection.api.current.getSelectedRows();
-  if (selectedStatus) {
-    if (selectedRow.id === getSelectedRow[0].id) {
-      callback(false);
+  if (selectedStatus.status) {
+    if (getSelectedRow[0].id) {
+      if (selectedRow.id === getSelectedRow[0].id) {
+        callback({
+          status: false,
+          row: selectedRow,
+        });
+      }
     }
   } else {
-    callback(true);
+    callback({
+      status: true,
+      row: selectedRow,
+    });
   }
 };
 
