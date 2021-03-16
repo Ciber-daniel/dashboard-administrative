@@ -48,15 +48,11 @@ export default function BrandForm(props) {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      props.data.buttonInfo.title === "Agregar"
-        ? props.data.buttonInfo.action(() => {
-            setTimeout(() => {
-              props.setOpen(false);
-            }, 3000);
-          })
-        : props.data.buttonInfo.action(() => {
-            props.setOpen(false);
-          });
+      props.data.buttonInfo.action(() => {
+        setTimeout(() => {
+          props.setOpen(false);
+        }, 3000);
+      });
     },
   });
 
