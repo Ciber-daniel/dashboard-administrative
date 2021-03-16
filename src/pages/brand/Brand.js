@@ -37,16 +37,28 @@ const Brand = () => {
           statusOpen={openAdd}
           setOpen={setOpenAdd}
           data={modalsInfoBrands.add}
+          snackbarData={{
+            message: "Marca agregada exitosamente",
+            severity: "success",
+          }}
         />
         <TransitionModal
           statusOpen={openEdit}
           setOpen={setOpenEdit}
           data={modalsInfoBrands.edit}
+          snackbarData={{
+            message: "Marca guardada exitosamente",
+            severity: "success",
+          }}
         />
         <TransitionModal
           statusOpen={openDelete}
           setOpen={setOpenDelete}
           data={modalsInfoBrands.delete}
+          snackbarData={{
+            message: "Marca eliminada exitosamente",
+            severity: "success",
+          }}
           row={selected.row}
         />
         <div className="row-grid-brands">

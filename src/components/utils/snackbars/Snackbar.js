@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const SnackBar = (props) => {
   const classes = useStyles();
-  const snackbarInfo = props.snackBar;
+  const { snackbarData } = props;
 
   const alertBody = (
     <div
@@ -25,44 +25,27 @@ export const SnackBar = (props) => {
     >
       <Alert
         className={classes.alertInfo}
-        elevation={snackbarInfo.alertElevation}
-        severity="error"
-        color="error"
+        elevation={snackbarData.alertElevation}
+        severity={snackbarData.severity}
+        color={snackbarData.severity}
       >
-        <span style={{ color: "#D44141" }}>{snackbarInfo.message}</span>
+        <span>{snackbarData.message}</span>
       </Alert>
-      {/* <Alert
-         className={classes.alertInfo}
-      elevation={snackbarInfo.alertElevation}
-        severity="warning"
-        color="warning"
-      >
-        <span style={{ color: "#FCC020" }}>{snackbarInfo.message}</span>
-      </Alert>  */}
-      {/* <Alert
-        className={classes.alertInfo}
-        elevation={snackbarInfo.alertElevation}
-        severity="success"
-        color="success"
-      >
-        <span style={{ color: "#63D1A2" }}>{snackbarInfo.message}</span>
-      </Alert>
-     */}
     </div>
   );
 
   return (
     <Snackbar
-      autoHideDuration={snackbarInfo.autoHideDuration}
+      autoHideDuration={snackbarData.autoHideDuration}
       anchorOrigin={{
-        vertical: snackbarInfo.vertical,
-        horizontal: snackbarInfo.horizontal,
+        vertical: snackbarData.vertical,
+        horizontal: snackbarData.horizontal,
       }}
-      open={snackbarInfo.openAlert}
+      open={snackbarData.openAlert}
       onClose={() => {
-        snackbarInfo.setOpenAlert(false);
+        snackbarData.setOpenAlert(false);
       }}
-      key={snackbarInfo.vertical + "-" + snackbarInfo.horizontal}
+      key={snackbarData.vertical + "-" + snackbarData.horizontal}
     >
       {alertBody}
     </Snackbar>
