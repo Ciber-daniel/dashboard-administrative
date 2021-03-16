@@ -35,16 +35,28 @@ const Insurer = () => {
         statusOpen={openAdd}
         setOpen={setOpenAdd}
         data={modalsInfoInsurers.add}
+        snackbarData={{
+          message: "Aseguradora guardada exitosamente",
+          severity: "success",
+        }}
       />
       <TransitionModal
         statusOpen={openEdit}
         setOpen={setOpenEdit}
         data={modalsInfoInsurers.edit}
+        snackbarData={{
+          message: "Aseguradora guardada exitosamente",
+          severity: "success",
+        }}
       />
       <TransitionModal
         statusOpen={openDelete}
         setOpen={setOpenDelete}
         data={modalsInfoInsurers.delete}
+        snackbarData={{
+          message: "Aseguradora guardada exitosamente",
+          severity: "success",
+        }}
         row={selected.row}
       />
       <div className="insurers-container">

@@ -39,15 +39,25 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TransitionModal(props) {
   const classes = useStyles();
-  // getModalStyle is not a pure function, we roll the style only on the first render
+  const { row, setOpen, data, statusOpen, snackbarData } = props;
 
   const body = props.data.title.includes("aseguradora") ? (
     <div className={classes.paper} style={{ borderRadius: "3%" }}>
-      <InsureForm row={props.row} setOpen={props.setOpen} data={props.data} />
+      <InsureForm
+        row={row}
+        setOpen={setOpen}
+        data={data}
+        snackbarData={snackbarData}
+      />
     </div>
   ) : (
     <div className={classes.paper} style={{ borderRadius: "3%" }}>
-      <BrandForm row={props.row} setOpen={props.setOpen} data={props.data} />
+      <BrandForm
+        row={row}
+        setOpen={setOpen}
+        data={data}
+        snackbarData={snackbarData}
+      />
     </div>
   );
 
@@ -57,10 +67,10 @@ export default function TransitionModal(props) {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
         className={classes.modal}
-        open={props.statusOpen}
+        open={statusOpen}
       >
         <Fade
-          in={props.statusOpen}
+          in={statusOpen}
           className={classes.modal}
           style={{ width: "100%", height: "100%" }}
         >

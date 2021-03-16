@@ -11,7 +11,6 @@ import { lettersOnly } from "../../../services/Local-services";
 import "./form.css";
 // utils
 import CustomButton from "../button/Button";
-import { DeleteForm } from "../form/deleteForm/Delete-form";
 
 const validationSchema = yup.object({
   hooli: yup
@@ -25,6 +24,10 @@ const validationSchema = yup.object({
 });
 
 export default function InsureForm(props) {
+  const [openAlert, setOpenAlert] = useState(false);
+  const { data, setOpen, row, snackbarData } = props;
+  const validate = data.title.includes("Eliminar");
+
   const [{ alt, src }, setImg] = useState({
     src: placeholder,
     alt: "Upload an Image",
@@ -42,64 +45,59 @@ export default function InsureForm(props) {
 
   const formik = useFormik({
     initialValues: {
-      hooli: "Si",
-      insurer: "",
-      photo: "",
+      hooli: validate ? row.type : "Si",
+      insurer: validate ? row.name : "",
+      photo: validate ? "disabled" : "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      props.data.buttonInfo.title === "Agregar"
-        ? props.data.buttonInfo.action(() => {
-            setTimeout(() => {
-              props.setOpen(false);
-            }, 3000);
-          })
-        : props.data.buttonInfo.action(() => {
-            props.setOpen(false);
-          });
+      data.buttonInfo.action(() => {
+        setOpenAlert(true);
+        setTimeout(() => {
+          setOpen(false);
+        }, 3000);
+      });
     },
   });
 
+  const redColor = validate ? "red" : "";
+
   return (
     <>
-      {props.data.title.includes("Eliminar") ? (
-        <div className="form">
-          <DeleteForm
-            setOpen={props.setOpen}
-            src={src}
-            alt={alt}
-            data={props.data}
-            row={props.row}
-            formik={formik}
-            handleSubmit={formik.handleSubmit}
-            isSubmitting={formik.isSubmitting}
-          />
-        </div>
-      ) : (
-        <div className="form">
-          <form
-            style={{ width: "100%", height: "100%" }}
-            onSubmit={formik.handleSubmit}
-            autoComplete="off"
-          >
-            <div className="title">
-              <h2>{props.data.title}</h2>
-            </div>
-            <div className="divider">
-              <Divider />
-            </div>
-            <div className="inputs">
-              <div
-                className="container-inverse"
-                style={{
-                  display: "flex",
-                  flexDirection: "column-reverse",
-                  marginTop: "-5%",
-                }}
-              >
-                <div className="input-container">
+      <div className="form">
+        <form
+          style={{ width: "100%", height: "100%" }}
+          onSubmit={formik.handleSubmit}
+          autoComplete="off"
+        >
+          <div className="title">
+            <h2 style={{ color: redColor }}>{data.title}</h2>
+          </div>
+          <div className="divider">
+            <Divider />
+          </div>
+          <div className="inputs">
+            <div
+              className="container-inverse"
+              style={{
+                display: "flex",
+                flexDirection: "column-reverse",
+                marginTop: "-5%",
+              }}
+            >
+              <div className="input-container">
+                {validate ? (
                   <TextField
-                    label={props.data.firstInput.label}
+                    label={data.firstInput.label}
+                    disabled
+                    name="hooli"
+                    id="standard-full-width"
+                    value={row.name}
+                    className="width-select"
+                  ></TextField>
+                ) : (
+                  <TextField
+                    label={data.firstInput.label}
                     name="hooli"
                     id="standard-select-currency-native"
                     select
@@ -116,8 +114,20 @@ export default function InsureForm(props) {
                     <option>Si</option>
                     <option>No</option>
                   </TextField>
-                </div>
-                <div className="input-container">
+                )}
+              </div>
+              <div className="input-container">
+                {validate ? (
+                  <TextField
+                    label={props.data.secondInput.label}
+                    disabled
+                    id="standard-full-width"
+                    name="insurer"
+                    margin="normal"
+                    value={row.type}
+                    fullWidth
+                  />
+                ) : (
                   <TextField
                     label={props.data.secondInput.label}
                     id="standard-full-width"
@@ -136,36 +146,39 @@ export default function InsureForm(props) {
                     }}
                     fullWidth
                   />
-                </div>
-              </div>
-              <div className="form__img-input-container">
-                <input
-                  type="file"
-                  accept=".png"
-                  id="photo"
-                  className="visually-hidden"
-                  onChange={handleImg}
-                />
-                <label htmlFor="photo" className="form-img__file-label"></label>
-                <img src={src} alt={alt} className="form-img__img-preview" />
+                )}
               </div>
             </div>
-            <div className="container-modal-buttons">
-              <CustomButton
-                setOpen={props.setOpen}
-                inputsValues={{
-                  firstInput: formik.values.insurer,
-                  secondInput: formik.values.hooli,
-                  imageInput: formik.values.photo,
-                }}
-                submitState={formik.isSubmitting}
-                data={props.data}
-                message="Aseguradora agregada con exito"
+            <div className="form__img-input-container">
+              <input
+                type="file"
+                accept=".png"
+                id="photo"
+                disabled={validate}
+                className="visually-hidden"
+                onChange={handleImg}
               />
+              <label htmlFor="photo" className="form-img__file-label"></label>
+              <img src={src} alt={alt} className="form-img__img-preview" />
             </div>
-          </form>
-        </div>
-      )}
+          </div>
+          <div className="container-modal-buttons">
+            <CustomButton
+              data={data}
+              inputsValues={{
+                firstInput: formik.values.insurer,
+                secondInput: formik.values.hooli,
+                imageInput: formik.values.photo,
+              }}
+              submitState={formik.isSubmitting}
+              setOpen={setOpen}
+              message={snackbarData.message}
+              setOpenAlert={setOpenAlert}
+              openAlert={openAlert}
+            />
+          </div>
+        </form>
+      </div>
     </>
   );
 }
