@@ -102,14 +102,12 @@ export default function BrandForm(props) {
                       id="standard-select-currency-native"
                       select
                       SelectProps={{
-                        native: true,
+                        native: false,
                       }}
                       className="width-select"
                       value={formik.values.type}
                       onChange={formik.handleChange}
                       error={formik.touched.type && Boolean(formik.errors.type)}
-                      onBlur={formik.handleBlur}
-                      helperText={formik.errors.type}
                     >
                       {currencies.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -150,7 +148,6 @@ export default function BrandForm(props) {
                         formik.touched.brand && Boolean(formik.errors.brand)
                       }
                       helperText={formik.touched.brand && formik.errors.brand}
-                      onBlur={formik.handleBlur}
                     />
                   )}
                 </div>

@@ -26,4 +26,5 @@ export const refreshPage = () => {
 };
 
 // validar que solo hayan letras/cadena de string
-export const lettersOnly = (value) => /^\D.+$/.test(value);
+export const lettersOnly = (value) =>
+  /^(?=s*[a-zA-Z])([a-zA-Z0-9\s]+)$/.test(value);

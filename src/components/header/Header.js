@@ -79,7 +79,7 @@ export default function Header(props) {
                     icon={eliminar}
                     setOpen={props.setOpenDelete}
                   />
-                  <span>1 registro</span>
+                  <span>{props.registers} registro</span>
                 </div>
               ) : (
                 <div>
@@ -93,7 +93,7 @@ export default function Header(props) {
                     icon={eliminar}
                     setOpen={props.setOpenDelete}
                   />
-                  <span>1 registro</span>
+                  <span>{props.registers} registro</span>
                 </div>
               )}
             </div>
@@ -117,7 +117,7 @@ export default function Header(props) {
                 icon={reload}
                 setOpen={refreshPage}
               />
-              <span>1 registro</span>
+              <span>{props.registers} registro</span>
             </div>
           )}
         </div>
