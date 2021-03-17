@@ -33,6 +33,5 @@ div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected {
 }
 
 div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected:hover {
-  transition: all 0.6s;
-  background: #f2f2f2;
+  background: #a7a7a7 0% 0% no-repeat padding-box;
 }
