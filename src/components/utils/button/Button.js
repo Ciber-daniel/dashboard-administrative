@@ -16,7 +16,6 @@ export default function CustomButton(props) {
     openAlert,
   } = props;
   const classes = styles(props);
-  console.log(data);
 
   return (
     <div className="container-modal-buttons">

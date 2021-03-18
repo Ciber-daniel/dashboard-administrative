@@ -27,6 +27,7 @@ const Insurer = () => {
         wordKey={Routes.insurers.wordKey}
         description={Routes.insurers.description}
         selectedStatus={selected}
+        registers={selected.status ? 1 : 0}
         setOpenAdd={setOpenAdd}
         setOpenEdit={setOpenEdit}
         setOpenDelete={setOpenDelete}

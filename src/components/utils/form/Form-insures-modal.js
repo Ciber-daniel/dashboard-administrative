@@ -43,10 +43,12 @@ export default function InsureForm(props) {
     }
   };
 
+  console.log(row);
+
   const formik = useFormik({
     initialValues: {
-      hooli: validate ? row.type : "Si",
-      insurer: validate ? row.name : "",
+      hooli: validate ? row.name : "Si",
+      insurer: validate ? row.type : "",
       photo: validate ? "disabled" : "",
     },
     validationSchema: validationSchema,
@@ -101,6 +103,7 @@ export default function InsureForm(props) {
                     name="hooli"
                     id="standard-select-currency-native"
                     select
+                    disabled={formik.isSubmitting}
                     SelectProps={{
                       native: true,
                     }}
@@ -108,7 +111,6 @@ export default function InsureForm(props) {
                     onChange={formik.handleChange}
                     error={formik.touched.hooli && Boolean(formik.errors.hooli)}
                     helperText={formik.touched.hooli && formik.errors.hooli}
-                    onBlur={formik.handleBlur}
                     className="width-select"
                   >
                     <option>Si</option>
@@ -134,13 +136,13 @@ export default function InsureForm(props) {
                     name="insurer"
                     placeholder={props.data.secondInput.placeholder}
                     margin="normal"
+                    disabled={formik.isSubmitting}
                     value={formik.values.insurer}
                     onChange={formik.handleChange}
                     error={
                       formik.touched.insurer && Boolean(formik.errors.insurer)
                     }
                     helperText={formik.touched.insurer && formik.errors.insurer}
-                    onBlur={formik.handleBlur}
                     InputLabelProps={{
                       shrink: true,
                     }}
