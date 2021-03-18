@@ -91,7 +91,12 @@ input.visually-hidden:focus-within + label {
   display: flex;
   flex-direction: row-reverse;
   padding-right: 2%;
-  margin-top: -0.5%;
+}
+
+.container-form-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 Button span:first-letter {
@@ -112,8 +117,12 @@ Button span:first-letter {
 
 @media (max-width: 1280px) {
   .container-modal-buttons {
-    margin: -1.8% auto;
+    margin: auto;
     padding-left: 4%;
+  }
+
+  .container-form-img {
+    padding-top: 1rem;
   }
 
   div.makeStyles-modal-8 {

@@ -156,18 +156,21 @@ export default function BrandForm(props) {
                 </div>
               </div>
             </div>
-            <div className="form__img-input-container">
-              <input
-                disabled={validate}
-                type="file"
-                accept=".png"
-                id="photo"
-                name="photo"
-                className="visually-hidden"
-                onChange={handleImg}
-              />
-              <label htmlFor="photo" className="form-img__file-label"></label>
-              <img src={src} alt={alt} className="form-img__img-preview" />
+            <div className="container-form-img">
+              {" "}
+              <div className="form__img-input-container">
+                <input
+                  disabled={validate}
+                  type="file"
+                  accept=".png"
+                  id="photo"
+                  name="photo"
+                  className="visually-hidden"
+                  onChange={handleImg}
+                />
+                <label htmlFor="photo" className="form-img__file-label"></label>
+                <img src={src} alt={alt} className="form-img__img-preview" />
+              </div>
             </div>
           </div>
           <div className="container-modal-buttons">
