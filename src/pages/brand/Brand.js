@@ -27,7 +27,6 @@ const Brand = () => {
         wordKey={Routes.brands.wordKey}
         description={Routes.brands.description}
         selectedStatus={selected}
-        registers={selected.status ? 1 : 0}
         setOpenAdd={setOpenAdd}
         setOpenEdit={setOpenEdit}
         setOpenDelete={setOpenDelete}

@@ -22,7 +22,7 @@
   justify-content: flex-end;
   position: absolute;
   top: 70%;
-  right: 1rem;
+  right: 5rem;
   width: 100%;
 }
 
@@ -31,10 +31,6 @@
   align-items: center;
   justify-content: space-evenly;
   margin: 0rem 0.3rem 0rem 0.3rem;
-}
-
-.icons-container span {
-  color: #707070;
 }
 
 .tooltip {
@@ -83,4 +79,21 @@
   bottom: 100%;
   left: 50%;
   border-color: transparent transparent #707070 transparent;
+}
+
+.buttons img {
+  animation-duration: 0.3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    height: 0px;
+    width: 0;
+  }
+
+  to {
+    height: 2.6rem;
+    width: 2.6rem;
+  }
 }

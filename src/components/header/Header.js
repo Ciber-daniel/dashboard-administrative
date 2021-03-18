@@ -79,7 +79,6 @@ export default function Header(props) {
                     icon={eliminar}
                     setOpen={props.setOpenDelete}
                   />
-                  <span>{props.registers} registro</span>
                 </div>
               ) : (
                 <div>
@@ -93,7 +92,6 @@ export default function Header(props) {
                     icon={eliminar}
                     setOpen={props.setOpenDelete}
                   />
-                  <span>{props.registers} registro</span>
                 </div>
               )}
             </div>
@@ -117,7 +115,6 @@ export default function Header(props) {
                 icon={reload}
                 setOpen={refreshPage}
               />
-              <span>{props.registers} registro</span>
             </div>
           )}
         </div>
@@ -133,7 +130,6 @@ export default function Header(props) {
           <div className="user-description">
             <img className="avatar" alt="avatar" src={AvatarUser} />
             <div className="name-user">
-              <span>Julio Besse</span>
               <p>Backuser</p>
               <div className="logout">
                 <img src={LogoutIcon} alt="logout" />

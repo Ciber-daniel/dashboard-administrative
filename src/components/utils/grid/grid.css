@@ -16,7 +16,8 @@ div.MuiDataGrid-root .MuiDataGrid-footer .MuiDataGrid-selectedRowCount {
 
 div.MuiDataGrid-root .MuiDataGrid-rowCount,
 .MuiDataGrid-root .MuiDataGrid-selectedRowCount {
-  display: none;
+  display: flex;
+  color: #707070;
 }
 
 div.MuiDataGrid-root .MuiDataGrid-colCell:focus,

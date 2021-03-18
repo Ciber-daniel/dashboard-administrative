@@ -103,7 +103,7 @@ export default function BrandForm(props) {
                       select
                       disabled={formik.isSubmitting}
                       SelectProps={{
-                        native: false,
+                        native: true,
                       }}
                       className="width-select"
                       value={formik.values.type}
@@ -111,7 +111,11 @@ export default function BrandForm(props) {
                       error={formik.touched.type && Boolean(formik.errors.type)}
                     >
                       {currencies.map((option) => (
-                        <option key={option.value} value={option.value}>
+                        <option
+                          key={option.value}
+                          hidden={option.hidden}
+                          value={option.value}
+                        >
                           {option.label}
                         </option>
                       ))}

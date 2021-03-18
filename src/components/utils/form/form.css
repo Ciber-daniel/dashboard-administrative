@@ -120,3 +120,11 @@ Button span:first-letter {
     height: 72vh;
   }
 }
+
+div.MuiInputBase-root.MuiInput-root.MuiInput-underline.Mui-disabled.Mui-disabled.MuiInputBase-formControl.MuiInput-formControl {
+  color: black;
+}
+
+div.MuiInputBase-root.MuiInput-root.MuiInput-underline.Mui-disabled.Mui-disabled.MuiInputBase-formControl.MuiInput-formControl::before {
+  border-bottom: none;
+}
