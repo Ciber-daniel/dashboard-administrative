@@ -19,6 +19,26 @@ export const data = [
     type: "Computadora",
     name: "Apple",
   },
+  {
+    id: "5",
+    type: "Computadora",
+    name: "Apple",
+  },
+  {
+    id: "6",
+    type: "Computadora",
+    name: "Apple",
+  },
+  {
+    id: "7",
+    type: "Computadora",
+    name: "Apple",
+  },
+  {
+    id: "8",
+    type: "Computadora",
+    name: "Apple",
+  },
 ];
 
 export const titles = ["Tipo de bien", "Nombre"];

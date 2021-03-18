@@ -120,7 +120,7 @@ section p {
 
 @media (min-width: 1920px) {
   .figures {
-    padding-top: 8%;
+    margin-top: -10%;
   }
 
   .elipse img {

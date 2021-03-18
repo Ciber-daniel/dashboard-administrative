@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
     "&:focus": {
       outline: "none",
     },
-    height: "76vh",
-    paddingTop: theme.spacing(10),
+    height: "78vh",
+    paddingTop: theme.spacing(8),
     [theme.breakpoints.up("xl")]: {
       height: "70vh",
     },
