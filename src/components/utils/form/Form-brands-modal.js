@@ -101,6 +101,7 @@ export default function BrandForm(props) {
                       name="type"
                       id="standard-select-currency-native"
                       select
+                      disabled={formik.isSubmitting}
                       SelectProps={{
                         native: false,
                       }}
@@ -138,6 +139,7 @@ export default function BrandForm(props) {
                       id="standard-full-width"
                       placeholder={data.secondInput.placeholder}
                       margin="normal"
+                      disabled={formik.isSubmitting}
                       InputLabelProps={{
                         shrink: true,
                       }}

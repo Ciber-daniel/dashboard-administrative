@@ -103,6 +103,7 @@ export default function InsureForm(props) {
                     name="hooli"
                     id="standard-select-currency-native"
                     select
+                    disabled={formik.isSubmitting}
                     SelectProps={{
                       native: true,
                     }}
@@ -135,6 +136,7 @@ export default function InsureForm(props) {
                     name="insurer"
                     placeholder={props.data.secondInput.placeholder}
                     margin="normal"
+                    disabled={formik.isSubmitting}
                     value={formik.values.insurer}
                     onChange={formik.handleChange}
                     error={
