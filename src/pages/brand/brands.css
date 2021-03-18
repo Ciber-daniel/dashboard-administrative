@@ -8,5 +8,12 @@
 
 .row-grid-brands {
   width: 96%;
-  height: 74%;
+  height: 77%;
+}
+
+@media (min-width: 1920px) {
+  .row-grid-brands {
+    width: 96%;
+    height: 80%;
+  }
 }

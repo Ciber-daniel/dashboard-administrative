@@ -55,69 +55,69 @@ export default function Header(props) {
               {props.wordKey}
             </Typography>
           </div>
-        </Toolbar>
-        <div className="icons-container">
-          {window.location.pathname === "/" ? (
-            ""
-          ) : props.selectedStatus.status ? (
-            <div>
-              {window.location.pathname === "/insurers" ? (
-                <div>
-                  <CircularButton
-                    text={"Ver brokers relacionados"}
-                    icon={lupa}
-                    setOpen={props.setOpenEdit}
-                  />
+          <div className="icons-container">
+            {window.location.pathname === "/" ? (
+              ""
+            ) : props.selectedStatus.status ? (
+              <div>
+                {window.location.pathname === "/insurers" ? (
+                  <div>
+                    <CircularButton
+                      text={"Ver brokers relacionados"}
+                      icon={lupa}
+                      setOpen={props.setOpenEdit}
+                    />
 
+                    <CircularButton
+                      text={"Editar aseguradora"}
+                      icon={editar}
+                      setOpen={props.setOpenEdit}
+                    />
+                    <CircularButton
+                      text={"Eliminar aseguradora"}
+                      icon={eliminar}
+                      setOpen={props.setOpenDelete}
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <CircularButton
+                      text={"Editar marca"}
+                      icon={editar}
+                      setOpen={props.setOpenEdit}
+                    />
+                    <CircularButton
+                      text={"Eliminar marca"}
+                      icon={eliminar}
+                      setOpen={props.setOpenDelete}
+                    />
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div>
+                {window.location.pathname === "/insurers" ? (
                   <CircularButton
-                    text={"Editar aseguradora"}
-                    icon={editar}
-                    setOpen={props.setOpenEdit}
+                    text={"Agregar aseguradora"}
+                    icon={addIcon}
+                    setOpen={props.setOpenAdd}
                   />
+                ) : (
                   <CircularButton
-                    text={"Eliminar aseguradora"}
-                    icon={eliminar}
-                    setOpen={props.setOpenDelete}
+                    text={"Agregar marca"}
+                    icon={addIcon}
+                    setOpen={props.setOpenAdd}
                   />
-                </div>
-              ) : (
-                <div>
-                  <CircularButton
-                    text={"Editar marca"}
-                    icon={editar}
-                    setOpen={props.setOpenEdit}
-                  />
-                  <CircularButton
-                    text={"Eliminar marca"}
-                    icon={eliminar}
-                    setOpen={props.setOpenDelete}
-                  />
-                </div>
-              )}
-            </div>
-          ) : (
-            <div>
-              {window.location.pathname === "/insurers" ? (
+                )}
                 <CircularButton
-                  text={"Agregar aseguradora"}
-                  icon={addIcon}
-                  setOpen={props.setOpenAdd}
+                  text={"Actualizar pagina"}
+                  icon={reload}
+                  setOpen={refreshPage}
                 />
-              ) : (
-                <CircularButton
-                  text={"Agregar marca"}
-                  icon={addIcon}
-                  setOpen={props.setOpenAdd}
-                />
-              )}
-              <CircularButton
-                text={"Actualizar pagina"}
-                icon={reload}
-                setOpen={refreshPage}
-              />
-            </div>
-          )}
-        </div>
+              </div>
+            )}
+          </div>
+        </Toolbar>
       </AppBar>
       <div className="content-drawer">
         <Drawer

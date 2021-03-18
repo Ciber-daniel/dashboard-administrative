@@ -3,7 +3,8 @@
 }
 
 header.MuiAppBar-colorPrimary {
-  height: 9.4rem;
+  height: 23vh;
+  display: flex;
   background: #f2f2f2;
 }
 
@@ -125,5 +126,9 @@ footer {
 @media (min-width: 1920px) {
   .list-items {
     height: 81vh;
+  }
+
+  header.MuiAppBar-colorPrimary {
+    height: 20vh;
   }
 }
