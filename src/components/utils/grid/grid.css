@@ -1,13 +1,13 @@
+:root {
+  --font-g: "Roboto", sans-serif;
+}
+
 div.MuiDataGrid-root.MuiDataGrid-root:before.MuiDataGrid-root:after {
   box-sizing: none;
 }
 
 div.MuiDataGrid-root {
   cursor: pointer;
-}
-
-.MuiDataGrid-selectedRowCount {
-  display: none;
 }
 
 div.MuiDataGrid-root .MuiDataGrid-footer .MuiDataGrid-selectedRowCount {
@@ -18,6 +18,8 @@ div.MuiDataGrid-root .MuiDataGrid-rowCount,
 .MuiDataGrid-root .MuiDataGrid-selectedRowCount {
   display: flex;
   color: #707070;
+  font-family: var(--font-g);
+  font-weight: 300;
 }
 
 div.MuiDataGrid-root .MuiDataGrid-colCell:focus,

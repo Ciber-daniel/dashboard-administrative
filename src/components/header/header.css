@@ -3,7 +3,7 @@
 }
 
 header.MuiAppBar-colorPrimary {
-  height: 23vh;
+  height: 9.4rem;
   display: flex;
   background: #f2f2f2;
 }
@@ -45,7 +45,7 @@ h4.MuiTypography-root {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 9.3rem;
+  height: 9.37rem;
   background: #f2f2f2 0% 0% no-repeat padding-box;
 }
 
@@ -96,7 +96,7 @@ h4.MuiTypography-root {
 .list-items {
   background: transparent linear-gradient(0deg, #63d1a2 0%, #63c3d1 100%) 0% 0%
     no-repeat padding-box;
-  height: 78vh;
+  height: 80vh;
   padding-left: 3%;
 }
 
@@ -123,12 +123,14 @@ footer {
   font-weight: 400;
 }
 
-@media (min-width: 1920px) {
-  .list-items {
-    height: 81vh;
+@media (max-width: 1280px) {
+  .user-description {
+    height: 9.6rem;
   }
+}
 
-  header.MuiAppBar-colorPrimary {
-    height: 20vh;
+@media (max-width: 1600px) {
+  .user-description {
+    height: 9.5rem;
   }
 }

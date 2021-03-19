@@ -37,7 +37,7 @@ const Insurer = () => {
         setOpen={setOpenAdd}
         data={modalsInfoInsurers.add}
         snackbarData={{
-          message: "Aseguradora guardada exitosamente",
+          message: "Aseguradora agregada exitosamente",
           severity: "success",
         }}
       />
@@ -55,7 +55,7 @@ const Insurer = () => {
         setOpen={setOpenDelete}
         data={modalsInfoInsurers.delete}
         snackbarData={{
-          message: "Aseguradora guardada exitosamente",
+          message: "Aseguradora eliminada exitosamente",
           severity: "success",
         }}
         row={selected.row}

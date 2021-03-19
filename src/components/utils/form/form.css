@@ -8,7 +8,7 @@
 }
 
 .form {
-  width: 100%;
+  width: 80%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
@@ -25,13 +25,13 @@
 }
 
 .input-container {
-  margin-bottom: 7%;
+  margin-bottom: 1.5rem;
 }
 
 /*input tipo file*/
 .form__img-input-container {
   position: relative;
-  margin: -1.5% auto;
+  margin: 2% auto;
 }
 
 .visually-hidden {
@@ -90,7 +90,6 @@ input.visually-hidden:focus-within + label {
 .container-modal-buttons {
   display: flex;
   flex-direction: row-reverse;
-  padding-right: 2%;
 }
 
 .container-form-img {
@@ -109,24 +108,38 @@ Button span:first-letter {
 
 @media (min-width: 1920px) {
   .container-modal-buttons {
-    margin-top: -5.5%;
-    padding-right: 3.5%;
+    display: flex;
+    margin-left: 7%;
+    justify-content: flex-start;
+    margin-top: -6%;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1600px) {
+  .form__img-input-container {
+    margin: 5% auto;
+  }
+  .container-modal-buttons {
+    margin-top: -3%;
+    margin-left: 8%;
     width: 100%;
   }
 }
 
 @media (max-width: 1280px) {
   .container-modal-buttons {
-    margin: auto;
-    padding-left: 4%;
+    padding-right: 3%;
+    padding-top: 4%;
   }
 
   .container-form-img {
     padding-top: 1rem;
   }
 
-  div.makeStyles-modal-8 {
-    height: 72vh;
+  label#standard-full-width-label {
+    width: 15rem;
   }
 }
 

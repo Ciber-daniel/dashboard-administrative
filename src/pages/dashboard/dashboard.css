@@ -120,7 +120,7 @@ section p {
 
 @media (min-width: 1920px) {
   .figures {
-    margin-top: -10%;
+    top: 14rem;
   }
 
   .elipse img {
@@ -173,5 +173,17 @@ section p {
   .cross {
     margin-top: 5%;
     margin-left: -21%;
+  }
+}
+
+@media (max-width: 1600px) {
+  .figures {
+    margin-top: -10%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .figures {
+    margin-top: -4%;
   }
 }

@@ -16,9 +16,9 @@ const useStyles = makeStyles((theme) => ({
       outline: "none",
     },
     height: "78vh",
-    paddingTop: theme.spacing(8),
+    paddingTop: theme.spacing(9),
     [theme.breakpoints.up("xl")]: {
-      height: "70vh",
+      height: "73vh",
     },
   },
   paper: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     outline: "none",
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[10],
-    width: "50%",
+    width: "45%",
     height: "100%",
     [theme.breakpoints.up("xl")]: {
       height: "80%",
@@ -42,7 +42,7 @@ export default function TransitionModal(props) {
   const { row, setOpen, data, statusOpen, snackbarData } = props;
 
   const body = props.data.title.includes("aseguradora") ? (
-    <div className={classes.paper} style={{ borderRadius: "3%" }}>
+    <div className={classes.paper} style={{ borderRadius: "0.63rem" }}>
       <InsureForm
         row={row}
         setOpen={setOpen}
@@ -51,7 +51,7 @@ export default function TransitionModal(props) {
       />
     </div>
   ) : (
-    <div className={classes.paper} style={{ borderRadius: "3%" }}>
+    <div className={classes.paper} style={{ borderRadius: "0.63rem" }}>
       <BrandForm
         row={row}
         setOpen={setOpen}

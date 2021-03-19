@@ -14,7 +14,7 @@ export default function XGridDemo(props) {
     <div style={{ height: "100%", width: "100%" }}>
       <XGrid
         localeText={{
-          footerTotalRows: props.data.length <= 1 ? "registro:" : "registros:",
+          footerTotalRows: props.data.length <= 1 ? "Registro:" : "Registros:",
           columnMenuLabel: "Menu",
           columnMenuShowColumns: "Mostrar columnas",
           columnMenuFilter: "Filtrar",
