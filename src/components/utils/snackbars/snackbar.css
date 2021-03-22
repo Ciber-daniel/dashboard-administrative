@@ -39,14 +39,27 @@ div.MuiSnackbar-root.MuiSnackbar-anchorOriginTopCenter {
   width: 45%;
 }
 
+@media (max-width: 1280px) {
+  div.MuiSnackbar-root.MuiSnackbar-anchorOriginTopCenter {
+    width: 53%;
+  }
+  div.alert-info {
+    margin-top: -3%;
+  }
+}
+
 @media (max-width: 1600px) {
   div.MuiSnackbar-root.MuiSnackbar-anchorOriginTopCenter {
     width: 53%;
   }
+
+  div.alert-info {
+    margin-top: 13%;
+  }
 }
 
-@media (max-width: 1280px) {
-  div.MuiSnackbar-root.MuiSnackbar-anchorOriginTopCenter {
-    width: 45%;
+@media (min-width: 1920px) {
+  div.alert-info {
+    margin-top: 15%;
   }
 }

@@ -43,8 +43,6 @@ export default function InsureForm(props) {
     }
   };
 
-  console.log(row);
-
   const formik = useFormik({
     initialValues: {
       hooli: validate ? row.name : "Si",
