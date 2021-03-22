@@ -3,7 +3,10 @@ import { XGrid, LicenseInfo } from "@material-ui/x-grid";
 // style
 import "./grid.css";
 // services
-import { validateRowSelected } from "../../../services/Local-services";
+import {
+  disableRowsNotSelected,
+  validateRowSelected,
+} from "../../../services/Local-services";
 
 LicenseInfo.setLicenseKey(
   "566251e0a8fd26c8758bbc5c1f9df178T1JERVI6MjE5MTUsRVhQSVJZPTE2NDYyMjIwNTcwMDAsS0VZVkVSU0lPTj0x"
@@ -23,14 +26,13 @@ export default function XGridDemo(props) {
           columnMenuSortAsc: "Ordenar por ASC",
           columnMenuSortDesc: "Ordenar por DESC",
         }}
-        l
         onRowSelected={(newSelection) => {
+          disableRowsNotSelected(props.selectedStatus.status);
           validateRowSelected(
             newSelection,
             props.selectedStatus,
             props.selected
           );
-          console.log("sdasdasd", !props.selectedStatus);
         }}
         columns={[
           {
@@ -45,8 +47,8 @@ export default function XGridDemo(props) {
           },
         ]}
         rows={props.data}
-        checkboxSelection={true}
-        disableSelectionOnClick={!props.selectedStatus}
+        checkboxSelection
+        disableSelectionOnClick={false}
       />
     </div>
   );
