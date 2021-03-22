@@ -39,7 +39,7 @@ export default makeStyles({
     color: "inherit",
     width: "14rem",
     height: "2rem",
-    background: "#f3f3f3",
+    background: "transparent",
     borderRadius: 21,
     opacity: 1,
     textTransform: "lowercase",

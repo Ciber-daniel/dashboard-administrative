@@ -14,7 +14,7 @@ LicenseInfo.setLicenseKey(
 
 export default function XGridDemo(props) {
   return (
-    <div style={{ height: "100%", width: "100%" }}>
+    <div style={{ height: "100%", width: "100%", boxShadow: "4px black" }}>
       <XGrid
         localeText={{
           footerTotalRows: props.data.length <= 1 ? "Registro:" : "Registros:",

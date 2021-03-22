@@ -15,10 +15,13 @@ const useStyles = makeStyles((theme) => ({
     "&:focus": {
       outline: "none",
     },
+
     paddingTop: theme.spacing(5),
     height: "100vh",
+    marginBottom: "5%",
     [theme.breakpoints.up("xl")]: {
       paddingTop: theme.spacing(2),
+      marginBottom: "1%",
     },
   },
   paper: {

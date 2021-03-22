@@ -25,7 +25,7 @@
   justify-content: flex-end;
   width: 100%;
   height: auto;
-  padding-top: 7rem;
+  padding-top: 8rem;
 }
 
 .figures .elipse {
@@ -40,15 +40,15 @@
 }
 
 .elipse .rombo {
-  width: 0.8rem;
+  width: 0.7rem;
   padding-top: 1rem;
-  margin-left: 2.8rem;
+  margin-left: 3rem;
 }
 
 .figures .vertical-line {
-  padding-top: 7rem;
-  padding-right: 14%;
-  margin-left: -3.5rem;
+  padding-top: 6.4rem;
+  padding-right: 13%;
+  margin-left: -3.4rem;
 }
 
 .vertical-line .line {
@@ -62,7 +62,7 @@ section {
   height: auto;
   justify-content: center;
   line-height: 0;
-  padding-top: 1.5rem;
+  padding-top: 2rem;
   padding-bottom: 1.5rem;
   width: 100%;
 }
@@ -94,19 +94,20 @@ section p {
 
 .container-left {
   display: flex;
-  padding-left: 14%;
+  padding-left: 13%;
+  padding-top: 2%;
 }
 
 .half-wheel img {
-  width: 6rem;
+  width: 7rem;
 }
 
 .cross {
-  margin-left: -18%;
+  margin-left: -16%;
 }
 
 .cross img {
-  width: 1.5rem;
+  width: 1.8rem;
 }
 
 .rombo {
@@ -115,7 +116,7 @@ section p {
 }
 
 .rombo img {
-  width: 0.75rem;
+  width: 0.82rem;
 }
 
 @media (min-width: 1920px) {
@@ -184,6 +185,6 @@ section p {
 
 @media (max-width: 1280px) {
   .figures {
-    margin-top: -4%;
+    margin-top: -7%;
   }
 }

@@ -44,7 +44,7 @@ div.MuiSnackbar-root.MuiSnackbar-anchorOriginTopCenter {
     width: 53%;
   }
   div.alert-info {
-    margin-top: -3%;
+    margin-top: 14% !important;
   }
 }
 
@@ -54,7 +54,7 @@ div.MuiSnackbar-root.MuiSnackbar-anchorOriginTopCenter {
   }
 
   div.alert-info {
-    margin-top: 13.5%;
+    margin-top: 11%;
   }
 }
 

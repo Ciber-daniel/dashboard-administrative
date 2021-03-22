@@ -9,4 +9,6 @@
 .row-grid-brands {
   width: 96%;
   height: 80%;
+  margin-bottom: 0.9%;
+  box-shadow: 0px 3px 8px #e5e5e5;
 }

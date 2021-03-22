@@ -62,137 +62,133 @@ export default function BrandForm(props) {
   const redColor = validate ? "red" : "";
 
   return (
-    <>
-      <div className="form">
-        <form
-          style={{ width: "100%", height: "100%" }}
-          onSubmit={formik.handleSubmit}
-          autoComplete="off"
-        >
-          <div className="title">
-            <h2 style={{ color: redColor }}>{props.data.title}</h2>
-          </div>
-          <div className="divider">
-            <Divider />
-          </div>
-          <div className="inputs">
-            <div
-              className="container-inverse"
-              style={{
-                display: "flex",
-                flexDirection: "column-reverse",
-                marginTop: "-5%",
-              }}
-            >
-              <div className="container-inverse">
-                <div className="input-container">
-                  {validate ? (
-                    <TextField
-                      label={props.data.firstInput.label}
-                      name="type"
-                      id="standard-full-width"
-                      className="width-select"
-                      disabled
-                      value={row.type}
-                    />
-                  ) : (
-                    <TextField
-                      label={props.data.firstInput.label}
-                      name="type"
-                      id="standard-select-currency-native"
-                      select
-                      disabled={formik.isSubmitting}
-                      SelectProps={{
-                        native: true,
-                      }}
-                      className="width-select"
-                      value={formik.values.type}
-                      onChange={formik.handleChange}
-                      error={formik.touched.type && Boolean(formik.errors.type)}
-                    >
-                      {currencies.map((option) => (
-                        <option
-                          key={option.value}
-                          hidden={option.hidden}
-                          value={option.value}
-                        >
-                          {option.label}
-                        </option>
-                      ))}
-                    </TextField>
-                  )}
-                </div>
-                <div className="input-container">
-                  {validate ? (
-                    <TextField
-                      label={data.secondInput.label}
-                      name="brand"
-                      id="standard-full-width"
-                      margin="normal"
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                      disabled
-                      fullWidth
-                      value={row.name}
-                    />
-                  ) : (
-                    <TextField
-                      label={data.secondInput.label}
-                      name="brand"
-                      id="standard-full-width"
-                      placeholder={data.secondInput.placeholder}
-                      margin="normal"
-                      disabled={formik.isSubmitting}
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                      fullWidth
-                      value={formik.values.brand}
-                      onChange={formik.handleChange}
-                      error={
-                        formik.touched.brand && Boolean(formik.errors.brand)
-                      }
-                      helperText={formik.touched.brand && formik.errors.brand}
-                    />
-                  )}
-                </div>
+    <div className="form">
+      <form
+        style={{ width: "100%", height: "100%" }}
+        onSubmit={formik.handleSubmit}
+        autoComplete="off"
+      >
+        <div className="title">
+          <h2 style={{ color: redColor }}>{props.data.title}</h2>
+        </div>
+        <div className="divider">
+          <Divider />
+        </div>
+        <div className="inputs">
+          <div
+            className="container-inverse"
+            style={{
+              display: "flex",
+              flexDirection: "column-reverse",
+              marginTop: "-5%",
+            }}
+          >
+            <div className="container-inverse">
+              <div className="input-container">
+                {validate ? (
+                  <TextField
+                    label={props.data.firstInput.label}
+                    name="type"
+                    id="standard-full-width"
+                    className="width-select"
+                    disabled
+                    value={row.type}
+                  />
+                ) : (
+                  <TextField
+                    label={props.data.firstInput.label}
+                    name="type"
+                    id="standard-select-currency-native"
+                    select
+                    disabled={formik.isSubmitting}
+                    SelectProps={{
+                      native: true,
+                    }}
+                    className="width-select"
+                    value={formik.values.type}
+                    onChange={formik.handleChange}
+                    error={formik.touched.type && Boolean(formik.errors.type)}
+                  >
+                    {currencies.map((option) => (
+                      <option
+                        key={option.value}
+                        hidden={option.hidden}
+                        value={option.value}
+                      >
+                        {option.label}
+                      </option>
+                    ))}
+                  </TextField>
+                )}
               </div>
-            </div>
-            <div className="container-form-img">
-              {" "}
-              <div className="form__img-input-container">
-                <input
-                  disabled={validate}
-                  type="file"
-                  accept=".png"
-                  id="photo"
-                  name="photo"
-                  className="visually-hidden"
-                  onChange={handleImg}
-                />
-                <label htmlFor="photo" className="form-img__file-label"></label>
-                <img src={src} alt={alt} className="form-img__img-preview" />
+              <div className="input-container">
+                {validate ? (
+                  <TextField
+                    label={data.secondInput.label}
+                    name="brand"
+                    id="standard-full-width"
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    disabled
+                    fullWidth
+                    value={row.name}
+                  />
+                ) : (
+                  <TextField
+                    label={data.secondInput.label}
+                    name="brand"
+                    id="standard-full-width"
+                    placeholder={data.secondInput.placeholder}
+                    margin="normal"
+                    disabled={formik.isSubmitting}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    fullWidth
+                    value={formik.values.brand}
+                    onChange={formik.handleChange}
+                    error={formik.touched.brand && Boolean(formik.errors.brand)}
+                    helperText={formik.touched.brand && formik.errors.brand}
+                  />
+                )}
               </div>
             </div>
           </div>
-          <div className="container-modal-buttons">
-            <CustomButton
-              data={data}
-              inputsValues={{
-                firstInput: formik.values.type,
-                secondInput: formik.values.brand,
-                imageInput: formik.values.photo,
-              }}
-              submitState={formik.isSubmitting}
-              setOpen={setOpen}
-              message={snackbarData.message}
-              setOpenAlert={setOpenAlert}
-              openAlert={openAlert}
-            />
+          <div className="container-form-img">
+            {" "}
+            <div className="form__img-input-container">
+              <input
+                disabled={validate}
+                type="file"
+                accept=".png"
+                id="photo"
+                name="photo"
+                className="visually-hidden"
+                onChange={handleImg}
+              />
+              <label htmlFor="photo" className="form-img__file-label"></label>
+              <img src={src} alt={alt} className="form-img__img-preview" />
+            </div>
           </div>
-        </form>
-      </div>
-    </>
+        </div>
+        <div className="container-modal-buttons">
+          <CustomButton
+            data={data}
+            inputsValues={{
+              firstInput: formik.values.type,
+              secondInput: formik.values.brand,
+              imageInput: formik.values.photo,
+            }}
+            submitState={formik.isSubmitting}
+            setOpen={setOpen}
+            message={snackbarData.message}
+            setOpenAlert={setOpenAlert}
+            openAlert={openAlert}
+          />
+        </div>
+      </form>
+    </div>
   );
 }
