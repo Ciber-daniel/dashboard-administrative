@@ -2,11 +2,11 @@ export const data = [
   {
     id: "1",
     type: "Computadora",
-    name: "Apple",
+    name: "Mac",
   },
   {
     id: "2",
-    type: "Computadora",
+    type: "Iphone",
     name: "Apple",
   },
   {

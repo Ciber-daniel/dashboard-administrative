@@ -15,11 +15,7 @@ const useStyles = makeStyles((theme) => ({
     "&:focus": {
       outline: "none",
     },
-    height: "78vh",
-    paddingTop: theme.spacing(9),
-    [theme.breakpoints.up("xl")]: {
-      height: "73vh",
-    },
+    height: "100vh",
   },
   paper: {
     display: "flex",
@@ -29,10 +25,12 @@ const useStyles = makeStyles((theme) => ({
     outline: "none",
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[10],
-    width: "45%",
-    height: "100%",
+    width: "50%",
+    height: "auto",
+    padding: "1.2rem",
     [theme.breakpoints.up("xl")]: {
-      height: "80%",
+      padding: 0,
+      width: "45%",
     },
   },
 }));

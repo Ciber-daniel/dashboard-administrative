@@ -19,50 +19,46 @@ export default function CustomButton(props) {
 
   return (
     <div className="container-modal-buttons">
-      <div className="container-modal-buttons">
-        <Button
-          type="submit"
-          className={
-            data.title.includes("Eliminar")
-              ? classes.redBtn
-              : classes.defaultBtn
-          }
-          disabled={
-            !inputsValues.firstInput ||
-            !inputsValues.secondInput ||
-            !inputsValues.imageInput ||
-            submitState
-          }
-        >
-          <span>{data.buttonInfo.title}</span>
-        </Button>
+      <Button
+        type="submit"
+        className={
+          data.title.includes("Eliminar") ? classes.redBtn : classes.defaultBtn
+        }
+        disabled={
+          !inputsValues.firstInput ||
+          !inputsValues.secondInput ||
+          !inputsValues.imageInput ||
+          submitState
+        }
+      >
+        <span>{data.buttonInfo.title}</span>
+      </Button>
 
-        <Button
-          disabled={submitState}
-          className={classes.whiteBtn}
-          onClick={() => {
-            setOpen(false);
-          }}
-        >
-          <span>Cancelar</span>
-        </Button>
-        <SnackBar
-          snackbarData={{
-            autoHideDuration: 5000,
-            data: data,
-            vertical: "top",
-            horizontal: "center",
-            openAlert: openAlert,
-            setOpenAlert: () => {
-              setOpenAlert(false);
-            },
-            severity: "success",
-            message: message,
-            alertElevation: 6,
-            varian: "filled",
-          }}
-        />
-      </div>
+      <Button
+        disabled={submitState}
+        className={classes.whiteBtn}
+        onClick={() => {
+          setOpen(false);
+        }}
+      >
+        <span>Cancelar</span>
+      </Button>
+      <SnackBar
+        snackbarData={{
+          autoHideDuration: 5000,
+          data: data,
+          vertical: "top",
+          horizontal: "center",
+          openAlert: openAlert,
+          setOpenAlert: () => {
+            setOpenAlert(false);
+          },
+          severity: "success",
+          message: message,
+          alertElevation: 6,
+          varian: "filled",
+        }}
+      />
     </div>
   );
 }

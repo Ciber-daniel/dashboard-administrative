@@ -25,12 +25,12 @@ export default function XGridDemo(props) {
         }}
         l
         onRowSelected={(newSelection) => {
-          console.log(newSelection);
           validateRowSelected(
             newSelection,
             props.selectedStatus,
             props.selected
           );
+          console.log("sdasdasd", !props.selectedStatus);
         }}
         columns={[
           {
@@ -45,6 +45,8 @@ export default function XGridDemo(props) {
           },
         ]}
         rows={props.data}
+        checkboxSelection={true}
+        disableSelectionOnClick={!props.selectedStatus}
       />
     </div>
   );

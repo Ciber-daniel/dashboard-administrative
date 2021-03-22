@@ -18,9 +18,10 @@ header.MuiPaper-elevation4 {
 }
 
 span.MuiIconButton-label {
-  color: #63c3d1;
+color: #63c3d1;
   opacity: 1;
 }
+
 
 h6.MuiTypography-root {
   color: #a7a7a7;
