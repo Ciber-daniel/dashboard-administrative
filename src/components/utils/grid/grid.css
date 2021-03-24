@@ -46,21 +46,15 @@ div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected:hover {
   height: 0px;
   width: 0px;
 }
-.MuiDataGrid-cell.MuiDataGrid-cellCheckbox.MuiDataGrid-cellWithRenderer.MuiDataGrid-cellCenter {
-  width: 0;
-  color: white;
-  border: 0;
-  display: none;
+
+div.MuiDataGrid-root {
+  cursor: auto;
 }
 
-.MuiDataGrid-colCell.MuiDataGrid-colCellCheckbox.MuiDataGrid-colCellCenter {
-  width: 0;
-  color: white;
-  border: 0;
-  display: none;
+.selected {
+  background: green !important;
 }
 
 .disabled {
-  pointer-events: none;
-  cursor: none;
+  background: white !important;
 }

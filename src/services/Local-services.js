@@ -2,25 +2,29 @@
 // lo esté ejecutar el callback solicitado
 export const validateRowSelected = async (
   newSelection,
-  selectedStatus,
-  callback
+  callback,
+  selectedStatus
 ) => {
   const selectedRow = newSelection.data;
-  const getSelectedRow = await newSelection.api.current.getSelectedRows();
-  if (selectedStatus.status) {
-    if (getSelectedRow[0].id) {
-      if (selectedRow.id === getSelectedRow[0].id) {
-        callback({
-          status: false,
-          row: selectedRow,
-        });
-      }
-    }
-  } else {
+  const getSelectedRow = newSelection.api.current.getSelectedRows();
+  if (selectedStatus.status === false) {
     callback({
       status: true,
-      row: selectedRow,
+      row: {},
     });
+  }
+  if (getSelectedRow) {
+    if (getSelectedRow[0]) {
+      if (getSelectedRow[0].id === selectedRow.id) {
+        console.log("ok?");
+        // callback({
+        //   status: false,
+        //   row: {
+        //     ...selectedRow,
+        //   },
+        // });
+      }
+    }
   }
 };
 
@@ -32,21 +36,3 @@ export const refreshPage = () => {
 // validar que solo hayan letras/cadena de string
 export const lettersOnly = (value) =>
   /^(?=s*[a-zA-Z])([a-zA-Z0-9\s]+)$/.test(value);
-
-export const disableRowsNotSelected = (selectedStatus) => {
-  const rows = document.getElementsByClassName("MuiDataGrid-row");
-  // conversión de un objeto iterable a array e iteración.
-  Array.from(rows).forEach((row) => {
-    if (!selectedStatus) {
-      // Aqui se valida el estado seleccionado.
-      const classes = Array.from(row.classList);
-      if (!classes.includes("Mui-selected")) {
-        // Si no tiene la clase, las deshabilita.
-        row.classList.add("disabled");
-      }
-    } else {
-      // Si tiene la clase, las vuelve a habilitar.
-      row.classList.remove("disabled");
-    }
-  });
-};
