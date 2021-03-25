@@ -31,11 +31,11 @@ div.MuiDataGrid-root .MuiDataGrid-cellLeft:focus {
   outline: none;
 }
 
-div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected {
-  background: #a7a7a7 0% 0% no-repeat padding-box;
+div .MuiDataGrid-root .MuiDataGrid-row:hover {
+  background: #f2f2f2 0% 0% no-repeat padding-box;
 }
 
-div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected:hover {
+div.MuiDataGrid-root .MuiDataGrid-row .Mui-selected:hover {
   background: #a7a7a7 0% 0% no-repeat padding-box;
 }
 
@@ -47,21 +47,7 @@ div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected:hover {
   height: 0px;
   width: 0px;
 }
-.MuiDataGrid-cell.MuiDataGrid-cellCheckbox.MuiDataGrid-cellWithRenderer.MuiDataGrid-cellCenter {
-  color: white;
-  border: 0;
-  visibility: hidden;
-  margin-left: -1.5%;
-}
 
-.MuiDataGrid-colCell.MuiDataGrid-colCellCheckbox.MuiDataGrid-colCellCenter {
-  color: white;
-  border: 0;
-  visibility: hidden;
-  margin-left: -1.5%;
-}
-
-.disabled {
-  pointer-events: none;
-  cursor: none;
+div.MuiDataGrid-root {
+  cursor: auto;
 }

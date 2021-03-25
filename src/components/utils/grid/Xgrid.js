@@ -1,18 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { XGrid, LicenseInfo } from "@material-ui/x-grid";
 // style
 import "./grid.css";
-// services
-import {
-  disableRowsNotSelected,
-  validateRowSelected,
-} from "../../../services/Local-services";
 
 LicenseInfo.setLicenseKey(
   "566251e0a8fd26c8758bbc5c1f9df178T1JERVI6MjE5MTUsRVhQSVJZPTE2NDYyMjIwNTcwMDAsS0VZVkVSU0lPTj0x"
 );
 
 export default function XGridDemo(props) {
+  const [selection, setSelection] = useState(null);
+
+  const validateRowSelected = (selection, setSelection, newSelection) => {
+    const rows = document.getElementsByClassName("Mui-selected");
+    let color = "";
+    let selectedByHtml = rows[0];
+
+    if (
+      selectedByHtml.style.backgroundColor === "" ||
+      selectedByHtml.style.backgroundColor === "white"
+    ) {
+      setSelection(selectedByHtml);
+      props.selected({
+        status: true,
+        row: {
+          ...newSelection.data,
+        },
+      });
+      color = "#a7a7a7";
+    }
+
+    if (selectedByHtml.style.backgroundColor === "rgb(167, 167, 167)") {
+      props.selected({
+        status: false,
+        data: {},
+      });
+      color = "white";
+    }
+
+    if (selection !== null) {
+      selection.style.backgroundColor = "white";
+    }
+
+    selectedByHtml.style.backgroundColor = color;
+  };
+
   return (
     <div style={{ height: "100%", width: "100%", boxShadow: "4px black" }}>
       <XGrid
@@ -27,12 +58,7 @@ export default function XGridDemo(props) {
           columnMenuSortDesc: "Ordenar por DESC",
         }}
         onRowSelected={(newSelection) => {
-          disableRowsNotSelected(props.selectedStatus.status);
-          validateRowSelected(
-            newSelection,
-            props.selectedStatus,
-            props.selected
-          );
+          validateRowSelected(selection, setSelection, newSelection);
         }}
         columns={[
           {
@@ -46,9 +72,8 @@ export default function XGridDemo(props) {
             width: 250,
           },
         ]}
+        disableMultipleSelection={true}
         rows={props.data}
-        checkboxSelection
-        disableSelectionOnClick={false}
       />
     </div>
   );
