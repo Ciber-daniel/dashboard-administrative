@@ -1,5 +1,6 @@
 :root {
   --font-g: "Roboto", sans-serif;
+  --hover-color: 0;
 }
 
 div.MuiDataGrid-root.MuiDataGrid-root:before.MuiDataGrid-root:after {
@@ -47,14 +48,12 @@ div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected:hover {
   width: 0px;
 }
 
-div.MuiDataGrid-root {
-  cursor: auto;
+div.MuiDataGrid-root .MuiDataGrid-row:hover {
+  color: red;
+  background: calc(red * var(--hover-color)) !important;
 }
-
-.selected {
-  background: green !important;
-}
-
-.disabled {
-  background: white !important;
-}
+/*
+div.MuiDataGrid-row .Mui-even {
+  color: red;
+  background-color: #f2f2f2 !important;
+} */
