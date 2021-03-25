@@ -10,14 +10,30 @@ LicenseInfo.setLicenseKey(
 export default function XGridDemo(props) {
   const [selection, setSelection] = useState(null);
 
+  const f1 = () => {
+    if (selection.style.backgroundColor === "white") {
+      selection.setAttribute("style", "background-color:rgb(242, 242, 242);");
+    }
+  };
+
+  const f2 = () => {
+    if (selection.style.backgroundColor === "rgb(242, 242, 242)") {
+      selection.setAttribute("style", "background-color:white;");
+    }
+  };
+
   const validateRowSelected = (selection, setSelection, newSelection) => {
     const rows = document.getElementsByClassName("Mui-selected");
     let color = "";
     let selectedByHtml = rows[0];
 
+    selectedByHtml.removeEventListener("mouseover", f1);
+    selectedByHtml.removeEventListener("mouseout", f2);
+
     if (
+      selectedByHtml.style.backgroundColor === "white" ||
       selectedByHtml.style.backgroundColor === "" ||
-      selectedByHtml.style.backgroundColor === "white"
+      selectedByHtml.style.backgroundColor === "rgb(242, 242, 242)"
     ) {
       setSelection(selectedByHtml);
       props.selected({
@@ -38,6 +54,10 @@ export default function XGridDemo(props) {
     }
 
     if (selection !== null) {
+      selection.addEventListener("mouseover", f1);
+
+      selection.addEventListener("mouseout", f2);
+
       selection.style.backgroundColor = "white";
     }
 
