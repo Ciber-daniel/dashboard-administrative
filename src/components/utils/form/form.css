@@ -51,14 +51,15 @@ input.visually-hidden:focus-within + label {
   top: 0;
   left: 0;
   display: block;
-  width: 10rem;
-  height: 10rem;
+  width: 100%;
+  height: 20vh;
   cursor: pointer;
-  background-color: rgba(245, 245, 231, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .form-img__file-label:hover {
-  background-color: rgba(245, 245, 231, 0.5);
+  background-color: transparent;
+  box-shadow: 5px 5px 20px #f4f4f4;
 }
 
 .form-img__file-label > svg {
@@ -76,12 +77,64 @@ input.visually-hidden:focus-within + label {
 .form-img__img-preview {
   display: block;
   width: 10rem;
-  object-fit: cover;
+  height: 20vh;
+  object-fit: contain;
   border: none;
 }
 
 .divider {
   margin: 0rem 2rem;
+}
+
+/*tooltip*/
+
+.tooltip-insurers {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-insurers .tiptext-insurers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  visibility: hidden;
+  width: 6rem;
+  height: 0.4rem;
+  background-color: #707070;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.38rem 0;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  font-size: 0.6rem;
+  font-family: var(--font-g);
+  font-weight: 300;
+}
+
+.tooltip-insurers .tiptext-insurers::after {
+  content: "";
+  position: absolute;
+  border-width: 0.31rem;
+  border-style: solid;
+}
+
+.tooltip-insurers:hover .tiptext-insurers {
+  visibility: visible;
+}
+
+.tooltip-insurers.right .tiptext-insurers {
+  margin-left: 3.75rem;
+  margin-top: -25%;
+  top: 120%;
+}
+
+.tooltip-insurers.right .tiptext-insurers::after {
+  margin-left: 1.5rem;
+  bottom: 100%;
+  left: 50%;
+  border-color: transparent transparent #707070 transparent;
 }
 
 /*modal buttons*/
@@ -95,7 +148,6 @@ input.visually-hidden:focus-within + label {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 4.5%;
 }
 
 Button span:first-letter {

@@ -149,18 +149,45 @@ export default function InsureForm(props) {
             </div>
           </div>
           <div className="container-form-img">
-            <div className="form__img-input-container">
-              <input
-                type="file"
-                accept=".png"
-                id="photo"
-                disabled={validate}
-                className="visually-hidden"
-                onChange={handleImg}
-              />
-              <label htmlFor="photo" className="form-img__file-label"></label>
-              <img src={src} alt={alt} className="form-img__img-preview" />
-            </div>
+            {props.createObjectURL === "0" ? (
+              <div className="tooltip-insurers right">
+                <div className="form__img-input-container">
+                  <input
+                    type="file"
+                    accept=".png"
+                    id="photo"
+                    disabled={validate}
+                    className="visually-hidden"
+                    onChange={handleImg}
+                  />
+                  <label
+                    htmlFor="photo"
+                    className="form-img__file-label"
+                  ></label>
+                  <img src={src} alt={alt} className="form-img__img-preview" />
+                </div>
+                <span className="tiptext-insurers">Cargar imagen</span>
+              </div>
+            ) : (
+              <div className="tooltip-insurers right">
+                <div className="form__img-input-container">
+                  <input
+                    type="file"
+                    accept=".png"
+                    id="photo"
+                    disabled={validate}
+                    className="visually-hidden"
+                    onChange={handleImg}
+                  />
+                  <label
+                    htmlFor="photo"
+                    className="form-img__file-label"
+                  ></label>
+                  <img src={src} alt={alt} className="form-img__img-preview" />
+                </div>
+                <span className="tiptext-insurers">Remplazar imagen</span>
+              </div>
+            )}
           </div>
         </div>
         <div className="container-modal-buttons">
