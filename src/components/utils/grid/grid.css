@@ -32,17 +32,22 @@ div.MuiDataGrid-root .MuiDataGrid-cellLeft:focus {
   outline: none;
 }
 
-div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected {
+div .MuiDataGrid-root .MuiDataGrid-row:hover {
+  background: #f2f2f2 0% 0% no-repeat padding-box;
+}
+
+div.MuiDataGrid-root .MuiDataGrid-row .Mui-selected {
   background: #a7a7a7 0% 0% no-repeat padding-box;
 }
 
-div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected:hover {
+div.MuiDataGrid-root .MuiDataGrid-row .Mui-selected:hover {
   background: #a7a7a7 0% 0% no-repeat padding-box;
 }
 
 .MuiDataGrid-root .MuiDataGrid-footer {
   min-height: auto !important;
 }
+
 .MuiDataGrid-window::-webkit-scrollbar {
   height: 0px;
   width: 0px;
