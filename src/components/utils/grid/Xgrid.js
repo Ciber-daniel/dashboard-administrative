@@ -32,7 +32,6 @@ export default function XGridDemo(props) {
       selectedByHtml.style.backgroundColor === "" ||
       selectedByHtml.style.backgroundColor === "rgb(242, 242, 242)"
     ) {
-      console.log("selection");
       setSelection(selectedByHtml);
       props.selected({
         status: true,
@@ -44,8 +43,6 @@ export default function XGridDemo(props) {
     }
 
     if (selectedByHtml.style.backgroundColor === "rgb(167, 167, 167)") {
-      console.log("deselection");
-
       props.selected({
         status: false,
         data: {},
