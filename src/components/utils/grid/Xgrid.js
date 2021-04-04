@@ -27,9 +27,6 @@ export default function XGridDemo(props) {
     let color = "";
     let selectedByHtml = rows[0];
 
-    selectedByHtml.removeEventListener("mouseover", f1);
-    selectedByHtml.removeEventListener("mouseout", f2);
-
     if (
       selectedByHtml.style.backgroundColor === "white" ||
       selectedByHtml.style.backgroundColor === "" ||
